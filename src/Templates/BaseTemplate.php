@@ -1,9 +1,11 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Templates;
 
+use AlexScherer\WpthemeValerieknill\Rendering\IRenderable;
+
 abstract class BaseTemplate {
 
-    protected $components = [];
+    private $components = [];
 
     protected $colourScheme = 'green';
 
@@ -22,6 +24,15 @@ abstract class BaseTemplate {
     protected function initialize() {
         add_action('wp_enqueue_styles', [$this, 'enqueueStyles']);
         add_action('wp_enqueue_scripts', [$this, 'enqueueScripts']);
+        $this->prepareComponents();
+    }
+
+    abstract protected function prepareComponents();
+
+    protected function addComponent($component) {
+        if ($component instanceof IRenderable) {
+            $this->components[] = $component;
+        }
     }
 
     protected function addStylesheet($handle, $path, $dependencies = []) {
@@ -54,6 +65,9 @@ abstract class BaseTemplate {
     
 
     public function render() {
+        foreach ($this->components as $component) {
+            $component->render();
+        }
 
     }
 }

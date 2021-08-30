@@ -32,6 +32,6 @@ class Theme {
     }
 
     public function render() {
-        echo "Hello World!";
+        $this->template->render();
     }
 }
