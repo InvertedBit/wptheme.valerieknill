@@ -1,6 +1,8 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill;
 
+use AlexScherer\WpthemeValerieknill\Templates;
+
 class Theme {
 
     protected static $_instance = false;
@@ -23,7 +25,10 @@ class Theme {
     }
 
     public function setTemplate($name) {
-        $this->template = $name;
+        if (class_exists("AlexScherer\\WpthemeValerieknill\\Templates\\" . $name . "Template")) {
+            $fullClassName = "AlexScherer\\WpthemeValerieknill\\Templates\\" . $name . "Template";
+            $this->template = new $fullClassName();
+        }
     }
 
     public function render() {

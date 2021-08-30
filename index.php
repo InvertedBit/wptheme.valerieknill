@@ -19,7 +19,7 @@ use AlexScherer\WpthemeValerieknill as VK;
 
 $theme = VK\Theme::getInstance();
 
-$theme->setTemplate('index');
+$theme->setTemplate('Home');
 
 $theme->render();
 
