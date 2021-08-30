@@ -27,11 +27,13 @@ abstract class BaseTemplate {
         $this->prepareComponents();
 
 
-        $this->addStylesheet('uikit-style', 'node_modules/uikit/dist/css/uikit.css');
+        //$this->addStylesheet('uikit-style', 'node_modules/uikit/dist/css/uikit.css');
+        $this->addStylesheet('uikit-style', 'assets/dist/css/theme-'.$this->colourScheme.'.css');
 
         $this->addScript('uikit', 'node_modules/uikit/dist/js/uikit.js');
         $this->addScript('uikit-icons', 'node_modules/uikit/dist/js/uikit-icons.js');
-        //$this->addScript('uikit', 'node_modules/uikit/dist/js/uikit.js');
+        $this->addScript('jquery', 'node_modules/jquery/dist/jquery.js');
+        $this->addScript('theme-pack', 'assets/dist/js/theme-pack.bundle.js');
 
     }
 
