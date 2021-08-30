@@ -22,6 +22,7 @@ class Theme {
 
 
     public function initialize() {
+        add_theme_support('menus');
     }
 
     public function setTemplate($name) {
