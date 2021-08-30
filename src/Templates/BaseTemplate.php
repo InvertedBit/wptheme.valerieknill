@@ -22,9 +22,17 @@ abstract class BaseTemplate {
     }
 
     protected function initialize() {
-        add_action('wp_enqueue_styles', [$this, 'enqueueStyles']);
+        add_action('wp_enqueue_scripts', [$this, 'enqueueStyles']);
         add_action('wp_enqueue_scripts', [$this, 'enqueueScripts']);
         $this->prepareComponents();
+
+
+        $this->addStylesheet('uikit-style', 'node_modules/uikit/dist/css/uikit.css');
+
+        $this->addScript('uikit', 'node_modules/uikit/dist/js/uikit.js');
+        $this->addScript('uikit-icons', 'node_modules/uikit/dist/js/uikit-icons.js');
+        //$this->addScript('uikit', 'node_modules/uikit/dist/js/uikit.js');
+
     }
 
     abstract protected function prepareComponents();
@@ -53,13 +61,13 @@ abstract class BaseTemplate {
 
     public function enqueueStyles() {
         foreach ($this->stylesheets as $stylesheet) {
-            wp_enqueue_style($stylesheet['handle'], get_template_directory_uri() . $stylesheet['path'], array(), filemtime(get_template_directory() . $stylesheet['path']), false);
+            wp_enqueue_style($stylesheet['handle'], get_template_directory_uri() . '/' . $stylesheet['path'], array(), filemtime(get_template_directory() . '/' . $stylesheet['path']));
         }
     }
 
     public function enqueueScripts() {
         foreach ($this->scripts as $script) {
-            wp_enqueue_script( $script['handle'], get_template_directory_uri() . $script['path'], $script['dependencies'], filemtime(get_template_directory() . $script['path']), false);
+            wp_enqueue_script( $script['handle'], get_template_directory_uri() . '/' . $script['path'], $script['dependencies'], filemtime(get_template_directory() . '/' . $script['path']), false);
         }
     }
     

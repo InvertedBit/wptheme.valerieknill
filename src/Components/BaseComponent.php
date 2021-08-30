@@ -13,7 +13,15 @@ abstract class BaseComponent implements IRenderable {
         $this->data = $data;
     }
 
+    protected function getViewPath() {
+        return get_template_directory() . '/src/Views/' . $this->name . '.php';
+    }
+
     public function render() {
-        include get_template_directory() . '/src/Views/' . $this->name . '.php';
+        if (!file_exists($this->getViewPath())) {
+            echo '<span class="uk-text-danger">Failed to load view for '.$this->name.'Component: no such view file!</span>';
+            return;
+        }
+        include $this->getViewPath();
     }
 }

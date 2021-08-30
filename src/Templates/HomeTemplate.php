@@ -1,6 +1,7 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Templates;
 
+use AlexScherer\WpthemeValerieknill\Components\FooterComponent;
 use AlexScherer\WpthemeValerieknill\Components\HeaderComponent;
 
 class HomeTemplate extends BaseTemplate {
@@ -12,5 +13,6 @@ class HomeTemplate extends BaseTemplate {
     protected function prepareComponents()
     {
         $this->addComponent(new HeaderComponent());
+        $this->addComponent(new FooterComponent());
     }
 }
