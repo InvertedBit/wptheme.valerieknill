@@ -1,0 +1,17 @@
+{
+    "name": "alex.scherer/wptheme.valerieknill",
+    "description": "Wordpress Theme for valerie-knill.com",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "AlexScherer\\WpthemeValerieknill\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alex Scherer",
+            "email": "alex.scherer@outlook.com"
+        }
+    ],
+    "require": {}
+}
