@@ -14,7 +14,7 @@ class HomeTemplate extends BaseTemplate {
     protected function prepareComponents()
     {
         $this->addComponent(new HeaderComponent());
-        $this->addComponent(new NavigationComponent());
+        $this->addComponent(new NavigationComponent(2));
         $this->addComponent(new FooterComponent());
     }
 }
