@@ -1,7 +1,7 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Components;
 
-class FooterComponent extends BaseComponent {
+class FooterComponent extends BaseViewComponent {
 
     public function __construct() {
         parent::__construct('Footer', []);

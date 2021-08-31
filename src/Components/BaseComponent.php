@@ -6,10 +6,12 @@ use AlexScherer\WpthemeValerieknill\Rendering\IRenderable;
 abstract class BaseComponent implements IRenderable {
     protected $name;
     protected $data;
+    protected $type;
 
-    public function __construct($name, $data = [])
+    public function __construct($name, $type, $data = [])
     {
         $this->name = $name;
+        $this->type = $type;
         $this->data = $data;
     }
 
@@ -17,11 +19,5 @@ abstract class BaseComponent implements IRenderable {
         return get_template_directory() . '/src/Views/' . $this->name . '.php';
     }
 
-    public function render() {
-        if (!file_exists($this->getViewPath())) {
-            echo '<span class="uk-text-danger">Failed to load view for '.$this->name.'Component: no such view file!</span>';
-            return;
-        }
-        include $this->getViewPath();
-    }
+    abstract public function render();
 }
