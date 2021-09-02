@@ -29,8 +29,9 @@ class Theme {
 
     public function setTemplate($name, $parameters = []) {
         $this->parameters = $parameters;
-        if (class_exists("AlexScherer\\WpthemeValerieknill\\Templates\\" . $name . "Template")) {
-            $fullClassName = "AlexScherer\\WpthemeValerieknill\\Templates\\" . $name . "Template";
+        $fullClassName = "AlexScherer\\WpthemeValerieknill\\Templates\\" . $name . "Template";
+        $fullBaseClassName = "AlexScherer\\WpthemeValerieknill\\Templates\\BaseTemplate";
+        if (class_exists($fullClassName) && is_a($fullClassName, $fullBaseClassName, true)) {
             $this->template = new $fullClassName($parameters);
         }
     }
