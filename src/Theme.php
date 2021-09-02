@@ -33,6 +33,8 @@ class Theme {
     }
 
     public function render() {
-        $this->template->render();
+        if ($this->template !== null) {
+            $this->template->render();
+        }
     }
 }
