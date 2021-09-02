@@ -27,7 +27,7 @@ class Theme {
         add_theme_support('menus');
     }
 
-    public function setTemplate($name, $parameters) {
+    public function setTemplate($name, $parameters = []) {
         $this->parameters = $parameters;
         if (class_exists("AlexScherer\\WpthemeValerieknill\\Templates\\" . $name . "Template")) {
             $fullClassName = "AlexScherer\\WpthemeValerieknill\\Templates\\" . $name . "Template";
