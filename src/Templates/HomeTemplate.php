@@ -7,8 +7,8 @@ use AlexScherer\WpthemeValerieknill\Components\NavigationComponent;
 
 class HomeTemplate extends BaseTemplate {
 
-    public function __construct() {
-        parent::__construct('Home', 'green');
+    public function __construct($parameters) {
+        parent::__construct('Home', 'green', $parameters);
     }
 
     protected function prepareComponents()

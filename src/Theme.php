@@ -20,19 +20,25 @@ class Theme {
 
     protected $template;
 
+    protected $parameters;
+
 
     public function initialize() {
         add_theme_support('menus');
     }
 
-    public function setTemplate($name) {
-        if (class_exists("AlexScherer\\WpthemeValerieknill\\Templates\\" . $name . "Template")) {
-            $fullClassName = "AlexScherer\\WpthemeValerieknill\\Templates\\" . $name . "Template";
-            $this->template = new $fullClassName();
+    public function setTemplate($name, $parameters = []) {
+        $this->parameters = $parameters;
+        $fullClassName = "AlexScherer\\WpthemeValerieknill\\Templates\\" . $name . "Template";
+        $fullBaseClassName = "AlexScherer\\WpthemeValerieknill\\Templates\\BaseTemplate";
+        if (class_exists($fullClassName) && is_a($fullClassName, $fullBaseClassName, true)) {
+            $this->template = new $fullClassName($parameters);
         }
     }
 
     public function render() {
-        $this->template->render();
+        if ($this->template !== null) {
+            $this->template->render();
+        }
     }
 }

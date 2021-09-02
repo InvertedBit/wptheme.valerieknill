@@ -13,11 +13,14 @@ abstract class BaseTemplate {
 
     protected $scripts = [];
 
+    protected $parameters;
+
     protected $name;
 
-    public function __construct($name, $colourScheme) {
+    public function __construct($name, $colourScheme, $parameters) {
         $this->name = $name;
         $this->colourScheme = $colourScheme;
+        $this->parameters = $parameters;
         $this->initialize();
     }
 
