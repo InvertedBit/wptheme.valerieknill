@@ -20,15 +20,18 @@ class Theme {
 
     protected $template;
 
+    protected $parameters;
+
 
     public function initialize() {
         add_theme_support('menus');
     }
 
-    public function setTemplate($name) {
+    public function setTemplate($name, $parameters) {
+        $this->parameters = $parameters;
         if (class_exists("AlexScherer\\WpthemeValerieknill\\Templates\\" . $name . "Template")) {
             $fullClassName = "AlexScherer\\WpthemeValerieknill\\Templates\\" . $name . "Template";
-            $this->template = new $fullClassName();
+            $this->template = new $fullClassName($parameters);
         }
     }
 

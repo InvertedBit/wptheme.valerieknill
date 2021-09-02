@@ -19,7 +19,12 @@ use AlexScherer\WpthemeValerieknill as VK;
 
 $theme = VK\Theme::getInstance();
 
-$theme->setTemplate('Home');
+if (!isset($_GET['subdomain']) || $_GET['subdomain'] === '') {
+	$theme->setTemplate('LandingPage');
+} else {
+	$theme->setTemplate('Home', ['subdomain' => $_GET['subdomain']]);
+}
+
 
 $theme->render();
 
