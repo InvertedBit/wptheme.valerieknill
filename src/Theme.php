@@ -25,6 +25,15 @@ class Theme {
 
     public function initialize() {
         add_theme_support('menus');
+        add_action('init', [$this, 'registerMenuLocations']);
+    }
+
+    public function registerMenuLocations() {
+        register_nav_menus([
+            'main-menu-painting'    => __('Main Menu - Painting'),
+            'main-menu-movies'      => __('Main Menu - Movies'),
+            'footer-menu'           => __('Footer Menu')
+        ]);
     }
 
     public function setTemplate($name, $parameters = []) {

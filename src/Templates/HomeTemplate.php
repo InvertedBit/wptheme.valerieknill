@@ -14,7 +14,7 @@ class HomeTemplate extends BaseTemplate {
     protected function prepareComponents()
     {
         $this->addComponent(new HeaderComponent());
-        $this->addComponent(new NavigationComponent(2));
+        $this->addComponent(new NavigationComponent(['menuLocation' => 'main-menu-painting']));
         $this->addComponent(new FooterComponent());
     }
 }
