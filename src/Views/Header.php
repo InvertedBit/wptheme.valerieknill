@@ -18,15 +18,17 @@
 </div>
 <div class="uk-section uk-light header-section header-background-slideshow" data-uk-slideshow="min-height: 300; autoplay:true; pause-on-hover: false; animation: push; autoplay-interval: 5000">
 			<ul class="uk-slideshow-items">
-				<li>
-					<img src="static/img/gallery/IMG_7710.JPG" data-uk-cover />
-				</li>
-				<li>
-					<img src="static/img/gallery/IMG_9738.JPG" data-uk-cover />
-				</li>
-				<li>
-					<img src="static/img/gallery/IMG_9742.JPG" data-uk-cover />
-				</li>
+                <?php
+                    if (!empty($this->data['images'])):
+                        foreach($this->data['images'] as $image):
+                ?>
+                        <li>
+                            <img src="<?php echo $image; ?>" data-uk-cover />
+                        </li>
+                <?php
+                        endforeach;
+                    endif;
+                ?>
 			</ul>
 			<div class="header-overlay">
 				<a href="index.html" class="uk-link-muted heading-logo-link uk-logo">
