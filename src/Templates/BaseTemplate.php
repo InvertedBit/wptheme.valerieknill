@@ -36,7 +36,7 @@ abstract class BaseTemplate {
         $this->addScript('uikit', 'node_modules/uikit/dist/js/uikit.js');
         $this->addScript('uikit-icons', 'node_modules/uikit/dist/js/uikit-icons.js');
         $this->addScript('jquery', 'node_modules/jquery/dist/jquery.js');
-        $this->addScript('theme-pack', 'assets/dist/js/theme-pack.bundle.js');
+        $this->addScript('theme-pack', 'assets/dist/js/theme-pack.bundle.js', ['jquery']);
 
     }
 
