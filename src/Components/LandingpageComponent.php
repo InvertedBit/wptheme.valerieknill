@@ -1,7 +1,7 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Components;
 
-class LandingpageComponent extends BaseViewComponent {
+class LandingpageComponent extends HeaderComponent {
 
     public function __construct() {
         parent::__construct('Landingpage', []);
