@@ -109,7 +109,6 @@ class Theme {
     }
 
     public function render() {
-        die($this->subdomain);
         if ($this->template !== null) {
             $this->template->render();
         }
