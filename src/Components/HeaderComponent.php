@@ -1,7 +1,7 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Components;
 
-class HeaderComponent extends BaseViewComponent {
+abstract class HeaderComponent extends BaseViewComponent {
 
     public function __construct($name, $data = []) {
         parent::__construct($name, $data);
