@@ -2,8 +2,8 @@
 namespace AlexScherer\WpthemeValerieknill\Templates;
 
 use AlexScherer\WpthemeValerieknill\Components\FooterComponent;
-use AlexScherer\WpthemeValerieknill\Components\HeaderComponent;
 use AlexScherer\WpthemeValerieknill\Components\NavigationComponent;
+use AlexScherer\WpthemeValerieknill\Components\SliderHeaderComponent;
 
 class HomeTemplate extends BaseTemplate {
 
@@ -13,7 +13,7 @@ class HomeTemplate extends BaseTemplate {
 
     protected function prepareComponents()
     {
-        $this->addComponent(new HeaderComponent());
+        $this->addComponent(new SliderHeaderComponent());
         $this->addComponent(new NavigationComponent(['menuLocation' => 'main-menu-painting']));
         $this->addComponent(new FooterComponent());
     }

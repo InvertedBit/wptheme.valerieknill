@@ -17,8 +17,16 @@ abstract class BaseComponent implements IRenderable {
         $this->data = $data;
     }
 
-    protected function getViewPath() {
-        return get_template_directory() . '/src/Views/' . $this->name . '.php';
+    protected function getViewPath($name = false) {
+        return get_template_directory() . '/src/Views/' . ($name ? $name : $this->name) . '.php';
+    }
+
+    protected function includeView($name = false) {
+        if (!file_exists($this->getViewPath($name))) {
+            echo '<span class="uk-text-danger">Failed to load view for '. ($name ? $name : $this->name) .'Component: no such view file!</span>';
+            return;
+        }
+        include $this->getViewPath($name);
     }
 
     protected function debug($data) {
@@ -32,8 +40,17 @@ abstract class BaseComponent implements IRenderable {
     }
 
     public function render() {
-        echo $this->preRender;
+        $this->preRender();
         $this->renderComponent();
+        $this->postRender();
+    }
+
+    public function preRender() {
+        echo $this->preRender;
+    }
+
+    public function postRender() {
+
     }
 
     abstract public function renderComponent();

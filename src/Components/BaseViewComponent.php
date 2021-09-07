@@ -9,10 +9,6 @@ abstract class BaseViewComponent extends BaseComponent {
     }
 
     public function renderComponent() {
-        if (!file_exists($this->getViewPath())) {
-            echo '<span class="uk-text-danger">Failed to load view for '.$this->name.'Component: no such view file!</span>';
-            return;
-        }
-        include $this->getViewPath();
+        $this->includeView();
     }
 }
