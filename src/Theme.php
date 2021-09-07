@@ -35,11 +35,27 @@ class Theme {
 
     protected $parameters;
 
+    protected $subdomain;
+
+    protected $baseDomain;
+
 
     public function initialize() {
+        $this->getCurrentSubdomain();
         add_theme_support('menus');
         add_action('init', [$this, 'runWordpressInit']);
         $this->loadTaxonomies();
+    }
+
+    protected function getCurrentSubdomain() {
+        $host = $_SERVER['HTTP_HOST'];
+        $siteHost = str_replace(['http://', 'https://'], '', get_site_url());
+        $this->baseDomain = $siteHost;
+        if ($host === $siteHost) {
+            $this->subdomain = false;
+            return;
+        }
+        $this->subdomain = rtrim(str_replace($siteHost, '', $host), '.');
     }
 
     public function runWordpressInit() {
@@ -93,6 +109,7 @@ class Theme {
     }
 
     public function render() {
+        die($this->subdomain);
         if ($this->template !== null) {
             $this->template->render();
         }
