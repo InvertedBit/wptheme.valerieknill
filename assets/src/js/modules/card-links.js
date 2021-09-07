@@ -1,5 +1,4 @@
-
-$(function() {
+jQuery(function($) {
     
     
     $('.uk-card').on('click', function(e) {

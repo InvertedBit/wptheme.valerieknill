@@ -1,4 +1,4 @@
-$(function() {
+jQuery(function($) {
 
 var isHeaderShown = false;
 let scrollTop = $(document).scrollTop();

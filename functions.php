@@ -1,7 +1,7 @@
 <?php
 require 'vendor/autoload.php';
 
-use AlexScherer\WpthemeValerieknill as VK;
+use AlexScherer\WpthemeValerieknill\Theme;
 
 /**
  * Functions and definitions
@@ -15,7 +15,7 @@ use AlexScherer\WpthemeValerieknill as VK;
 
 
 
-$theme = VK\Theme::getInstance();
+$theme = Theme::getInstance();
 
 $theme->initialize();
 
