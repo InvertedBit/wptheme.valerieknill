@@ -9,11 +9,11 @@
 <?php wp_body_open(); ?>
     <div class="uk-section uk-section-secondary landingpage-section uk-light">
         <div class="title-logo">
-            <h1 class="uk-heading-large heading-logo">Valerie Knill</h1>
+            <h1 class="uk-heading-large heading-logo"><?php echo $this->data['title']; ?></h1>
         </div>
         <div class="link-container">
-            <div class="link-painting link" style="background-image: url('./static/img/DSC018841o.R.JPG');"><a class="link-text" href="index.html">Painting</a></div>
-            <div class="link-movies link" style="background-image: url('./static/img/header-movie01.png');"><a class="link-text" href="index-video.html">Movies</a></div>
+            <div class="link-painting link" style="background-image: url('<?php echo $this->data['link_left']['image']; ?>');"><a class="link-text" href="<?php echo $this->data['paintingUrl']; ?>"><?php echo $this->data['link_left']['text']; ?></a></div>
+            <div class="link-movies link" style="background-image: url('<?php echo $this->data['link_right']['image']; ?>');"><a class="link-text" href="<?php echo $this->data['moviesUrl']; ?>"><?php echo $this->data['link_right']['text']; ?></a></div>
         </div>
     </div>
 
