@@ -47,6 +47,10 @@ class Theme {
         $this->loadTaxonomies();
     }
 
+    public function getSubdomain() {
+        return $this->subdomain;
+    }
+
     protected function getCurrentSubdomain() {
         $host = $_SERVER['HTTP_HOST'];
         $siteHost = str_replace(['http://', 'https://'], '', get_site_url());
