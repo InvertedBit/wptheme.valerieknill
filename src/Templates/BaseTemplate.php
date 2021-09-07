@@ -9,6 +9,8 @@ abstract class BaseTemplate {
 
     protected $colourScheme = 'green';
 
+    protected $discipline = false;
+
     protected $stylesheets = [];
 
     protected $scripts = [];
@@ -17,9 +19,8 @@ abstract class BaseTemplate {
 
     protected $name;
 
-    public function __construct($name, $colourScheme, $parameters) {
+    public function __construct($name, $parameters) {
         $this->name = $name;
-        $this->colourScheme = $colourScheme;
         $this->parameters = $parameters;
         $this->initialize();
     }
@@ -41,6 +42,20 @@ abstract class BaseTemplate {
     }
 
     abstract protected function prepareComponents();
+
+    protected function getPostDiscipline() {
+        $currentPostId = get_the_ID();
+        $postDiscipline = wp_get_post_terms($currentPostId, 'discipline');
+        $postDisciplineId = $postDiscipline[0]->term_id;
+        $disciplines = get_field('disciplines', 'option');
+        foreach($disciplines as $discipline) {
+            if (in_array($postDisciplineId, $discipline['term'])) {
+                $this->colourScheme = $discipline['colorscheme'];
+                $this->discipline = $discipline['discipline'];
+                break;
+            }
+        }
+    }
 
     protected function addComponent($component) {
         if ($component instanceof IRenderable) {
