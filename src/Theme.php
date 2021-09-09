@@ -44,6 +44,8 @@ class Theme {
         $this->getCurrentSubdomain();
         add_theme_support('menus');
         add_action('init', [$this, 'runWordpressInit']);
+        add_action('admin_init', [$this, 'runWordpressAdminInit']);
+        $this->registerThemeSettings();
         $this->loadTaxonomies();
     }
 
@@ -65,6 +67,21 @@ class Theme {
     public function runWordpressInit() {
         $this->registerMenuLocations();
         $this->registerTaxonomies();
+    }
+
+    public function runWordpressAdminInit() {
+    }
+
+    protected function registerThemeSettings() {
+        if (function_exists('acf_add_options_page')) {
+            acf_add_options_page(array(
+                'page_title' 	=> 'Theme Settings',
+                'menu_title'	=> 'Theme Settings',
+                'menu_slug' 	=> 'theme-settings',
+                'capability'	=> 'edit_posts',
+                'redirect'		=> false
+            ));
+        }
     }
 
     public function registerTaxonomies() {
