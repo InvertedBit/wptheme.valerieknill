@@ -25,5 +25,8 @@ class LandingpageComponent extends HeaderComponent {
         
     }
 
+    public function isValid() {
+        return true;
+    }
 }
 

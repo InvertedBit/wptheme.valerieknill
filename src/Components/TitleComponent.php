@@ -19,4 +19,11 @@ class TitleComponent extends BaseViewComponent {
         
     }
 
+    public function isValid() {
+        if (empty($this->data['title'])) {
+            return false;
+        }
+        return true;
+    }
+
 }

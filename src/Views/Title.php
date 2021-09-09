@@ -1,3 +1,4 @@
+<?php if (!$this->componentValid): ?>
 <div class="uk-section uk-section-secondary uk-light">
     <div class="uk-container main-section">
         <h1 class="uk-heading-large introduction-title"><?php echo $this->data['title']; ?></h1>
@@ -13,3 +14,4 @@
 <?php  endif; ?>
     </div>
 </div>
+<?php endif; ?>

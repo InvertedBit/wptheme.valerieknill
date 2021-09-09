@@ -15,5 +15,11 @@ class VideoHeaderComponent extends HeaderComponent {
         $this->data['header_video'] = $headerVideo;
     }
 
+    public function isValid() {
+        if (empty($this->data['header_video'])) {
+            return false;
+        }
+        return true;
+    }
 }
 

@@ -40,5 +40,11 @@ class NavigationComponent extends BaseViewComponent {
         $this->data['items'] = $navigationItems;
     }
     
+    public function isValid() {
+        if (empty($this->data['items'])) {
+            return false;
+        }
+        return true;
+    }
 
 }

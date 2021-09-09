@@ -15,6 +15,12 @@ class SlimHeaderComponent extends HeaderComponent {
         $this->data['header_image'] = $headerImage;
     }
 
+    public function isValid() {
+        if (empty($this->data['header_image'])) {
+            return false;
+        }
+        return true;
+    }
 }
 
 
