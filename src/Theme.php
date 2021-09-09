@@ -1,8 +1,6 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill;
 
-use AlexScherer\WpthemeValerieknill\Templates;
-
 class Theme {
 
     protected const TAXONOMY_NAMESPACE = "AlexScherer\\WpthemeValerieknill\\Taxonomies\\";
