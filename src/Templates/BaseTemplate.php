@@ -26,6 +26,7 @@ abstract class BaseTemplate {
     }
 
     protected function initialize() {
+        $this->getPostDiscipline();
         add_action('wp_enqueue_scripts', [$this, 'enqueueStyles']);
         add_action('wp_enqueue_scripts', [$this, 'enqueueScripts']);
         $this->prepareComponents();

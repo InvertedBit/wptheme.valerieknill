@@ -4,7 +4,7 @@ namespace AlexScherer\WpthemeValerieknill\Components;
 class VideoHeaderComponent extends HeaderComponent {
 
     public function __construct() {
-        parent::__construct('SliderHeader', []);
+        parent::__construct('VideoHeader', []);
         $this->initialize();
     }
 
