@@ -3,8 +3,8 @@ namespace AlexScherer\WpthemeValerieknill\Components;
 
 class SliderHeaderComponent extends HeaderComponent {
 
-    public function __construct() {
-        parent::__construct('SliderHeader', []);
+    public function __construct($data = []) {
+        parent::__construct('SliderHeader', $data);
         $this->initialize();
     }
 

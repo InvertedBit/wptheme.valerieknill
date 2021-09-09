@@ -3,8 +3,8 @@ namespace AlexScherer\WpthemeValerieknill\Components;
 
 class SlimHeaderComponent extends HeaderComponent {
 
-    public function __construct() {
-        parent::__construct('SlimHeader', []);
+    public function __construct($data = []) {
+        parent::__construct('SlimHeader', $data);
         $this->initialize();
     }
 

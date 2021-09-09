@@ -1,5 +1,5 @@
 <div id="fixed-header" class="fixed-header uk-position-fixed uk-position-center-top uk-width-1-1 hidden">
-	<a href="index.html" class="uk-link-muted heading-logo-link uk-logo">
+	<a href="<?php echo $this->data['home_link']; ?>" class="uk-link-muted heading-logo-link uk-logo">
 		<h1 class="uk-heading-small heading-logo">Valerie Knill</h1>
 		<h3 class="uk-heading-xsmall heading-logo-sub">Painting</h3>
 	</a>
@@ -20,7 +20,7 @@
                 ?>
 			</ul>
 			<div class="header-overlay">
-				<a href="index.html" class="uk-link-muted heading-logo-link uk-logo">
+				<a href="<?php echo $this->data['home_link']; ?>" class="uk-link-muted heading-logo-link uk-logo">
 					<h1 class="uk-heading-small heading-logo">Valerie Knill</h1>
 					<h3 class="uk-heading-xsmall heading-logo-sub">Painting</h3>
 				</a>

@@ -14,7 +14,9 @@ class NewsTemplate extends BaseTemplate {
     protected function prepareComponents()
     {
 
-        $this->addComponent(new SlimHeaderComponent());
+        $this->addComponent(new SlimHeaderComponent([
+                'discipline' => $this->discipline
+            ]));
         $this->addComponent(new NavigationComponent(['menuLocation' => 'main-menu-' . $this->discipline]));
         $this->addComponent(new FooterComponent());
     }

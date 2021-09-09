@@ -16,11 +16,15 @@ class HomeTemplate extends BaseTemplate {
     {
 
         if ($this->discipline === 'painting') {
-            $this->addComponent(new SliderHeaderComponent());
+            $this->addComponent(new SliderHeaderComponent([
+                'discipline' => $this->discipline
+            ]));
         } else {
-            $this->addComponent(new VideoHeaderComponent()); 
+            $this->addComponent(new VideoHeaderComponent([
+                'discipline' => $this->discipline
+            ])); 
         }
-        $this->addComponent(new NavigationComponent(['menuLocation' => 'main-menu-painting']));
+        $this->addComponent(new NavigationComponent(['menuLocation' => 'main-menu-' . $this->discipline]));
         $this->addComponent(new FooterComponent());
     }
 }
