@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Expositions
+* Template Name: Exhibitions
 *
 */
 use AlexScherer\WpthemeValerieknill\Theme;
@@ -8,6 +8,6 @@ use AlexScherer\WpthemeValerieknill\Theme;
 
 $theme = Theme::getInstance();
 
-$theme->setTemplate('Expositions');
+$theme->setTemplate('Exhibitions');
 
 $theme->render();
