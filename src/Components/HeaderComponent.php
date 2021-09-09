@@ -15,7 +15,7 @@ abstract class HeaderComponent extends BaseViewComponent {
         //$this->debug($homepages);
         $this->data['home_link'] = '#';
         foreach ($homepages as $homepage) {
-            if ($homepage['name'] === $this->discipline . '-' . $language) {
+            if ($homepage['name'] === $this->data['discipline'] . '-' . $language) {
                 $this->data['home_link'] = $homepage['page_link'];
                 break;
             }
