@@ -21,4 +21,11 @@ class SliderHeaderComponent extends HeaderComponent {
         $this->data['images'] = $imageArray;
     }
 
+    public function isValid() {
+        if (empty($this->data['images'])) {
+            return false;
+        }
+        return true;
+    }
+
 }

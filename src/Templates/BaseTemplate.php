@@ -47,6 +47,9 @@ abstract class BaseTemplate {
     protected function getPostDiscipline() {
         $currentPostId = get_the_ID();
         $postDiscipline = wp_get_post_terms($currentPostId, 'discipline');
+        if (empty($postDiscipline)) {
+            return;
+        }
         $postDisciplineId = $postDiscipline[0]->term_id;
         $disciplines = get_field('disciplines', 'option');
         foreach($disciplines as $discipline) {

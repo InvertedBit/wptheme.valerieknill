@@ -7,4 +7,7 @@ class FooterComponent extends BaseViewComponent {
         parent::__construct('Footer', []);
     }
 
+    public function isValid() {
+        return true;
+    }
 }

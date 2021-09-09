@@ -54,4 +54,6 @@ abstract class BaseComponent implements IRenderable {
     }
 
     abstract public function renderComponent();
+
+    abstract public function isValid();
 }
