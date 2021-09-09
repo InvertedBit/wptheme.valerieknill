@@ -20,6 +20,13 @@ abstract class HeaderComponent extends BaseViewComponent {
                 break;
             }
         }
+        $this->data['blog_title'] = get_bloginfo('name');
+        $this->data['blog_subtitle'] = '';
+        if ($this->data['discipline'] === 'painting') {
+            $this->data['blog_subtitle'] = _x('Painting', 'Header Subtitle Painting');
+        } elseif ($this->data['discipline'] === 'movies') {
+            $this->data['blog_subtitle'] = _x('Movies', 'Header Subtitle Movies');
+        }
     }
 
     public function preRender() {
