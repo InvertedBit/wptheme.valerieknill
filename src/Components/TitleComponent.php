@@ -3,8 +3,8 @@ namespace AlexScherer\WpthemeValerieknill\Components;
 
 class TitleComponent extends BaseViewComponent {
 
-    public function __construct() {
-        parent::__construct('Title', []);
+    public function __construct($data = []) {
+        parent::__construct('Title', $data);
         $this->initialize();
     }
 
