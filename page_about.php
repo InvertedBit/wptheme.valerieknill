@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Gallery
+* Template Name: About
 *
 */
 use AlexScherer\WpthemeValerieknill\Theme;
