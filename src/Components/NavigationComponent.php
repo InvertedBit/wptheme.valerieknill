@@ -14,12 +14,15 @@ class NavigationComponent extends BaseViewComponent {
             $menuId = $this->data['menuId'];
         } elseif (!empty($this->data['menuLocation'])) {
             $locations = get_nav_menu_locations();
-            //$this->debug($locations);
-            //$menu = get_term( $locations[$theme_location], 'nav_menu' );
             $menuId = $locations[$this->data['menuLocation']];
         }
         $wpMenu = wp_get_nav_menu_items($menuId);
-        //$this->debug($wpMenu);
+        if (empty($wpMenu)) {
+            $this->debug('No menu at location "'.$this->data['menuLocation'].'"');
+            $this->data['items'] = [];
+            return;
+        }
+
         $currentPostId = get_the_ID();
         $navigationItems = [];
         foreach ($wpMenu as $menuPost) {
