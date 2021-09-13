@@ -171,9 +171,8 @@ class Theme {
 
     public function setTemplate($name, $parameters = []) {
         $this->parameters = $parameters;
-        $fullClassName = "AlexScherer\\WpthemeValerieknill\\Templates\\" . $name . "Template";
-        $fullBaseClassName = "AlexScherer\\WpthemeValerieknill\\Templates\\BaseTemplate";
-        if (class_exists($fullClassName) && is_a($fullClassName, $fullBaseClassName, true)) {
+        $fullClassName = Theme::TEMPLATE_NAMESPACE . $name . "Template";
+        if (class_exists($fullClassName) && is_a($fullClassName, Theme::TEMPLATE_BASECLASS, true)) {
             $this->template = new $fullClassName($parameters);
         }
     }
