@@ -1,10 +1,16 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill;
 
+use AlexScherer\WpthemeValerieknill\PostTypes\BasePostType;
+use AlexScherer\WpthemeValerieknill\Taxonomies\BaseTaxonomy;
+
 class Theme {
 
     protected const TAXONOMY_NAMESPACE = "AlexScherer\\WpthemeValerieknill\\Taxonomies\\";
     protected const TAXONOMY_BASECLASS = "AlexScherer\\WpthemeValerieknill\\Taxonomies\\BaseTaxonomy";
+
+    protected const POSTTYPE_NAMESPACE = "AlexScherer\\WpthemeValerieknill\\PostTypes\\";
+    protected const POSTTYPE_BASECLASS = "AlexScherer\\WpthemeValerieknill\\PostTypes\\BasePostType";
 
     protected const TEMPLATE_NAMESPACE = "AlexScherer\\WpthemeValerieknill\\Templates\\";
     protected const TEMPLATE_BASECLASS = "AlexScherer\\WpthemeValerieknill\\Templates\\BaseTemplate";
@@ -21,6 +27,9 @@ class Theme {
     protected function __construct() {
     }
 
+    /**
+     * @var BaseTaxonomy[]
+     */
     protected $taxonomies = [];
 
     protected $taxonomiesToLoad = [
@@ -28,6 +37,18 @@ class Theme {
     ];
 
     protected $taxonomiesLoaded = false;
+
+    /**
+     * @var BasePostType[]
+     */
+    protected $postTypes = [];
+
+    protected $postTypesToLoad = [
+        'News',
+        'Exhibition'
+    ];
+
+    protected $postTypesLoaded = false;
 
     protected $template;
 
@@ -38,6 +59,7 @@ class Theme {
     protected $baseDomain;
 
 
+    
     public function initialize() {
         $this->getCurrentSubdomain();
         add_theme_support('menus');
@@ -45,6 +67,7 @@ class Theme {
         add_action('admin_init', [$this, 'runWordpressAdminInit']);
         $this->registerThemeSettings();
         $this->loadTaxonomies();
+        $this->loadPostTypes();
     }
 
     public function getSubdomain() {
@@ -65,6 +88,7 @@ class Theme {
     public function runWordpressInit() {
         $this->registerMenuLocations();
         $this->registerTaxonomies();
+        $this->registerPostTypes();
     }
 
     public function runWordpressAdminInit() {
@@ -108,6 +132,33 @@ class Theme {
         }
         $this->taxonomies = $loadedTaxonomies;
         $this->taxonomiesLoaded = true;
+    }
+
+    public function registerPostTypes() {
+        if (!$this->postTypesLoaded) {
+            $this->loadPostTypes();
+        }
+        foreach ($this->postTypes as $postType) {
+            $postType->registerPostType();
+        }
+    }
+
+    protected function loadPostTypes() {
+        if ($this->postTypesLoaded) {
+            return;
+        }
+        $postTypesToLoad = $this->postTypesToLoad;
+        $loadedPostTypes = [];
+        foreach ($postTypesToLoad as $postTypeName) {
+            $fullPostTypeName = Theme::POSTTYPE_NAMESPACE . $postTypeName . "PostType";
+
+            if (class_exists($fullPostTypeName) && is_a($fullPostTypeName, Theme::POSTTYPE_BASECLASS, true)) {
+                $postTypeInstance = new $fullPostTypeName();
+                $loadedPostTypes[strtolower($postTypeName)] = $postTypeInstance;
+            }
+        }
+        $this->postTypes = $loadedPostTypes;
+        $this->postTypesLoaded = true;
     }
 
     public function registerMenuLocations() {
