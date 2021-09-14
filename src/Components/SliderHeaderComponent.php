@@ -10,8 +10,7 @@ class SliderHeaderComponent extends HeaderComponent {
 
     
     protected function initialize() {
-        $currentPostId = get_the_ID();
-        $headerImages = get_field('header_images', $currentPostId);
+        $headerImages = $this->getField('header_images');
         //$this->debug($headerImages);
         $imageArray = [];
         foreach($headerImages as $image) {

@@ -10,8 +10,7 @@ class VideoHeaderComponent extends HeaderComponent {
 
     
     protected function initialize() {
-        $currentPostId = get_the_ID();
-        $headerVideo = get_field('header_video', $currentPostId);
+        $headerVideo = $this->getField('header_video');
         $this->data['header_video'] = $headerVideo;
     }
 

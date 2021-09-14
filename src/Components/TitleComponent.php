@@ -10,12 +10,11 @@ class TitleComponent extends BaseViewComponent {
 
     
     protected function initialize() {
-        $currentPostId = get_the_ID();
-        $this->data['title'] = get_field('title', $currentPostId);
+        $this->data['title'] = $this->getField('title');
 
-        $this->data['layout'] = get_field('layout', $currentPostId);
-        $this->data['subtitle'] = get_field('subtitle', $currentPostId);
-        $this->data['introduction'] = get_field('introduction', $currentPostId);
+        $this->data['layout'] = $this->getField('layout');
+        $this->data['subtitle'] = $this->getField('subtitle');
+        $this->data['introduction'] = $this->getField('introduction');
         
     }
 

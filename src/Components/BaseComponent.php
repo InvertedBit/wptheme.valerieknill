@@ -3,18 +3,22 @@ namespace AlexScherer\WpthemeValerieknill\Components;
 
 use AlexScherer\WpthemeValerieknill\Rendering\IRenderable;
 
-abstract class BaseComponent implements IRenderable {
+abstract class BaseComponent extends BasePost implements IRenderable {
     protected $name;
     protected $data;
     protected $type;
 
     protected $preRender = '';
 
-    public function __construct($name, $type, $data = [])
+    public function __construct($name, $type, $data = [], $postId = -1)
     {
         $this->name = $name;
         $this->type = $type;
         $this->data = $data;
+        if ($postId == -1) {
+            $postId = get_the_ID();
+        }
+        parent::__construct($postId);
     }
 
     protected function getViewPath($name = false) {

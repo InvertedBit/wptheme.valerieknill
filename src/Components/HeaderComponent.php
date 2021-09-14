@@ -9,9 +9,12 @@ abstract class HeaderComponent extends BaseViewComponent {
     }
 
     protected function initializeHeader() {
-        $language = pll_current_language('slug');
+        $language = 'de';
+        if (function_exists('pll_current_language')) {
+            $language = pll_current_language('slug');
+        }
         //$this->debug($language);
-        $homepages = get_field('homepages', 'option');
+        $homepages = $this->getField('homepages', 'option');
         //$this->debug($homepages);
         $this->data['home_link'] = '#';
         $this->data['blog_title'] = get_bloginfo('name');

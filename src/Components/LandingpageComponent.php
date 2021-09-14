@@ -10,9 +10,8 @@ class LandingpageComponent extends HeaderComponent {
 
     
     protected function initialize() {
-        $currentPostId = get_the_ID();
-        $this->data['title'] = get_field('title', $currentPostId);
-        $links = get_field('links', $currentPostId);
+        $this->data['title'] = $this->getField('title');
+        $links = $this->getField('links');
 
         $this->data['link_left'] = $links[0];
         $this->data['link_right'] = $links[1];
