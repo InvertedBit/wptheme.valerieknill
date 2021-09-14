@@ -25,19 +25,17 @@ class ExhibitionSliderComponent extends BaseViewComponent {
             $exhibitionEndDate = $this->getField('to', $exhibitionPost->ID);
             $exhibitionEndDatetime = DateTime::createFromFormat("d/m/Y", $exhibitionEndDate);
             $exhibitionEndTime = $exhibitionEndDatetime->getTimestamp();
-            if ($exhibitionEndTime >= $nowTime) {
-                $this->data['exhibitions'][] = [
+            $exhibition = [
                     'name' => $this->getField('name', $exhibitionPost->ID),
                     'description' => $this->getField('description', $exhibitionPost->ID),
                     'address' => $this->getField('address', $exhibitionPost->ID),
                     'from' => $this->getField('from', $exhibitionPost->ID),
                     'to' => $this->getField('to', $exhibitionPost->ID)
                 ];
+            if ($exhibitionEndTime >= $nowTime) {
+                $this->data['exhibitions'][] = $exhibition;
             } else {
-                $this->data['exhibitions_closed'][] = [
-                    'name' => $this->getField('name', $exhibitionPost->ID),
-                    'description' => $this->getField('description', $exhibitionPost->ID)
-                ];
+                $this->data['exhibitions_closed'][] = $exhibition;
             }
         }
     }
