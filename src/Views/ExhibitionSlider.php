@@ -1,4 +1,3 @@
-<div class="uk-section uk-section-secondary uk-light">
 <?php if (count($this->data['exhibitions']) > 0): ?>
     <div class="uk-container uk-margin-large-top">
         <h3 class="uk-heading"><?php echo __('Current exhibitions', 'wptheme.valerieknill'); ?></h3>
@@ -39,6 +38,3 @@
     </div>
 
 <?php endif; ?>
-
-</div>
-
