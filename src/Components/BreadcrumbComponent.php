@@ -10,16 +10,14 @@ class BreadcrumbComponent extends BaseViewComponent {
 
     
     protected function initialize() {
-        $this->data['title'] = $this->getField('title');
-
-        $this->data['layout'] = $this->getField('layout');
-        $this->data['subtitle'] = $this->getField('subtitle');
-        $this->data['introduction'] = $this->getField('introduction');
-        
+        $this->data['breadcrumb'] = [
+            'Home' => 'http://vk.dev.hl4b.cloud/homepage_malerei',
+            'Ausstellungen' => false
+        ];
     }
 
     public function isValid() {
-        if (empty($this->data['title'])) {
+        if (empty($this->data['breadcrumb'])) {
             return false;
         }
         return true;
