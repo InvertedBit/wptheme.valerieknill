@@ -14,7 +14,7 @@ class SectionComponent extends BaseViewComponent {
             return;
         }
         foreach ($this->data['components'] as $key => $component) {
-            if (!is_a($component, "BaseComponent")) {
+            if (!is_a($component, "AlexScherer\\WpthemeValerieknill\\Components\\BaseComponent")) {
                 unset($this->data['components'][$key]);
             }
         }
