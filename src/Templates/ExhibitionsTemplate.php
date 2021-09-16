@@ -25,7 +25,9 @@ class ExhibitionsTemplate extends BaseTemplate {
 
         $mainPageSection = new SectionComponent([
             'components' => [
-                new BreadcrumbComponent(),
+                new BreadcrumbComponent([
+                    'discipline' => $this->discipline
+                ]),
                 new TitleComponent(),
                 new ExhibitionSliderComponent()
             ],

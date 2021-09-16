@@ -10,10 +10,37 @@ class BreadcrumbComponent extends BaseViewComponent {
 
     
     protected function initialize() {
+        $language = 'de';
+        if (function_exists('pll_current_language')) {
+            $language = pll_current_language('slug');
+        }
+        $homepages = $this->getField('homepages', 'option');
+        $homeLink = '#';
+        foreach ($homepages as $homepage) {
+            if ($homepage['name'] === $this->data['discipline'] . '-' . $language) {
+                $homeLink = $homepage['page_link'];
+                break;
+            }
+        }
+        $currentPostTitle = $this->getField('title');
+
+        $ancestors = get_post_ancestors(get_the_ID());
+
         $this->data['breadcrumb'] = [
-            'Home' => 'http://vk.dev.hl4b.cloud/homepage_malerei',
-            'Ausstellungen' => false
+            'Home' => $homeLink
         ];
+
+        if (!empty($ancestors)) {
+            foreach ($ancestors as $ancestor) {
+                $title = $this->getField('title', $ancestor);
+                $link = get_post_permalink($ancestor);
+                $this->data['breadcrumb'][$title] = $link;
+            }
+        }
+
+
+        $this->data['breadcrumb'][$currentPostTitle] = false;
+
     }
 
     public function isValid() {
