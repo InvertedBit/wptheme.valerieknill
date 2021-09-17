@@ -3,8 +3,11 @@
     .uk-offcanvas-bar {
         background-color: $colourtheme-1;
         a {
-            color: black;
+            color: #ffffff;
             opacity: 1;
+            &:hover {
+                color: rgba(#ffffff, 0.8);
+            }
         }
     }
 }
