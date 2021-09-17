@@ -21,7 +21,10 @@ class ExhibitionsTemplate extends BaseTemplate {
         $this->addComponent(new SlimHeaderComponent([
                 'discipline' => $this->discipline
             ]));
-        $this->addComponent(new NavigationComponent(['menuLocation' => 'main-menu-painting']));
+        $this->addComponent(new NavigationComponent([
+            'menuLocation' => 'main-menu-painting',
+            'discipline' => $this->discipline
+        ]));
 
         $mainPageSection = new SectionComponent([
             'components' => [

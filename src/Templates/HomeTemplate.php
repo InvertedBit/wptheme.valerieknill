@@ -26,7 +26,10 @@ class HomeTemplate extends BaseTemplate {
                 'discipline' => $this->discipline
             ])); 
         }
-        $this->addComponent(new NavigationComponent(['menuLocation' => 'main-menu-' . $this->discipline]));
+        $this->addComponent(new NavigationComponent([
+            'menuLocation' => 'main-menu-' . $this->discipline,
+            'discipline' => $this->discipline
+        ]));
         $this->addComponent(new SectionComponent([
             'components' => [
                 new TitleComponent()

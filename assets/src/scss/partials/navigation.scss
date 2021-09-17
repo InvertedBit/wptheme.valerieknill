@@ -9,5 +9,30 @@
                 color: rgba(#ffffff, 0.8);
             }
         }
+
+        .uk-button-default {
+
+            &.button-other-discipline {
+                text-align: left;
+                margin-top: 20px;
+                padding-bottom: 1em;
+                padding-left: 30%;
+                font-family: $header-title-font-family;
+                color: #ffffff;
+                //font-size: 26px;
+                font-size: 1.5em;
+                position: relative;
+                display: block;
+                
+                clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 20% 100%);
+                
+                .smaller {
+                    font-size: 16px;
+                    margin-top: -6px;
+                }
+                background-color: $colourtheme-comp-1;
+            }
+            
+        }
     }
 }
