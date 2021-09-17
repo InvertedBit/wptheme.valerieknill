@@ -3,6 +3,7 @@ namespace AlexScherer\WpthemeValerieknill\Templates;
 
 use AlexScherer\WpthemeValerieknill\Components\FooterComponent;
 use AlexScherer\WpthemeValerieknill\Components\NavigationComponent;
+use AlexScherer\WpthemeValerieknill\Components\SectionComponent;
 use AlexScherer\WpthemeValerieknill\Components\SliderHeaderComponent;
 use AlexScherer\WpthemeValerieknill\Components\TitleComponent;
 use AlexScherer\WpthemeValerieknill\Components\VideoHeaderComponent;
@@ -25,8 +26,16 @@ class HomeTemplate extends BaseTemplate {
                 'discipline' => $this->discipline
             ])); 
         }
-        $this->addComponent(new NavigationComponent(['menuLocation' => 'main-menu-' . $this->discipline]));
-        $this->addComponent(new TitleComponent());
+        $this->addComponent(new NavigationComponent([
+            'menuLocation' => 'main-menu-' . $this->discipline,
+            'discipline' => $this->discipline
+        ]));
+        $this->addComponent(new SectionComponent([
+            'components' => [
+                new TitleComponent()
+            ],
+            'style' => 'secondary'
+        ]));
         $this->addComponent(new FooterComponent());
     }
 }

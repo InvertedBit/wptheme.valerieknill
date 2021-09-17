@@ -1,4 +1,4 @@
-$fixed-header-height: 100px;
+$fixed-header-height: 125px;
 
 #fixed-header {
     background-color: rgba(25, 25, 25, 0.8);
@@ -9,6 +9,8 @@ $fixed-header-height: 100px;
     .heading-logo-link {
         display: block;
         width: max-content;
+        position: relative;
+        left: 3vw;
         &:hover > .heading-logo {
             color: rgba(255, 255, 255, 0.8);
         }
@@ -18,14 +20,14 @@ $fixed-header-height: 100px;
             color: #ffffff;
             position: relative;
             display: block;
-            left: 3vw;
+            //left: 3vw;
             margin: 0;
             width: max-content;
         }
         .heading-logo-sub {
             color: $colourtheme-1;
             position: relative;
-            left: calc(3vw + 15px);
+            //left: calc(3vw + 15px);
             top: 0;
         }
 

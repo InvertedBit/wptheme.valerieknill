@@ -7,7 +7,7 @@ abstract class BaseTemplate {
 
     private $components = [];
 
-    protected $colourScheme = 'green';
+    protected $colourScheme = 'pink';
 
     protected $discipline = false;
 

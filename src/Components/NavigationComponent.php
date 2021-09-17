@@ -9,6 +9,13 @@ class NavigationComponent extends BaseViewComponent {
     }
 
     protected function initialize() {
+        $disciplines = $this->getField('disciplines', 'option');
+        foreach ($disciplines as $discipline) {
+            if ($discipline['discipline'] !== $this->data['discipline']) {
+                $this->data['otherDiscipline'] = $discipline['discipline'];
+                break;
+            }
+        }
         $menuId = false;
         if (!empty($this->data['menuId'])) {
             $menuId = $this->data['menuId'];
@@ -30,7 +37,8 @@ class NavigationComponent extends BaseViewComponent {
                 'id' => $menuPost->ID,
                 'title' => $menuPost->title,
                 'url' => $menuPost->url,
-                'active' => false
+                'active' => false,
+                'isCrosslink' => $this->getField('is_crosslink', $menuPost->ID)
             ];
             if ($menuPost->ID === $currentPostId) {
                 $item['active'] = true;

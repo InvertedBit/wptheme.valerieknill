@@ -70,7 +70,11 @@
                 font-family: $header-title-font-family;
                 font-size: 61px;
                 position: relative;
-                top: calc(50% - 38px);
+                top: calc(75% - 38px);
+                width: inherit;
+                display: inline-block;
+                line-height: 1.1125em;
+                padding-bottom: 0.175em;
             }
         }
         
@@ -95,8 +99,9 @@
                 animation-fill-mode: both;
             }
             .link-text {
-                color: $colourtheme-3;
-                left: 30px;
+                color: #ffffff;
+                background-color: $colourtheme-3;
+                padding-left: 30px;
             }     
         }
         
@@ -123,8 +128,9 @@
                 animation-fill-mode: both;
             }
             .link-text {
-                color: $colourtheme-comp-3;
-                right: 30px;
+                color: #ffffff;
+                background-color: $colourtheme-comp-3;
+                padding-right: 30px;
             }     
         }
         
