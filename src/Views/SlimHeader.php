@@ -1,12 +1,11 @@
 <div id="fixed-header" class="fixed-header uk-position-fixed uk-position-center-top uk-width-1-1 hidden">
 <?php
 $logoText = explode(' ', $this->data['blog_title']);
-
 ?>
     <a href="<?php echo $this->data['home_link']; ?>" class="uk-link-muted heading-logo-link uk-logo">
     <div class="logo-part logo-top"><?php echo $logoText[0]; ?></div>
 <div class="logo-part logo-middle"><?php echo $logoText[1]; ?></div>
-<div class="logo-part logo-bottom"><?php echo $this->data['blog_subtitle']; ?></div>
+<div class="logo-part logo-<?php echo $this->data['discipline']; ?> logo-bottom"><?php echo $this->data['blog_subtitle']; ?></div>
     </a>
 <!--
     <a href="<?php echo $this->data['home_link']; ?>" class="uk-link-muted heading-logo-link uk-logo">
@@ -25,7 +24,7 @@ $logoText = explode(' ', $this->data['blog_title']);
     <a href="<?php echo $this->data['home_link']; ?>" class="uk-link-muted heading-logo-link uk-logo">
     <div class="logo-part logo-top"><?php echo $logoText[0]; ?></div>
 <div class="logo-part logo-middle"><?php echo $logoText[1]; ?></div>
-<div class="logo-part logo-bottom"><?php echo $this->data['blog_subtitle']; ?></div>
+<div class="logo-part logo-<?php echo $this->data['discipline']; ?> logo-bottom"><?php echo $this->data['blog_subtitle']; ?></div>
     </a>
 <!--
             <a href="<?php echo $this->data['home_link']; ?>" class="uk-link-muted heading-logo-link uk-logo">
