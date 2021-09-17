@@ -1,0 +1,31 @@
+.page {
+
+.heading-logo-link.uk-logo {
+
+    &:hover {
+        .logo-part {
+            color: rgba(#ffffff, 0.8);
+            &.logo-bottom {
+                color: rgba($colourtheme-1, 0.8);
+            }
+        }
+    }
+
+    .logo-part {
+        display: block;
+        font-size: 1.5em;
+        height: 1em;
+        color: #ffffff;
+
+        &.logo-middle {
+            padding-left: 2.675em;
+        }
+
+        &.logo-bottom {
+            color: $colourtheme-1;
+        }
+        
+    }
+}
+
+}
