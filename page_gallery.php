@@ -8,6 +8,8 @@ use AlexScherer\WpthemeValerieknill\Theme;
 
 $theme = Theme::getInstance();
 
-$theme->setTemplate('Gallery');
+$theme->setTemplate('Gallery', [
+    'type' => 'page'
+]);
 
 $theme->render();

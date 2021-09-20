@@ -25,7 +25,8 @@ if (is_a($queriedObject, 'WP_TERM')) {
         $theme->setTemplate('Gallery', [
             'discipline' => 'painting',
             'type' => 'taxonomy',
-            'taxonomy' => $taxonomy
+            'taxonomy' => $taxonomy,
+            'term' => $queriedObject
         ]);
     }
 }

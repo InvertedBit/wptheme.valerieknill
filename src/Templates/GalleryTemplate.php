@@ -26,17 +26,39 @@ class GalleryTemplate extends BaseTemplate {
         $this->addComponent('NavigationComponent', [
             'menuLocation' => 'main-menu'
         ]);
+
+
+        $mainSectionComponents = [];
+
+        if (!empty($this->parameters['type'])) {
+            if ($this->parameters['type'] === 'taxonomy') {
+                $mainSectionComponents[] = [
+                    'name' => 'GalleryComponent',
+                    'arguments' => [
+                        'term' => $this->parameters['term'],
+                        'post_type' => 'image'
+                    ]
+                ];
+                
+            } elseif ($this->parameters['type'] === 'page') {
+                if ($this->discipline === 'painting') {
+                    $mainSectionComponents[] = [
+                        'name' => 'TaxonomyGridComponent',
+                        'arguments' => [
+                            'taxonomy' => 'series',
+                            'filter' => false
+                        ]
+                    ];
+                }
+            }
+
+        }
+
+
+
         $this->addComponent('SectionComponent', [
             'style' => 'secondary',
-            'components' => [
-                [
-                    'name' => 'TaxonomyGridComponent',
-                    'arguments' => [
-                        'taxonomy' => 'series',
-                        'filter' => false
-                    ]
-                ]
-            ]
+            'components' => $mainSectionComponents
         ]);
         $this->addComponent('FooterComponent');
     }
