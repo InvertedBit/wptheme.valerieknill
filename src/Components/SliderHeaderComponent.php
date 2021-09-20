@@ -11,7 +11,6 @@ class SliderHeaderComponent extends HeaderComponent {
     
     protected function initialize() {
         $headerImages = $this->getField('header_images');
-        $this->debug($headerImages);
         $imageArray = [];
         foreach($headerImages as $image) {
             if (empty($image['image'])) {
