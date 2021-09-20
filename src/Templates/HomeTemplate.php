@@ -1,12 +1,6 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Templates;
 
-use AlexScherer\WpthemeValerieknill\Components\FooterComponent;
-use AlexScherer\WpthemeValerieknill\Components\NavigationComponent;
-use AlexScherer\WpthemeValerieknill\Components\SectionComponent;
-use AlexScherer\WpthemeValerieknill\Components\SliderHeaderComponent;
-use AlexScherer\WpthemeValerieknill\Components\TitleComponent;
-use AlexScherer\WpthemeValerieknill\Components\VideoHeaderComponent;
 
 class HomeTemplate extends BaseTemplate {
 
@@ -18,24 +12,21 @@ class HomeTemplate extends BaseTemplate {
     {
 
         if ($this->discipline === 'painting') {
-            $this->addComponent(new SliderHeaderComponent([
-                'discipline' => $this->discipline
-            ]));
+            $this->addComponent('SliderHeaderComponent');
         } else {
-            $this->addComponent(new VideoHeaderComponent([
-                'discipline' => $this->discipline
-            ])); 
+            $this->addComponent('VideoHeaderComponent');
         }
-        $this->addComponent(new NavigationComponent([
-            'menuLocation' => 'main-menu-' . $this->discipline,
-            'discipline' => $this->discipline
-        ]));
-        $this->addComponent(new SectionComponent([
+        $this->addComponent('NavigationComponent', [
+            'menuLocation' => 'main-menu'
+        ]);
+        $this->addComponent('SectionComponent', [
+            'style' => 'secondary',
             'components' => [
-                new TitleComponent()
-            ],
-            'style' => 'secondary'
-        ]));
-        $this->addComponent(new FooterComponent());
+                [
+                    'name' => 'TitleComponent'
+                ]
+            ]
+        ]);
+        $this->addComponent('FooterComponent');
     }
 }
