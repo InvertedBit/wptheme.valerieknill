@@ -13,7 +13,6 @@ class TaxonomyGridComponent extends BaseViewComponent {
         $taxonomyTerms = get_terms([
             'taxonomy' => $this->data['taxonomy']
         ]);
-        $this->debug($taxonomyTerms);
         $this->data['entries'] = [];
         foreach($taxonomyTerms as $term) {
             if ($term->count === 0) {
@@ -28,8 +27,6 @@ class TaxonomyGridComponent extends BaseViewComponent {
             ];
             $this->data['entries'][] = $termEntry;
         }
-
-        $this->debug($this->data['entries']);
     }
 
     public function isValid() {
