@@ -1,10 +1,6 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Templates;
 
-use AlexScherer\WpthemeValerieknill\Components\FooterComponent;
-use AlexScherer\WpthemeValerieknill\Components\NavigationComponent;
-use AlexScherer\WpthemeValerieknill\Components\SlimHeaderComponent;
-
 class AboutTemplate extends BaseTemplate {
 
     public function __construct($parameters) {
@@ -14,10 +10,10 @@ class AboutTemplate extends BaseTemplate {
     protected function prepareComponents()
     {
 
-        $this->addComponent(new SlimHeaderComponent([
-                'discipline' => $this->discipline
-            ]));
-        $this->addComponent(new NavigationComponent(['menuLocation' => 'main-menu-' . $this->discipline]));
-        $this->addComponent(new FooterComponent());
+        $this->addComponent('SlimHeaderComponent');
+        $this->addComponent('NavigationComponent', [
+            'menuLocation' => 'main-menu'
+        ]);
+        $this->addComponent('FooterComponent');
     }
 }

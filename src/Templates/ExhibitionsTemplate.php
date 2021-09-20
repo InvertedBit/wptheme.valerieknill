@@ -18,26 +18,27 @@ class ExhibitionsTemplate extends BaseTemplate {
     protected function prepareComponents()
     {
 
-        $this->addComponent(new SlimHeaderComponent([
-                'discipline' => $this->discipline
-            ]));
-        $this->addComponent(new NavigationComponent([
-            'menuLocation' => 'main-menu-painting',
-            'discipline' => $this->discipline
-        ]));
-
-        $mainPageSection = new SectionComponent([
-            'components' => [
-                new BreadcrumbComponent([
-                    'discipline' => $this->discipline
-                ]),
-                new TitleComponent(),
-                new ExhibitionSliderComponent()
-            ],
-            'style' => 'secondary'
+        $this->addComponent('SlimHeaderComponent');
+        $this->addComponent('NavigationComponent', [
+            'menuLocation' => 'main-menu'
         ]);
-        $this->addComponent($mainPageSection);
-        $this->addComponent(new FooterComponent());
+
+        $this->addComponent('SectionComponent', [
+            'style' => 'secondary',
+            'components' => [
+                [
+                    'name' => 'BreadcrumbComponent'
+                ],
+                [
+                    'name' => 'TitleComponent'
+                ],
+                [
+                    'name' => 'ExhibitionSliderComponent'
+                ]
+            ]
+        ]);
+
+        $this->addComponent('FooterComponent');
     }
 }
 

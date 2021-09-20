@@ -17,15 +17,17 @@ class NavigationComponent extends BaseViewComponent {
             }
         }
         $menuId = false;
+        $actualLocation = '';
         if (!empty($this->data['menuId'])) {
             $menuId = $this->data['menuId'];
         } elseif (!empty($this->data['menuLocation'])) {
             $locations = get_nav_menu_locations();
-            $menuId = $locations[$this->data['menuLocation']];
+            $actualLocation = $this->data['menuLocation'] . '-' . $this->data['discipline'];
+            $menuId = $locations[$actualLocation];
         }
         $wpMenu = wp_get_nav_menu_items($menuId);
         if (empty($wpMenu)) {
-            $this->debug('No menu at location "'.$this->data['menuLocation'].'"');
+            $this->debug('No menu at location "'.$actualLocation.'"');
             $this->data['items'] = [];
             return;
         }

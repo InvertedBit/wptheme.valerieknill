@@ -10,9 +10,7 @@ class SlimHeaderComponent extends HeaderComponent {
 
     
     protected function initialize() {
-        $currentPostId = get_the_ID();
-        $headerImage = get_field('header_image', $currentPostId);
-        $this->data['header_image'] = $headerImage;
+        $this->data['header_image'] = $this->getField('header_image');
     }
 
     public function isValid() {

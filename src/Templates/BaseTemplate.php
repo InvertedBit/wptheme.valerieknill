@@ -1,9 +1,11 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Templates;
 
-use AlexScherer\WpthemeValerieknill\Rendering\IRenderable;
-
 abstract class BaseTemplate {
+
+    protected const COMPONENT_NAMESPACE = "AlexScherer\\WpthemeValerieknill\\Components\\";
+
+    protected const IRENDERABLE_INTERFACE = "AlexScherer\\WpthemeValerieknill\\Rendering\\IRenderable";
 
     private $components = [];
 
@@ -45,26 +47,78 @@ abstract class BaseTemplate {
     abstract protected function prepareComponents();
 
     protected function getPostDiscipline() {
-        $currentPostId = get_the_ID();
-        $postDiscipline = wp_get_post_terms($currentPostId, 'discipline');
-        if (empty($postDiscipline)) {
-            return;
-        }
-        $postDisciplineId = $postDiscipline[0]->term_id;
         $disciplines = get_field('disciplines', 'option');
-        foreach($disciplines as $discipline) {
-            if (in_array($postDisciplineId, $discipline['term'])) {
-                $this->colourScheme = $discipline['colorscheme'];
-                $this->discipline = $discipline['discipline'];
-                break;
+        if (!empty($this->parameters['discipline'])) {
+            $this->discipline = $this->parameters['discipline'];
+            foreach($disciplines as $discipline) {
+                if ($discipline['discipline'] === $this->discipline) {
+                    $this->colourScheme = $discipline['colorscheme'];
+                    break;
+                }
             }
+        } else {
+            $currentPostId = get_the_ID();
+            $postDiscipline = wp_get_post_terms($currentPostId, 'discipline');
+            if (empty($postDiscipline)) {
+                return;
+            }
+            $postDisciplineId = $postDiscipline[0]->term_id;
+            foreach($disciplines as $discipline) {
+                if (in_array($postDisciplineId, $discipline['term'])) {
+                    $this->colourScheme = $discipline['colorscheme'];
+                    $this->discipline = $discipline['discipline'];
+                    break;
+                }
+            }
+
         }
     }
 
-    protected function addComponent($component) {
-        if ($component instanceof IRenderable) {
-            $this->components[] = $component;
+    protected function addComponent($componentName, $arguments = []) {
+        if (!empty($arguments['components'])) {
+            $componentDefinitions = $arguments['components'];
+            $arguments['components'] = [];
+            foreach ($componentDefinitions as $componentDefinition) {
+                $newComponent = false;
+                if (isset($componentDefinition['arguments'])) {
+                    $newComponent = $this->createComponent($componentDefinition['name'], $componentDefinition['arguments']);
+                } else {
+                    $newComponent = $this->createComponent($componentDefinition['name']);
+                }
+                if ($newComponent) {
+                    $arguments['components'][] = $newComponent;
+                }
+            }
         }
+
+        $newComponent = $this->createComponent($componentName, $arguments);
+
+        if ($newComponent) {
+            $this->components[] = $newComponent;
+        }
+    }
+
+    protected function createComponent($componentName, $arguments = []) {
+        $fullComponentName = BaseTemplate::COMPONENT_NAMESPACE . $componentName;
+        if (!class_exists($fullComponentName)) {
+            return false;
+        }
+        $componentImplements = class_implements($fullComponentName);
+        if (empty($componentImplements)) {
+            return false;
+        }
+        $isRenderable = false;
+        foreach($componentImplements as $interface) {
+            if ($interface === BaseTemplate::IRENDERABLE_INTERFACE) {
+                $isRenderable = true;
+                break;
+            }
+        }
+        $arguments['discipline'] = $this->discipline;
+        if ($isRenderable) {
+            return new $fullComponentName($arguments);
+        }
+        return false;
     }
 
     protected function addStylesheet($handle, $path, $dependencies = []) {
