@@ -18,7 +18,11 @@ class GalleryTemplate extends BaseTemplate {
             'style' => 'secondary',
             'components' => [
                 [
-                    'name' => 'TaxonomyGridComponent'
+                    'name' => 'TaxonomyGridComponent',
+                    'arguments' => [
+                        'taxonomy' => 'series',
+                        'filter' => false
+                    ]
                 ]
             ]
         ]);
