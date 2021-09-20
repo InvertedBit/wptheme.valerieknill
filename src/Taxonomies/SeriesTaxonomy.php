@@ -29,7 +29,7 @@ class SeriesTaxonomy extends BaseTaxonomy {
             'rewrite'           => [ 'slug' => $this->name ],
         );
         $this->objectType = [
-            'attachment'
+            'image'
         ];
     }
 }

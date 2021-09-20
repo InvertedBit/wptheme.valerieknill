@@ -46,7 +46,8 @@ class Theme {
 
     protected $postTypesToLoad = [
         'News',
-        'Exhibition'
+        'Exhibition',
+        'Image'
     ];
 
     protected $postTypesLoaded = false;
