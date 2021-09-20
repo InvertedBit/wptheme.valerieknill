@@ -14,6 +14,14 @@ class GalleryTemplate extends BaseTemplate {
         $this->addComponent('NavigationComponent', [
             'menuLocation' => 'main-menu'
         ]);
+        $this->addComponent('SectionComponent', [
+            'style' => 'secondary',
+            'components' => [
+                [
+                    'name' => 'TaxonomyGridComponent'
+                ]
+            ]
+        ]);
         $this->addComponent('FooterComponent');
     }
 }
