@@ -33,7 +33,8 @@ class Theme {
     protected $taxonomies = [];
 
     protected $taxonomiesToLoad = [
-        'Discipline'
+        'Discipline',
+        'Series'
     ];
 
     protected $taxonomiesLoaded = false;
