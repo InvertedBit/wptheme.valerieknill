@@ -11,10 +11,12 @@ class SliderHeaderComponent extends HeaderComponent {
     
     protected function initialize() {
         $headerImages = $this->getField('header_images');
-        //$this->debug($headerImages);
         $imageArray = [];
         foreach($headerImages as $image) {
-            $newImg = $image['image']['url'];
+            if (empty($image['image'])) {
+                continue;
+            }
+            $newImg = $image['image'];
             $imageArray[] = $newImg;
         }
         $this->data['images'] = $imageArray;
