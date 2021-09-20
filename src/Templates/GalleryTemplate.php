@@ -13,7 +13,7 @@ class GalleryTemplate extends BaseTemplate {
         if (!empty($this->parameters['type']) && $this->parameters['type'] === 'taxonomy') {
             $headerArguments = [
             'field_overrides' => [
-                'image' => [
+                'header_image' => [
                     'field' => 'title_image',
                     'id' => get_queried_object()
                 ]

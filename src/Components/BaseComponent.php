@@ -33,6 +33,19 @@ abstract class BaseComponent extends BasePost implements IRenderable {
         include $this->getViewPath($name);
     }
 
+    protected function getField(string $name, $source = false)
+    {
+        if (!empty($this->data['field_overrides']) && !empty($this->data['field_overrides'][$name])) {
+            if (is_array($this->data['field_overrides'][$name])) {
+                return parent::getField($this->data['field_overrides'][$name]['field'], $this->data['field_overrides'][$name]['id']);
+            } else {
+                return parent::getField($this->data['field_overrides'][$name]['field']);
+            }
+        }
+
+        return parent::getField($name, $source);
+    }
+
     protected function debug($data) {
         $this->preRender .= '<div class="uk-section uk-section-secondary">';
         $this->preRender .= '<div class="uk-container">';

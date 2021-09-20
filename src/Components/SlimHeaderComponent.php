@@ -10,19 +10,7 @@ class SlimHeaderComponent extends HeaderComponent {
 
     
     protected function initialize() {
-        $imageField = 'header_image';
-        $headerImage = false;
-        if (!empty($this->data['field_overrides']) && !empty($this->data['field_overrides']['image'])) {
-            if (is_array($this->data['field_overrides']['image'])) {
-                $headerImage = $this->getField($this->data['field_overrides']['image']['field'], $this->data['field_overrides']['image']['id']);
-            } else {
-                $headerImage = $this->getField($this->data['field_overrides']['image']);
-            }
-        } else {
-            $headerImage = $this->getField($imageField);
-        }
-        $this->data['header_image'] = $headerImage;
-        //$this->debug($this->data);
+        $this->data['header_image'] = $this->getField('header_image');
     }
 
     public function isValid() {
