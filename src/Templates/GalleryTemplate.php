@@ -9,8 +9,20 @@ class GalleryTemplate extends BaseTemplate {
 
     protected function prepareComponents()
     {
+        $headerArguments = [];
+        if (!empty($this->parameters['type']) && $this->parameters['type'] === 'taxonomy') {
+            $headerArguments = [
+            'field_overrides' => [
+                'image' => [
+                    'field' => 'title_image',
+                    'id' => get_queried_object()
+                ]
+            ]
+        ];
 
-        $this->addComponent('SlimHeaderComponent');
+        }
+
+        $this->addComponent('SlimHeaderComponent', $headerArguments);
         $this->addComponent('NavigationComponent', [
             'menuLocation' => 'main-menu'
         ]);
