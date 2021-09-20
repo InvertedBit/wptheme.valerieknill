@@ -14,11 +14,6 @@ $theme = Theme::getInstance();
 
 $queriedObject = get_queried_object();
 
-
-//echo "<pre>";
-//print_r($queriedObject);
-//echo "</pre>";
-
 if (is_a($queriedObject, 'WP_TERM')) {
     $taxonomy = $queriedObject->taxonomy;
     if ($taxonomy === 'series') {

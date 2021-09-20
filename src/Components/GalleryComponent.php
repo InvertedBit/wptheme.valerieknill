@@ -35,8 +35,6 @@ class GalleryComponent extends BaseViewComponent {
                 $this->data['entries'][] = $galleryEntry;
             }
         }
-
-        
     }
 
     public function isValid() {

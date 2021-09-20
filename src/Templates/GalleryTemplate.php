@@ -54,8 +54,6 @@ class GalleryTemplate extends BaseTemplate {
 
         }
 
-
-
         $this->addComponent('SectionComponent', [
             'style' => 'secondary',
             'components' => $mainSectionComponents
