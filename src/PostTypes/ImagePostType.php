@@ -42,7 +42,7 @@ class ImagePostType extends BasePostType {
         $this->args = array(
             'labels'             => $labels,
             'description'        => 'Image custom post type.',
-            'menu_icon'          => 'dashicons-store',
+            'menu_icon'          => 'dashicons-format-gallery',
             'public'             => true,
             'publicly_queryable' => true,
             'show_ui'            => true,
@@ -52,7 +52,7 @@ class ImagePostType extends BasePostType {
             'capability_type'    => 'post',
             'has_archive'        => true,
             'hierarchical'       => false,
-            'menu_position'      => 20,
+            'menu_position'      => 19,
             'supports'           => array( 'title', 'editor', 'author', 'thumbnail' ),
             'taxonomies'         => ['series'],
             'show_in_rest'       => true
