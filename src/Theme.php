@@ -34,7 +34,8 @@ class Theme {
 
     protected $taxonomiesToLoad = [
         'Discipline',
-        'Series'
+        'Series',
+        'Role'
     ];
 
     protected $taxonomiesLoaded = false;
@@ -47,7 +48,8 @@ class Theme {
     protected $postTypesToLoad = [
         'News',
         'Exhibition',
-        'Image'
+        'Image',
+        'Project'
     ];
 
     protected $postTypesLoaded = false;
