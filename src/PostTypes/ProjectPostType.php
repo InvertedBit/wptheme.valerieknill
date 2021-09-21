@@ -48,7 +48,7 @@ class ProjectPostType extends BasePostType {
             'show_ui'            => true,
             'show_in_menu'       => true,
             'query_var'          => true,
-            'rewrite'            => array( 'slug' => 'project' ),
+            'rewrite'            => array( 'slug' => 'projects' ),
             'capability_type'    => 'post',
             'has_archive'        => true,
             'hierarchical'       => false,
