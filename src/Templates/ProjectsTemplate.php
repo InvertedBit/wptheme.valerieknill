@@ -1,6 +1,8 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Templates;
 
+use AlexScherer\WpthemeValerieknill\Data\TestIterativeDataSource;
+
 class ProjectsTemplate extends BaseTemplate {
 
     public function __construct($parameters) {
@@ -26,6 +28,23 @@ class ProjectsTemplate extends BaseTemplate {
 
 
         $mainSectionComponents = [];
+
+        $mainSectionComponents[] = [
+            'name' => 'GridComponent',
+            'arguments' => [
+                'datasource' => new TestIterativeDataSource(),
+                'childComponent' => [
+                    'name' => 'ProjectCardComponent',
+                    'arguments' => []
+                ],
+                'cols' => [
+                    'xs' => 1,
+                    's' => 2,
+                    'm' => 3,
+                    'l' => 4
+                ]
+            ]
+        ];
 
         if (!empty($this->parameters['type'])) {
             if ($this->parameters['type'] === 'taxonomy') {
