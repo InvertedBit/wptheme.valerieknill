@@ -57,6 +57,14 @@ class ProjectPostType extends BasePostType {
             'taxonomies'         => ['roles'],
             'show_in_rest'       => true
         );
+
+        $this->acfPages = [
+            [
+                'page_title'     => 'Project Archive Settings',
+                'parent_slug'    => 'edit.php?post_type=project',
+                'capability'     => 'manage_options'
+            ]
+        ];
     }
 }
 
