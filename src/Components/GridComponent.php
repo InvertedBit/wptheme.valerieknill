@@ -30,6 +30,7 @@ class GridComponent extends BaseViewComponent {
                 GridComponent::ITERATIVEDATASOURCE_BASECLASS)) {
                 return;
         }
+        $this->setWidthClasses();
         $this->childDefinition = $this->data['childComponent'];
         $this->dataSource = $this->data['datasource'];
         
@@ -50,6 +51,20 @@ class GridComponent extends BaseViewComponent {
                 $this->debug('child not created');
             }
         } while ($this->dataSource->nextItem());
+    }
+
+    protected function setWidthClasses() {
+        $widthClass = '';
+        if (!empty($this->data['cols'])) {
+            $last = end($this->data['cols']);
+            foreach ($this->data['cols'] as $size => $cols) {
+                $widthClass .= 'uk-child-width-1-'.$cols.'@'.$size;
+                if ($cols !== $last) {
+                    $widthClass .= ' ';
+                }
+            }
+        }
+        $this->data['uk-child-width'] = $widthClass;
     }
 
     protected function createChildComponent(BaseDataSource $dataSource, $data = []) {

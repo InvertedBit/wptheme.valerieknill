@@ -46,8 +46,7 @@ class ProjectListTemplate extends BaseTemplate {
                 'cols' => [
                     'xs' => 1,
                     's' => 2,
-                    'm' => 3,
-                    'l' => 4
+                    'm' => 3
                 ],
                 'filter' => [
                     'mode' => 'terms',
