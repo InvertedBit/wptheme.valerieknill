@@ -37,16 +37,12 @@ class GridComponent extends BaseViewComponent {
             return;
         }
 
-
-        //$this->debug($this->dataSource->getFromList('terms'));
-
         $this->data['children'] = [];
         $childData = [];
         if (!empty($this->data['discipline'])) {
             $childData['discipline'] = $this->data['discipline'];
         }
         do {
-            //$this->debug($this->dataSource->getItem());
             $newChild = $this->createChildComponent($this->dataSource->getItem(), $childData);
             if ($newChild) {
                 $this->data['children'][] = $newChild;
