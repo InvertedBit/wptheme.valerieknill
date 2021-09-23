@@ -1,6 +1,6 @@
 <div class="uk-card uk-card-secondary uk-card-hover card-clickable">
     <div class="uk-card-media-top">
-        <a href="project-detail.html" class="uk-cover-container card-link">
+        <a href="<?php echo get_permalink($this->dataSource->ID); ?>" class="uk-cover-container card-link">
             <img src="<?php echo $this->dataSource->poster_image['url']; ?>" alt="<?php echo $this->dataSource->poster_image['title']; ?>" />
         </a>
     </div>
