@@ -1,9 +1,9 @@
 <div class="uk-container uk-margin-large-top">
-<?php if (!empty($this->data['filter']) && count($this->dataSource->terms) > 0): ?>
+<?php if (!empty($this->data['filter']) && count($this->dataSource->getFromList('terms')) > 0): ?>
     <div data-uk-filter="target: .filter-container">
         <ul class="uk-subnav uk-subnav-pill">
             <li class="uk-active" data-uk-filter-control><a href="#">Alle</a></li>
-<?php foreach ($this->dataSource->terms[$this->data['filter']['taxonomy']] as $term): ?>
+<?php foreach ($this->dataSource->getFromList('terms')[$this->data['filter']['taxonomy']] as $term): ?>
             <li data-uk-filter-control=".<?php echo $term->slug; ?>"><a href="#"><?php echo $term->name; ?></a></li>
 <?php endforeach; ?>
         </ul>

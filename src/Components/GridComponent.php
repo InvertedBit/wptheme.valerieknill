@@ -38,6 +38,7 @@ class GridComponent extends BaseViewComponent {
         }
 
 
+        //$this->debug($this->dataSource->getFromList('terms'));
 
         $this->data['children'] = [];
         $childData = [];
