@@ -38,8 +38,12 @@ class GridComponent extends BaseViewComponent {
             return;
         }
 
+
         $this->data['children'] = [];
         $childData = [];
+        if (!empty($this->data['childComponent']['arguments'])) {
+            $childData = $this->data['childComponent']['arguments'];
+        }
         if (!empty($this->data['discipline'])) {
             $childData['discipline'] = $this->data['discipline'];
         }
@@ -80,9 +84,9 @@ class GridComponent extends BaseViewComponent {
     }
 
     public function isValid() {
-        //if (empty($this->data['entries'])) {
-            //return false;
-        //}
+        if (empty($this->data['children'])) {
+            return false;
+        }
         return true;
     }
 

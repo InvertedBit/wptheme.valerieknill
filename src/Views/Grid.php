@@ -10,6 +10,7 @@
 <?php endif; ?>
         <div class="filter-container <?php echo $this->data['uk-child-width']; ?>" data-uk-grid>
 <?php foreach ($this->data['children'] as $child): ?>
+<?php if ($child->isValid()): ?>
 <?php if (!empty($this->data['filter'])): ?>
             <div class="<?php foreach ($child->dataSource->terms[$this->data['filter']['taxonomy']] as $term) { echo $term->slug . ' '; } ?>">
 <?php else: ?>
@@ -19,6 +20,7 @@
 <?php $child->render(); ?>
 
             </div>
+<?php endif; ?>
 <?php endforeach; ?>
         </div>
 <?php if (!empty($this->data['filter'])): ?>
