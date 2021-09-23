@@ -16,6 +16,10 @@ abstract class BaseIterativeDataSource extends BaseDataSource {
         }
     }
 
+    public function getItem() {
+        return $this->items[$this->iterator];
+    }
+
     public function getFromItem(string $name) {
         if (!empty($this->items[$this->iterator])) {
             //if (is_a($this->items[$this->iterator], BaseIterativeDataSource::ITERATIVEDATASOURCE_BASECLASS)) {
@@ -27,12 +31,16 @@ abstract class BaseIterativeDataSource extends BaseDataSource {
     }
 
     public function nextItem() : bool {
-        if ($this->iterator < count($this->items)) {
+        if ($this->iterator < count($this->items) - 1) {
             $this->iterator++;
             return true;
         } else {
             $this->iterator = 0;
             return false;
         }
+    }
+
+    public function isEmpty() : bool {
+        return count($this->items) === 0;
     }
 }

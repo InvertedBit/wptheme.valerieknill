@@ -3,7 +3,7 @@ namespace AlexScherer\WpthemeValerieknill\Templates;
 
 use AlexScherer\WpthemeValerieknill\Data\TestIterativeDataSource;
 
-class ProjectsTemplate extends BaseTemplate {
+class ProjectListTemplate extends BaseTemplate {
 
     public function __construct($parameters) {
         parent::__construct('Projects', $parameters);

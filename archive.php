@@ -33,8 +33,8 @@ if (is_a($queriedObject, 'WP_TERM')) {
     $parameters = [];
     if ($name === 'project') {
         $parameters['discipline'] = 'movies';
+        $theme->setTemplate('ProjectList', $parameters);
     }
-    $theme->setTemplate(ucfirst($name . 's'), $parameters);
 }
 
 

@@ -32,12 +32,22 @@ class GridComponent extends BaseViewComponent {
         $this->childDefinition = $this->data['childComponent'];
         $this->dataSource = $this->data['datasource'];
         
+        if ($this->dataSource->isEmpty()) {
+            return;
+        }
+        $this->data['children'] = [];
+        $childData = [];
+        if (!empty($this->data['discipline'])) {
+            $childData['discipline'] = $this->data['discipline'];
+        }
         do {
             $this->debug($this->dataSource->parameters);
+            $childData['datasource'] = $this->dataSource->getItem();
+            $this->data['children'][] = $this->createChildComponent($childData);
         } while ($this->dataSource->nextItem());
     }
 
-    protected function createChildComponent($data = []) : BaseComponent {
+    protected function createChildComponent($data = []) {
         if (empty($this->childDefinition) || empty($this->childDefinition['name'])) {
             return false;
         }
@@ -46,7 +56,7 @@ class GridComponent extends BaseViewComponent {
             return false;
         }
 
-        return new $fullChildClassName();
+        return new $fullChildClassName($data);
     }
 
     public function isValid() {
