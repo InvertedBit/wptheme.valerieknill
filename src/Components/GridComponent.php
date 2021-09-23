@@ -1,6 +1,7 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Components;
 
+use AlexScherer\WpthemeValerieknill\Data\BaseDataSource;
 use AlexScherer\WpthemeValerieknill\Data\BaseIterativeDataSource;
 
 class GridComponent extends BaseViewComponent {
@@ -35,28 +36,35 @@ class GridComponent extends BaseViewComponent {
         if ($this->dataSource->isEmpty()) {
             return;
         }
+
+
+
         $this->data['children'] = [];
         $childData = [];
         if (!empty($this->data['discipline'])) {
             $childData['discipline'] = $this->data['discipline'];
         }
         do {
-            $this->debug($this->dataSource->parameters);
-            $childData['datasource'] = $this->dataSource->getItem();
-            $this->data['children'][] = $this->createChildComponent($childData);
+            //$this->debug($this->dataSource->getItem());
+            $newChild = $this->createChildComponent($this->dataSource->getItem(), $childData);
+            if ($newChild) {
+                $this->data['children'][] = $newChild;
+            } else {
+                $this->debug('child not created');
+            }
         } while ($this->dataSource->nextItem());
     }
 
-    protected function createChildComponent($data = []) {
+    protected function createChildComponent(BaseDataSource $dataSource, $data = []) {
         if (empty($this->childDefinition) || empty($this->childDefinition['name'])) {
             return false;
         }
         $fullChildClassName = GridComponent::COMPONENT_NAMESPACE . $this->childDefinition['name'];
-        if (!class_exists($fullChildClassName) || !is_a($fullChildClassName, GridComponent::COMPONENT_BASECLASS)) {
+        if (!class_exists($fullChildClassName) || !is_a($fullChildClassName, GridComponent::COMPONENT_BASECLASS, true)) {
             return false;
         }
 
-        return new $fullChildClassName($data);
+        return new $fullChildClassName($dataSource, $data);
     }
 
     public function isValid() {

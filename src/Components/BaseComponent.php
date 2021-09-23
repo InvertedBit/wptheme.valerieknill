@@ -49,6 +49,7 @@ abstract class BaseComponent extends BasePost implements IRenderable {
     protected function debug($data) {
         $this->preRender .= '<div class="uk-section uk-section-secondary">';
         $this->preRender .= '<div class="uk-container">';
+        $this->preRender .= '<h4 class="uk-heading-small">Component "' . $this->name . '" debug output</h4>';
 
         $this->preRender .= '<pre>'. print_r($data, 1) .'</pre>';
 

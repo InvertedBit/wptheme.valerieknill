@@ -20,6 +20,13 @@ abstract class BaseIterativeDataSource extends BaseDataSource {
         return $this->items[$this->iterator];
     }
 
+    public function getFromList($name) {
+        if (property_exists($this, $name)) {
+            return $this->$name;
+        }
+        return null;
+    }
+
     public function getFromItem(string $name) {
         if (!empty($this->items[$this->iterator])) {
             //if (is_a($this->items[$this->iterator], BaseIterativeDataSource::ITERATIVEDATASOURCE_BASECLASS)) {

@@ -1,6 +1,7 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Templates;
 
+use AlexScherer\WpthemeValerieknill\Data\ProjectPostTypeDataSource;
 use AlexScherer\WpthemeValerieknill\Data\TestIterativeDataSource;
 
 class ProjectListTemplate extends BaseTemplate {
@@ -32,7 +33,12 @@ class ProjectListTemplate extends BaseTemplate {
         $mainSectionComponents[] = [
             'name' => 'GridComponent',
             'arguments' => [
-                'datasource' => new TestIterativeDataSource(),
+                'datasource' => new ProjectPostTypeDataSource([
+                    'loadTerms' => [
+                        'role'
+                    ],
+                    'hideEmptyTerms' => true
+                ]),
                 'childComponent' => [
                     'name' => 'ProjectCardComponent',
                     'arguments' => []
@@ -42,6 +48,11 @@ class ProjectListTemplate extends BaseTemplate {
                     's' => 2,
                     'm' => 3,
                     'l' => 4
+                ],
+                'filter' => [
+                    'mode' => 'terms',
+                    'taxonomy' => 'role',
+                    'hide_empty' => true
                 ]
             ]
         ];
