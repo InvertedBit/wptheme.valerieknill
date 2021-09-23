@@ -2,7 +2,6 @@
 namespace AlexScherer\WpthemeValerieknill\Templates;
 
 use AlexScherer\WpthemeValerieknill\Data\ProjectPostTypeDataSource;
-use AlexScherer\WpthemeValerieknill\Data\TestIterativeDataSource;
 
 class ProjectListTemplate extends BaseTemplate {
 
