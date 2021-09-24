@@ -28,11 +28,21 @@ class SingleProjectTemplate extends BaseTemplate {
         ]);
 
 
+        $topSectionComponents = [];
+
+
+        $this->addComponent('SectionComponent', [
+            'style' => 'secondary',
+            'components' => $topSectionComponents
+        ]);
+
+
         $mainSectionComponents = [];
 
         $mainSectionComponents[] = [
             'name' => 'GridComponent',
             'arguments' => [
+                'title' => __('Awards', 'wptheme.valerieknill'),
                 'datasource' => new RepeaterDataSource([
                     'field' => 'awards',
                     'source' => get_the_ID(),
@@ -57,10 +67,56 @@ class SingleProjectTemplate extends BaseTemplate {
         ];
 
 
+
+
+
+
         $this->addComponent('SectionComponent', [
-            'style' => 'secondary',
+            'style' => 'primary',
             'components' => $mainSectionComponents
         ]);
+
+        $reviewSectionComponents = [];
+
+
+
+        $this->addComponent('SectionComponent', [
+            'style' => 'secondary',
+            'components' => $reviewSectionComponents
+        ]);
+
+
+        $festivalSectionComponents = [];
+
+
+        $festivalSectionComponents[] = [
+            'name' => 'GridComponent',
+            'arguments' => [
+                'title' => __('Festivals', 'wptheme.valerieknill'),
+                'datasource' => new RepeaterDataSource([
+                    'field' => 'festivals',
+                    'source' => get_the_ID()
+                ]),
+                'childComponent' => [
+                    'name' => 'PlaqueCardComponent',
+                    'arguments' => []
+                ],
+                'cols' => [
+                    'xs' => 1,
+                    's' => 2,
+                    'm' => 3
+                ]
+            ]
+        ];
+
+
+        $this->addComponent('SectionComponent', [
+            'style' => 'primary',
+            'components' => $festivalSectionComponents
+        ]);
+
+
+
         $this->addComponent('FooterComponent');
     }
 }
