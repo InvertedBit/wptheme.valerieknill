@@ -39,7 +39,10 @@ class SingleProjectTemplate extends BaseTemplate {
 
         $mainSectionComponents = [];
 
-        $mainSectionComponents[] = [
+
+        $awardsGridComponents = [];
+
+        $awardsGridComponents[] = [
             'name' => 'GridComponent',
             'arguments' => [
                 'title' => __('Awards', 'wptheme.valerieknill'),
@@ -62,6 +65,46 @@ class SingleProjectTemplate extends BaseTemplate {
                     'xs' => 1,
                     's' => 2,
                     'm' => 3
+                ]
+            ]
+        ];
+
+        $awardsGridComponents[] = [
+            'name' => 'TableComponent',
+            'arguments' => [
+                'title' => __('Specifications', 'wptheme.valerieknill'),
+                'datasource' => new RepeaterDataSource([
+                    'field' => 'specifications',
+                    'source' => get_the_ID()
+                ]),
+                'fields' => [
+                    'role',
+                    'name'
+                ],
+                'heading-col' => 'role',
+                'style' => [
+                    'divider',
+                    'heading-vertical'
+                ]
+            ]
+        ];
+
+
+        $mainSectionComponents[] = [
+            'name' => 'GridComponent',
+            'arguments' => [
+                'components' => $awardsGridComponents,
+                'cols' => [
+                    's' => 1,
+                    'm' => 2
+                ],
+                'div-options' => [
+                    'TableComponent' => [
+                        'flex' => [
+                            'first@s',
+                            'last@m'
+                        ]
+                    ]
                 ]
             ]
         ];

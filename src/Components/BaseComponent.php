@@ -59,7 +59,11 @@ abstract class BaseComponent extends BasePost implements IRenderable {
 
     public function render() {
         $this->preRender();
-        $this->renderComponent();
+        if ($this->isValid()) {
+            $this->renderComponent();
+        } elseif (defined('WP_DEBUG') && WP_DEBUG) {
+            echo '<p class="uk-text-danger">Component "' . $this->name . '" failed the validation!</p>';
+        }
         $this->postRender();
     }
 

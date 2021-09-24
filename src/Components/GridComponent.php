@@ -23,6 +23,11 @@ class GridComponent extends BaseViewComponent {
 
     
     protected function initialize() {
+        if (!empty($this->data['components'])) {
+            //$this->debug($this->data['components']);
+            $this->data['children'] = $this->data['components'];
+            return;
+        }
         if (empty($this->data['childComponent']) ||
             empty($this->data['datasource']) ||
             !is_a(
