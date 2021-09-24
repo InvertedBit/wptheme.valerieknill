@@ -21,6 +21,10 @@ abstract class BaseComponent extends BasePost implements IRenderable {
         parent::__construct($postId);
     }
 
+    public function getName() {
+        return $this->name;
+    }
+
     protected function getViewPath($name = false) {
         return get_template_directory() . '/src/Views/' . ($name ? $name : $this->name) . '.php';
     }
@@ -42,13 +46,25 @@ abstract class BaseComponent extends BasePost implements IRenderable {
                 return parent::getField($this->data['field_overrides'][$name]['field']);
             }
         }
+        $parentResult = parent::getField($name, $source);
 
-        return parent::getField($name, $source);
+        if (empty($parentResult) &&
+            !empty($this->data['field_fallback']) &&
+            !empty($this->data['field_fallback'][$name])) {
+            if (is_array($this->data['field_fallback'][$name])) {
+                return parent::getField($this->data['field_fallback'][$name]['field'], $this->data['field_fallback'][$name]['id']);
+            } else {
+                return parent::getField($this->data['field_fallback'][$name]['field']);
+            }
+        }
+
+        return $parentResult;
     }
 
     protected function debug($data) {
         $this->preRender .= '<div class="uk-section uk-section-secondary">';
         $this->preRender .= '<div class="uk-container">';
+        $this->preRender .= '<h4 class="uk-heading-small">Component "' . $this->name . '" debug output</h4>';
 
         $this->preRender .= '<pre>'. print_r($data, 1) .'</pre>';
 
@@ -58,7 +74,11 @@ abstract class BaseComponent extends BasePost implements IRenderable {
 
     public function render() {
         $this->preRender();
-        $this->renderComponent();
+        if ($this->isValid()) {
+            $this->renderComponent();
+        } elseif (defined('WP_DEBUG') && WP_DEBUG) {
+            echo '<p class="uk-text-danger">Component "' . $this->name . '" failed the validation!</p>';
+        }
         $this->postRender();
     }
 

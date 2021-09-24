@@ -13,6 +13,7 @@ namespace AlexScherer\WpthemeValerieknill\PostTypes;
 abstract class BasePostType {
     protected $name;
     protected $args;
+    protected $acfPages = false;
 
     public function __construct($name) {
         $this->name = $name;
@@ -23,6 +24,24 @@ abstract class BasePostType {
 
     public function registerPostType() {
         register_post_type($this->name, $this->args);
+        $this->registerAcfPages();
+    }
+
+    public function registerAcfPages() {
+        if ($this->acfPages === false) {
+            return;
+        }
+
+        foreach ($this->acfPages as $acfPage) {
+            if(function_exists('acf_add_options_page')) {
+                acf_add_options_sub_page([
+                    'page_title'      => $acfPage['page_title'],
+
+                    'parent_slug'     => $acfPage['parent_slug'],
+                    'capability'      => $acfPage['capability']
+                ]);
+            }
+        }
     }
 
 }

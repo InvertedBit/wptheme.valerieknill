@@ -74,24 +74,76 @@ abstract class BaseTemplate {
         }
     }
 
-    protected function addComponent($componentName, $arguments = []) {
+    protected function getChildComponents($arguments = []) {
+        //echo '<pre>';
+        //print_r($arguments);
+        //echo '</pre>';
+        $newArguments = $arguments;
         if (!empty($arguments['components'])) {
-            $componentDefinitions = $arguments['components'];
-            $arguments['components'] = [];
-            foreach ($componentDefinitions as $componentDefinition) {
+            $newComponents = [];
+            foreach ($arguments['components'] as $componentDefinition) {
                 $newComponent = false;
                 if (isset($componentDefinition['arguments'])) {
-                    $newComponent = $this->createComponent($componentDefinition['name'], $componentDefinition['arguments']);
+                    //if (!empty($componentDefinition['arguments']['cols']) && $componentDefinition['arguments']['cols']['s'] === 1) {
+                        //echo $componentDefinition['name'] . ' PRE<hr />';
+                        //echo '<pre>';
+                        //print_r($componentDefinition['arguments']);
+                        //echo '</pre>';
+                        //echo '<hr />';
+                    //}
+                    $arguments = $componentDefinition['arguments'];
+                    $arguments = $this->getChildComponents($arguments);
+                    //if (!empty($componentDefinition['arguments']['cols']) && $componentDefinition['arguments']['cols']['s'] === 1) {
+                        //echo $componentDefinition['name'] . ' POST<hr />';
+                        //echo '<pre>';
+                        //print_r($arguments);
+                        //echo '</pre>';
+                        //echo '<hr />';
+                    //}
+                    $newComponent = $this->createComponent($componentDefinition['name'], $arguments);
                 } else {
                     $newComponent = $this->createComponent($componentDefinition['name']);
                 }
                 if ($newComponent) {
-                    $arguments['components'][] = $newComponent;
+                    //echo '<hr />';
+                    //echo 'Adding component "'.$componentDefinition['name'].'"';
+
+                    //echo '<hr />';
+                    $newComponents[] = $newComponent;
                 }
             }
+            $newArguments['components'] = $newComponents;
         }
+        return $newArguments;
+    }
 
-        $newComponent = $this->createComponent($componentName, $arguments);
+    protected function addComponent($componentName, $arguments = []) {
+        //echo '<pre>Before
+//';
+        //print_r($arguments);
+        //echo '</pre>';
+        $parsedArguments = $this->getChildComponents($arguments);
+        //if (!empty($arguments['components'])) {
+            //$componentDefinitions = $arguments['components'];
+            //$arguments['components'] = [];
+            //foreach ($componentDefinitions as $componentDefinition) {
+                //$newComponent = false;
+                //if (isset($componentDefinition['arguments'])) {
+                    //$newComponent = $this->createComponent($componentDefinition['name'], $componentDefinition['arguments']);
+                //} else {
+                    //$newComponent = $this->createComponent($componentDefinition['name']);
+                //}
+                //if ($newComponent) {
+                    //$arguments['components'][] = $newComponent;
+                //}
+            //}
+        //}
+
+        $newComponent = $this->createComponent($componentName, $parsedArguments);
+        
+        //echo '<pre>After';
+        //print_r($newComponent);
+        //echo '</pre>';
 
         if ($newComponent) {
             $this->components[] = $newComponent;
