@@ -30,6 +30,10 @@ abstract class PostDataSource extends BaseDataSource {
 
     protected function getFromItem(string $name)
     {
+        //echo '<pre>';
+        //print_r($this);
+        //print_r($name);
+        //echo '</pre>';
         if (property_exists($this, $name)) {
             return $this->$name;
         } elseif (property_exists($this->item, $name)) {

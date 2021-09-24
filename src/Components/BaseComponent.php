@@ -46,8 +46,19 @@ abstract class BaseComponent extends BasePost implements IRenderable {
                 return parent::getField($this->data['field_overrides'][$name]['field']);
             }
         }
+        $parentResult = parent::getField($name, $source);
 
-        return parent::getField($name, $source);
+        if (empty($parentResult) &&
+            !empty($this->data['field_fallback']) &&
+            !empty($this->data['field_fallback'][$name])) {
+            if (is_array($this->data['field_fallback'][$name])) {
+                return parent::getField($this->data['field_fallback'][$name]['field'], $this->data['field_fallback'][$name]['id']);
+            } else {
+                return parent::getField($this->data['field_fallback'][$name]['field']);
+            }
+        }
+
+        return $parentResult;
     }
 
     protected function debug($data) {

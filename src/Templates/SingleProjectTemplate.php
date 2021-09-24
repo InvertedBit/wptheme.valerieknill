@@ -1,7 +1,9 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Templates;
 
+use AlexScherer\WpthemeValerieknill\Data\ProjectPostDataSource;
 use AlexScherer\WpthemeValerieknill\Data\RepeaterDataSource;
+use AlexScherer\WpthemeValerieknill\Data\SimpleDataSource;
 
 class SingleProjectTemplate extends BaseTemplate {
 
@@ -12,7 +14,7 @@ class SingleProjectTemplate extends BaseTemplate {
     protected function prepareComponents()
     {
         $headerArguments = [
-            'field_overrides' => [
+            'field_fallback' => [
                 'header_image' => [
                     'field' => 'archive_project_header_image',
                     'id' => 'option',
@@ -39,6 +41,16 @@ class SingleProjectTemplate extends BaseTemplate {
 
         $mainSectionComponents = [];
 
+        $mainSectionComponents[] = [
+            'name' => 'TextComponent',
+            'arguments' => [
+                'datasource' => new ProjectPostDataSource([
+                    'id' => get_the_ID()
+                ]),
+                'field' => 'logline',
+                'container' => true,
+            ]
+        ];
 
         $awardsGridComponents = [];
 
