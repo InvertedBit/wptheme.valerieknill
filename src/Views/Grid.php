@@ -1,4 +1,7 @@
 <div class="uk-container uk-margin-large-top">
+<?php if (!empty($this->data['title'])): ?>
+<h3 class="uk-heading-small"><?php echo $this->data['title']; ?></h3>
+<?php endif; ?>
 <?php if (!empty($this->data['filter']) && count($this->dataSource->getFromList('terms')) > 0): ?>
     <div data-uk-filter="target: .filter-container">
         <ul class="uk-subnav uk-subnav-pill">
