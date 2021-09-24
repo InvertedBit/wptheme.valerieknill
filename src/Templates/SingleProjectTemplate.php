@@ -32,6 +32,17 @@ class SingleProjectTemplate extends BaseTemplate {
 
         $topSectionComponents = [];
 
+        $topSectionComponents[] = [
+            'name' => 'MediaComponent',
+            'arguments' => [
+                'datasource' => new ProjectPostDataSource([
+                    'id' => get_the_ID()
+                ]),
+                'field' => 'eyecatcher',
+                'container' => true
+            ]
+        ];
+
 
         $this->addComponent('SectionComponent', [
             'style' => 'secondary',
