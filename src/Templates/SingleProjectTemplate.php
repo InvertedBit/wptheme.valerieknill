@@ -98,8 +98,9 @@ class SingleProjectTemplate extends BaseTemplate {
                     's' => 1,
                     'm' => 2
                 ],
+                'container' => true,
                 'div-options' => [
-                    'TableComponent' => [
+                    'Table' => [
                         'flex' => [
                             'first@s',
                             'last@m'
@@ -144,6 +145,7 @@ class SingleProjectTemplate extends BaseTemplate {
                     'name' => 'PlaqueCardComponent',
                     'arguments' => []
                 ],
+                'container' => true,
                 'cols' => [
                     'xs' => 1,
                     's' => 2,

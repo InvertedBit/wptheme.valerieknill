@@ -1,4 +1,6 @@
+<?php if ($this->data['container']): ?>
 <div class="uk-container uk-margin-large-top">
+<?php endif; ?>
 <?php if (!empty($this->data['title'])): ?>
 <h3 class="uk-heading-small"><?php echo $this->data['title']; ?></h3>
 <?php endif; ?>
@@ -12,12 +14,12 @@
         </ul>
 <?php endif; ?>
         <div class="filter-container <?php echo $this->data['uk-child-width']; ?>" data-uk-grid>
-<?php foreach ($this->data['children'] as $child): ?>
+<?php foreach ($this->data['children'] as $key => $child): ?>
 <?php if ($child->isValid()): ?>
 <?php if (!empty($this->data['filter'])): ?>
-            <div class="<?php foreach ($child->dataSource->terms[$this->data['filter']['taxonomy']] as $term) { echo $term->slug . ' '; } ?>">
+            <div class="<?php echo (empty($this->data['div-classes'][$key])?'':$this->data['div-classes'][$key]); foreach ($child->dataSource->terms[$this->data['filter']['taxonomy']] as $term) { echo $term->slug . ' '; } ?>">
 <?php else: ?>
-            <div>
+            <div class="<?php echo (empty($this->data['div-classes'][$key])?'':$this->data['div-classes'][$key]); ?>">
 <?php endif; ?>
 
 <?php $child->render(); ?>
@@ -29,4 +31,7 @@
 <?php if (!empty($this->data['filter'])): ?>
     </div>
 <?php endif; ?>
+
+<?php if ($this->data['container']): ?>
 </div>
+<?php endif; ?>

@@ -21,6 +21,10 @@ abstract class BaseComponent extends BasePost implements IRenderable {
         parent::__construct($postId);
     }
 
+    public function getName() {
+        return $this->name;
+    }
+
     protected function getViewPath($name = false) {
         return get_template_directory() . '/src/Views/' . ($name ? $name : $this->name) . '.php';
     }

@@ -23,43 +23,85 @@ class GridComponent extends BaseViewComponent {
 
     
     protected function initialize() {
+        //$this->debug($this->data['cols']);
         if (!empty($this->data['components'])) {
             //$this->debug($this->data['components']);
             $this->data['children'] = $this->data['components'];
-            return;
-        }
-        if (empty($this->data['childComponent']) ||
-            empty($this->data['datasource']) ||
-            !is_a(
-                $this->data['datasource'],
-                GridComponent::ITERATIVEDATASOURCE_BASECLASS)) {
-                return;
-        }
-        $this->setWidthClasses();
-        $this->childDefinition = $this->data['childComponent'];
-        $this->dataSource = $this->data['datasource'];
-        
-        if ($this->dataSource->isEmpty()) {
-            return;
-        }
-
-
-        $this->data['children'] = [];
-        $childData = [];
-        if (!empty($this->data['childComponent']['arguments'])) {
-            $childData = $this->data['childComponent']['arguments'];
-        }
-        if (!empty($this->data['discipline'])) {
-            $childData['discipline'] = $this->data['discipline'];
-        }
-        do {
-            $newChild = $this->createChildComponent($this->dataSource->getItem(), $childData);
-            if ($newChild) {
-                $this->data['children'][] = $newChild;
-            } else {
-                $this->debug('child not created');
+        } else {
+            if (empty($this->data['childComponent']) ||
+                empty($this->data['datasource']) ||
+                !is_a(
+                    $this->data['datasource'],
+                    GridComponent::ITERATIVEDATASOURCE_BASECLASS)) {
+                    return;
             }
-        } while ($this->dataSource->nextItem());
+            $this->childDefinition = $this->data['childComponent'];
+            $this->dataSource = $this->data['datasource'];
+            
+            if ($this->dataSource->isEmpty()) {
+                return;
+            }
+
+            if (!isset($this->data['container'])) {
+                $this->data['container'] = false;
+            }
+
+
+            $this->data['children'] = [];
+            $childData = [];
+            if (!empty($this->data['childComponent']['arguments'])) {
+                $childData = $this->data['childComponent']['arguments'];
+            }
+            if (!empty($this->data['discipline'])) {
+                $childData['discipline'] = $this->data['discipline'];
+            }
+            do {
+                $newChild = $this->createChildComponent($this->dataSource->getItem(), $childData);
+                if ($newChild) {
+                    $this->data['children'][] = $newChild;
+                } else {
+                    $this->debug('child not created');
+                }
+            } while ($this->dataSource->nextItem());
+        }
+
+        $this->setWidthClasses();
+        $this->compileDivClasses();
+        //$this->debug($this->data['div-classes']);
+
+    }
+
+    protected function compileDivClasses() {
+        if (!empty($this->data['children']) && !empty($this->data['div-options'])) {
+            $this->data['div-classes'] = [];
+            foreach ($this->data['div-options'] as $name => $options) {
+                foreach ($this->data['children'] as $key => $child) {
+                    if ($child->getName() === $name) {
+                        $this->data['div-classes'][$key] = $this->generateClassString($options);
+                    }
+                }
+            }
+        }
+    }
+
+    protected function generateClassString($options) {
+        $classString = '';
+
+        foreach ($options as $type => $suffixes) {
+            $prefix = '';
+            switch($type) {
+                case 'flex':
+                    $prefix = 'uk-flex-';
+                    break;
+                default:
+                    $prefix = $type . '-';
+            }
+            foreach ($suffixes as $suffix) {
+                $classString .= $prefix . $suffix . ' ';
+            }
+        }
+
+        return $classString;
     }
 
     protected function setWidthClasses() {
