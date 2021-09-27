@@ -190,6 +190,41 @@ class SingleProjectTemplate extends BaseTemplate {
 
         $reviewSectionComponents = [];
 
+        $reviewSectionComponents[] = [
+            'name' => 'GridComponent',
+            'arguments' => [
+                'title' => __('Reviews', 'wptheme.valerieknill'),
+                'datasource' => new RepeaterDataSource([
+                    'field' => 'reviews',
+                    'source' => get_the_ID()
+                ]),
+                'childComponent' => [
+                    'name' => 'QuoteComponent',
+                    'arguments' => [
+                        'fields' => [
+                            'quote' => 'content',
+                            'quotee' => 'name',
+                            'sourceType' => 'source',
+                            'sourceWeb' => 'source_web',
+                            'sourcePrint' => 'source_print'
+                        ]
+                    ]
+                ],
+                'cols' => [
+                    'xs' => 1,
+                    's' => 2,
+                ]
+            ]
+        ];
+
+        $reviewContainer = [
+            [
+                'name' => 'ContainerComponent',
+                'arguments' => [
+                    'components' => $reviewSectionComponents
+                ]
+            ]
+        ];
 
 
         $this->addComponent('SectionComponent', [
@@ -198,7 +233,7 @@ class SingleProjectTemplate extends BaseTemplate {
                     'secondary'
                 ]
             ],
-            'components' => $reviewSectionComponents
+            'components' => $reviewContainer
         ]);
 
 
