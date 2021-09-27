@@ -17,7 +17,9 @@ class HomeTemplate extends BaseTemplate {
         ]);
 
         if ($this->discipline === 'painting') {
-            $this->addComponent('SliderHeaderComponent');
+            $this->addComponent('SliderHeaderComponent', [
+                'datasource' => $dataSource
+            ]);
         } else {
             $this->addComponent('VideoHeaderComponent', [
                 'datasource' => $dataSource

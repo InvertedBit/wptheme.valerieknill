@@ -8,18 +8,25 @@ class SliderHeaderComponent extends HeaderComponent {
         $this->initialize();
     }
 
+    protected function initializeFields()
+    {
+        $this->fields = [
+            'header_images'
+        ];
+    }
     
     protected function initialize() {
-        $headerImages = $this->getField('header_images');
-        $imageArray = [];
-        foreach($headerImages as $image) {
-            if (empty($image['image'])) {
-                continue;
+        if (!empty($this->data['header_images'])) {
+            $imageArray = [];
+            foreach($this->data['header_images'] as $image) {
+                if (empty($image['image'])) {
+                    continue;
+                }
+                $newImg = $image['image'];
+                $imageArray[] = $newImg;
             }
-            $newImg = $image['image'];
-            $imageArray[] = $newImg;
+            $this->data['images'] = $imageArray;
         }
-        $this->data['images'] = $imageArray;
     }
 
     public function isValid() {
