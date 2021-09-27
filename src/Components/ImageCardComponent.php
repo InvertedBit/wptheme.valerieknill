@@ -3,12 +3,12 @@ namespace AlexScherer\WpthemeValerieknill\Components;
 
 use AlexScherer\WpthemeValerieknill\Data\BaseDataSource;
 
-class ImageCardComponent extends BaseViewComponent {
+class ImageCardComponent extends BaseCardComponent {
 
     protected BaseDataSource $dataSource;
 
     public function __construct(BaseDataSource $dataSource, $data = []) {
-        parent::__construct('ImageCard', $data);
+        parent::__construct('ImageCard', $dataSource, $data);
         $this->dataSource = $dataSource;
     }
 

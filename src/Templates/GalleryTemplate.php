@@ -73,12 +73,14 @@ class GalleryTemplate extends BaseTemplate {
                             'datasource' => new TaxonomyDataSource([
                                 'taxonomy' => 'series'
                             ]),
-                            'childComponent' => 'ImageCardComponent',
-                            'arguments' => [
-                                'fields' => [
-                                    'title' => 'name',
-                                    'image' => 'title_image',
-                                    'url' => ['get_term_link' => 'item']
+                            'childComponent' => [
+                                'name' => 'ImageCardComponent',
+                                'arguments' => [
+                                    'fields' => [
+                                        'title' => 'name',
+                                        'image' => 'title_image',
+                                        'url' => ['get_term_link' => 'item']
+                                    ]
                                 ]
                             ]
                         ]
