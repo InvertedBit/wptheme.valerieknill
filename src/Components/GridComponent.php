@@ -9,6 +9,8 @@ class GridComponent extends BaseViewComponent {
     protected const COMPONENT_NAMESPACE = 'AlexScherer\\WpthemeValerieknill\\Components\\';
     protected const COMPONENT_BASECLASS = 'AlexScherer\\WpthemeValerieknill\\Components\\BaseComponent';
 
+    protected const CARDCOMPONENT_BASECLASS = 'AlexScherer\\WpthemeValerieknill\\Components\\BaseCardComponent';
+
     protected const ITERATIVEDATASOURCE_BASECLASS = 'AlexScherer\\WpthemeValerieknill\\Data\\BaseIterativeDataSource';
 
 
@@ -127,7 +129,12 @@ class GridComponent extends BaseViewComponent {
             return false;
         }
 
-        return new $fullChildClassName($dataSource, $data);
+        if (is_a($fullChildClassName, GridComponent::CARDCOMPONENT_BASECLASS, true)) {
+            return new $fullChildClassName($dataSource, $data);
+        } else {
+            $data['datasource'] = $dataSource;
+            return new $fullChildClassName($data);
+        }
     }
 
     public function isValid() {

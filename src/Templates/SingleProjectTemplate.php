@@ -3,7 +3,6 @@ namespace AlexScherer\WpthemeValerieknill\Templates;
 
 use AlexScherer\WpthemeValerieknill\Data\ProjectPostDataSource;
 use AlexScherer\WpthemeValerieknill\Data\RepeaterDataSource;
-use AlexScherer\WpthemeValerieknill\Data\SimpleDataSource;
 
 class SingleProjectTemplate extends BaseTemplate {
 
@@ -33,33 +32,59 @@ class SingleProjectTemplate extends BaseTemplate {
         $topSectionComponents = [];
 
         $topSectionComponents[] = [
+            'name' => 'BreadcrumbComponent',
+            'arguments' => []
+        ];
+
+        $topSectionComponents[] = [
             'name' => 'MediaComponent',
             'arguments' => [
                 'datasource' => new ProjectPostDataSource([
                     'id' => get_the_ID()
                 ]),
-                'field' => 'eyecatcher',
-                'container' => true
+                'field' => 'eyecatcher'
             ]
         ];
 
 
+
+        $topSectionContainer = [
+            [
+                'name' => 'ContainerComponent',
+                'arguments' => [
+                    'components' => $topSectionComponents,
+                    'customClasses' => [
+                        'main-section'
+                    ]
+                ]
+            ]
+        ];
+
         $this->addComponent('SectionComponent', [
-            'style' => 'secondary',
-            'components' => $topSectionComponents
+            'components' => $topSectionContainer,
+            'style' => [
+                'section' => [
+                    'secondary'
+                ]
+            ],
+            'customClasses' => [
+                'trailer-section'
+            ]
         ]);
 
 
-        $mainSectionComponents = [];
+        $loglineComponents = [];
 
-        $mainSectionComponents[] = [
+        $loglineComponents[] = [
             'name' => 'TextComponent',
             'arguments' => [
                 'datasource' => new ProjectPostDataSource([
                     'id' => get_the_ID()
                 ]),
                 'field' => 'logline',
-                'container' => true,
+                'customClasses' => [
+                    'uk-dropcap'
+                ]
             ]
         ];
 
@@ -87,7 +112,6 @@ class SingleProjectTemplate extends BaseTemplate {
                 'cols' => [
                     'xs' => 1,
                     's' => 2,
-                    'm' => 3
                 ]
             ]
         ];
@@ -105,15 +129,24 @@ class SingleProjectTemplate extends BaseTemplate {
                     'name'
                 ],
                 'heading-col' => 'role',
-                'style' => [
+                'options' => [
                     'divider',
                     'heading-vertical'
                 ]
             ]
         ];
 
-
         $mainSectionComponents[] = [
+            'name' => 'ContainerComponent',
+            'arguments' => [
+                'components' => $loglineComponents,
+                'customClasses' => [
+                    'project-logline'
+                ]
+            ]
+        ];
+
+        $awardsGrid[] = [
             'name' => 'GridComponent',
             'arguments' => [
                 'components' => $awardsGridComponents,
@@ -134,22 +167,73 @@ class SingleProjectTemplate extends BaseTemplate {
         ];
 
 
-
+        $mainSectionComponents[] = [
+            'name' => 'ContainerComponent',
+            'arguments' => [
+                'components' => $awardsGrid,
+                'customClasses' => [
+                    'project-details'
+                ]
+            ]
+        ];
 
 
 
         $this->addComponent('SectionComponent', [
-            'style' => 'primary',
+            'style' => [
+                'section' => [
+                    'primary'
+                ]
+            ],
             'components' => $mainSectionComponents
         ]);
 
         $reviewSectionComponents = [];
 
+        $reviewSectionComponents[] = [
+            'name' => 'GridComponent',
+            'arguments' => [
+                'title' => __('Reviews', 'wptheme.valerieknill'),
+                'datasource' => new RepeaterDataSource([
+                    'field' => 'reviews',
+                    'source' => get_the_ID()
+                ]),
+                'childComponent' => [
+                    'name' => 'QuoteComponent',
+                    'arguments' => [
+                        'fields' => [
+                            'quote' => 'content',
+                            'quotee' => 'name',
+                            'sourceType' => 'source',
+                            'sourceWeb' => 'source_web',
+                            'sourcePrint' => 'source_print'
+                        ]
+                    ]
+                ],
+                'cols' => [
+                    'xs' => 1,
+                    's' => 2,
+                ]
+            ]
+        ];
+
+        $reviewContainer = [
+            [
+                'name' => 'ContainerComponent',
+                'arguments' => [
+                    'components' => $reviewSectionComponents
+                ]
+            ]
+        ];
 
 
         $this->addComponent('SectionComponent', [
-            'style' => 'secondary',
-            'components' => $reviewSectionComponents
+            'style' => [
+                'section' => [
+                    'secondary'
+                ]
+            ],
+            'components' => $reviewContainer
         ]);
 
 
@@ -177,10 +261,23 @@ class SingleProjectTemplate extends BaseTemplate {
             ]
         ];
 
+        $festivalContainer = [
+            [
+                'name' => 'ContainerComponent',
+                'arguments' => [
+                    'components' => $festivalSectionComponents,
+                ]
+            ]
+        ];
+
 
         $this->addComponent('SectionComponent', [
-            'style' => 'primary',
-            'components' => $festivalSectionComponents
+            'style' => [
+                'section' => [
+                    'primary'
+                ]
+            ],
+            'components' => $festivalContainer
         ]);
 
 

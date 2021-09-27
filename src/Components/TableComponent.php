@@ -51,7 +51,7 @@ class TableComponent extends BaseViewComponent {
                     'type' => 'cell',
                     'tag' => 'td'
                 ];
-                if (in_array('heading-vertical', $this->data['style']) && $this->data['heading-col'] === $field) {
+                if (in_array('heading-vertical', $this->data['options']) && $this->data['heading-col'] === $field) {
                     $cell['type'] = 'heading';
                     $cell['tag'] = 'th';
                 }

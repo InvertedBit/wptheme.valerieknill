@@ -18,17 +18,15 @@ class SectionComponent extends BaseViewComponent {
                 unset($this->data['components'][$key]);
             }
         }
-        $this->data['classes'] = [
-            'uk-section'
-        ];
-        if (empty($this->data['style']) || $this->data['style'] === 'primary') {
-            $this->data['classes'][] = 'uk-section-primary';
-        } elseif ($this->data['style'] === 'secondary') {
-            $this->data['classes'][] = 'uk-section-secondary';
-        } elseif ($this->data['style'] === 'muted') {
-            $this->data['classes'][] = 'uk-section-muted';
-        }
-        $this->data['classes'][] = 'uk-light';
+        //$this->data['styleClasses'] = 'uk-section ';
+        //if (empty($this->data['style']) || $this->data['style'] === 'primary') {
+            //$this->data['classes'] .= 'uk-section-primary ';
+        //} elseif ($this->data['style'] === 'secondary') {
+            //$this->data['classes'] .= 'uk-section-secondary ';
+        //} elseif ($this->data['style'] === 'muted') {
+            //$this->data['classes'][] = 'uk-section-muted';
+        //}
+        //$this->data['classes'][] = 'uk-light';
     }
 
     public function isValid() {
