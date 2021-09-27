@@ -1,6 +1,3 @@
-<?php if ($this->data['container']): ?>
-<div class="uk-container uk-margin-large-top">
-<?php endif; ?>
 <?php if (!empty($this->data['title'])): ?>
 <h3 class="uk-heading-small"><?php echo $this->data['title']; ?></h3>
 <?php endif; ?>
@@ -30,8 +27,4 @@
         </div>
 <?php if (!empty($this->data['filter'])): ?>
     </div>
-<?php endif; ?>
-
-<?php if ($this->data['container']): ?>
-</div>
 <?php endif; ?>
