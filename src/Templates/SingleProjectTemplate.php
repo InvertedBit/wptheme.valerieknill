@@ -112,7 +112,6 @@ class SingleProjectTemplate extends BaseTemplate {
                 'cols' => [
                     'xs' => 1,
                     's' => 2,
-                    'm' => 3
                 ]
             ]
         ];
@@ -227,6 +226,15 @@ class SingleProjectTemplate extends BaseTemplate {
             ]
         ];
 
+        $festivalContainer = [
+            [
+                'name' => 'ContainerComponent',
+                'arguments' => [
+                    'components' => $festivalSectionComponents,
+                ]
+            ]
+        ];
+
 
         $this->addComponent('SectionComponent', [
             'style' => [
@@ -234,7 +242,7 @@ class SingleProjectTemplate extends BaseTemplate {
                     'primary'
                 ]
             ],
-            'components' => $festivalSectionComponents
+            'components' => $festivalContainer
         ]);
 
 
