@@ -82,7 +82,9 @@ class SingleProjectTemplate extends BaseTemplate {
                     'id' => get_the_ID()
                 ]),
                 'field' => 'logline',
-                'container' => true,
+                'customClasses' => [
+                    'uk-dropcap'
+                ]
             ]
         ];
 
