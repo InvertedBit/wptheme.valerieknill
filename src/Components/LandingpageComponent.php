@@ -3,28 +3,32 @@ namespace AlexScherer\WpthemeValerieknill\Components;
 
 class LandingpageComponent extends HeaderComponent {
 
-    public function __construct() {
-        parent::__construct('Landingpage', []);
+    public function __construct($parameters = []) {
+        parent::__construct('Landingpage', $parameters);
         $this->initialize();
     }
 
+    protected function initializeFields()
+    {
+        $this->fields = [
+            'title',
+            'links'
+        ];
+    }
     
     protected function initialize() {
-        $this->data['title'] = $this->getField('title');
-        $links = $this->getField('links');
+        $links = $this->data['links'];
 
         $this->data['link_left'] = $links[0];
         $this->data['link_right'] = $links[1];
-
-
-        $siteHost = str_replace(['http://', 'https://'], '', get_site_url());
-
-        $this->data['paintingUrl'] = "http://painting." . $siteHost;
-        $this->data['moviesUrl'] = "http://movies." . $siteHost;
-        
     }
 
     public function isValid() {
+        if (empty($this->data['link_left']) ||
+            empty($this->data['link_right']) ||
+            empty($this->data['title'])) {
+            return false;
+        }
         return true;
     }
 }
