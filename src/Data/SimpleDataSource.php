@@ -11,12 +11,6 @@ class SimpleDataSource extends BaseDataSource {
         $this->item = $this->parameters['item'];
     }
 
-    protected function getField($name) {
-        if (function_exists('get_field')) {
-            return get_field($name, $this->item->ID);
-        }
-    }
-
     protected function getFromItem(string $name)
     {
         if (property_exists($this, $name)) {

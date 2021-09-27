@@ -10,10 +10,8 @@ abstract class BaseIterativeDataSource extends BaseDataSource {
     protected int $iterator;
 
     public function __construct(string $name, array $parameters = []) {
+        $this->iterator = 0;
         parent::__construct($name, $parameters);
-        if (!empty($this->items) && is_array($this->items)) {
-            $this->iterator = 0;
-        }
     }
 
     public function getItem() {
@@ -38,6 +36,9 @@ abstract class BaseIterativeDataSource extends BaseDataSource {
     }
 
     public function nextItem() : bool {
+        if (empty($this->items) || !is_array($this->items)) {
+            return false;
+        }
         if ($this->iterator < count($this->items) - 1) {
             $this->iterator++;
             return true;
@@ -48,6 +49,6 @@ abstract class BaseIterativeDataSource extends BaseDataSource {
     }
 
     public function isEmpty() : bool {
-        return count($this->items) === 0;
+        return empty($this->items) || count($this->items) === 0;
     }
 }

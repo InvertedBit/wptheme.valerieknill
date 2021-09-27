@@ -2,27 +2,25 @@
 namespace AlexScherer\WpthemeValerieknill\Components;
 
 use AlexScherer\WpthemeValerieknill\Data\BaseDataSource;
-use AlexScherer\WpthemeValerieknill\Data\BaseIterativeDataSource;
 
-class GridComponent extends BaseViewComponent {
+class GridComponent extends BaseIterativeViewComponent {
 
     protected const COMPONENT_NAMESPACE = 'AlexScherer\\WpthemeValerieknill\\Components\\';
     protected const COMPONENT_BASECLASS = 'AlexScherer\\WpthemeValerieknill\\Components\\BaseComponent';
 
     protected const CARDCOMPONENT_BASECLASS = 'AlexScherer\\WpthemeValerieknill\\Components\\BaseCardComponent';
 
-    protected const ITERATIVEDATASOURCE_BASECLASS = 'AlexScherer\\WpthemeValerieknill\\Data\\BaseIterativeDataSource';
-
-
     protected $childDefinition;
-
-    protected BaseIterativeDataSource $dataSource;
 
     public function __construct($data = []) {
         parent::__construct('Grid', $data);
         $this->initialize();
     }
 
+    protected function initializeFields()
+    {
+        $this->fields = [];
+    }
     
     protected function initialize() {
         //$this->debug($this->data['cols']);

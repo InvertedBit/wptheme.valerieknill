@@ -1,11 +1,11 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Components;
 
-use AlexScherer\WpthemeValerieknill\Data\BaseDataSource;
+use AlexScherer\WpthemeValerieknill\Data\BaseIterativeDataSource;
 use AlexScherer\WpthemeValerieknill\Rendering\IRenderable;
 
-abstract class BaseComponent extends BasePost implements IRenderable {
-    protected const DATASOURCE_BASECLASS = 'AlexScherer\\WpthemeValerieknill\\Data\\BaseDataSource';
+abstract class BaseIterativeComponent extends BasePost implements IRenderable {
+    protected const ITERATIVEDATASOURCE_BASECLASS = 'AlexScherer\\WpthemeValerieknill\\Data\\BaseIterativeDataSource';
 
     protected $name;
     protected $data;
@@ -15,7 +15,7 @@ abstract class BaseComponent extends BasePost implements IRenderable {
 
     protected $preRender = '';
 
-    protected BaseDataSource $dataSource;
+    protected BaseIterativeDataSource $dataSource;
 
     public function __construct($name, $type, $data = [], $postId = -1)
     {
@@ -35,7 +35,7 @@ abstract class BaseComponent extends BasePost implements IRenderable {
 
     protected function initializeDataSource() {
         if (!empty($this->data['datasource']) &&
-            is_a($this->data['datasource'], BaseComponent::DATASOURCE_BASECLASS, true)) {
+            is_a($this->data['datasource'], BaseIterativeComponent::ITERATIVEDATASOURCE_BASECLASS, true)) {
             $this->dataSource = $this->data['datasource'];
         }
     }
@@ -52,24 +52,6 @@ abstract class BaseComponent extends BasePost implements IRenderable {
 
     protected function hasDataSource() {
         return isset($this->dataSource);
-    }
-
-    protected function getFieldValue($field) {
-        $fieldName = $this->getFieldName($field);
-        if (is_array($fieldName)) {
-            $functionName = array_key_first($fieldName);
-            $parameter = $fieldName[$functionName];
-            if ($parameter === 'item') {
-                $parameter = $this->dataSource->getItem();
-            } else {
-                $parameter = $this->dataSource->{$parameter};
-            }
-            if (function_exists($functionName)) {
-                return $functionName($parameter);
-            }
-        }
-
-        return $this->dataSource->{$this->getFieldName($field)};
     }
 
     protected function getFieldName($field) {
@@ -154,3 +136,4 @@ abstract class BaseComponent extends BasePost implements IRenderable {
 
     abstract public function isValid();
 }
+

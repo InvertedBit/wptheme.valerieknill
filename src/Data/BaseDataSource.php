@@ -16,6 +16,20 @@ abstract class BaseDataSource {
         return $this->name;
     }
 
+    public function getItem() {
+        return $this->item;
+    }
+
+    protected function getField($name, $source = false) {
+        if (function_exists('get_field')) {
+            if ($source) {
+                return get_field($name, $source);
+            } else {
+                return get_field($name, $this->item->ID);
+            }
+        }
+    }
+
     protected abstract function loadData();
 
     protected abstract function getFromItem(string $name);

@@ -1,6 +1,10 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Templates;
 
+use AlexScherer\WpthemeValerieknill\Data\GeneralPostDataSource;
+use AlexScherer\WpthemeValerieknill\Data\TaxonomyDataSource;
+use AlexScherer\WpthemeValerieknill\Data\TermDataSource;
+
 class GalleryTemplate extends BaseTemplate {
 
     public function __construct($parameters) {
@@ -11,15 +15,29 @@ class GalleryTemplate extends BaseTemplate {
     {
         $headerArguments = [];
         if (!empty($this->parameters['type']) && $this->parameters['type'] === 'taxonomy') {
+            //$headerArguments = [
+            //'field_overrides' => [
+                //'header_image' => [
+                    //'field' => 'title_image',
+                    //'id' => get_queried_object()
+                //]
+            //]
+        //];
             $headerArguments = [
-            'field_overrides' => [
-                'header_image' => [
-                    'field' => 'title_image',
-                    'id' => get_queried_object()
+                'datasource' => new TermDataSource([
+                    'item' => get_queried_object()
+                ]),
+                'fields' => [
+                    'header_image' => 'title_image'
                 ]
-            ]
-        ];
+            ];
 
+        } else {
+            $headerArguments = [
+                'datasource' => new GeneralPostDataSource([
+                    'id' => get_the_ID()
+                ])
+            ];
         }
 
         $this->addComponent('SlimHeaderComponent', $headerArguments);
@@ -42,11 +60,27 @@ class GalleryTemplate extends BaseTemplate {
                 
             } elseif ($this->parameters['type'] === 'page') {
                 if ($this->discipline === 'painting') {
+                    //$mainSectionComponents[] = [
+                        //'name' => 'TaxonomyGridComponent',
+                        //'arguments' => [
+                            //'taxonomy' => 'series',
+                            //'filter' => false
+                        //]
+                    //];
                     $mainSectionComponents[] = [
-                        'name' => 'TaxonomyGridComponent',
+                        'name' => 'GridComponent',
                         'arguments' => [
-                            'taxonomy' => 'series',
-                            'filter' => false
+                            'datasource' => new TaxonomyDataSource([
+                                'taxonomy' => 'series'
+                            ]),
+                            'childComponent' => 'ImageCardComponent',
+                            'arguments' => [
+                                'fields' => [
+                                    'title' => 'name',
+                                    'image' => 'title_image',
+                                    'url' => ['get_term_link' => 'item']
+                                ]
+                            ]
                         ]
                     ];
                 }
@@ -55,8 +89,19 @@ class GalleryTemplate extends BaseTemplate {
         }
 
         $this->addComponent('SectionComponent', [
-            'style' => 'secondary',
-            'components' => $mainSectionComponents
+            'style' => [
+                'section' => [
+                    'secondary'
+                ]
+            ],
+            'components' => [
+                [
+                    'name' => 'ContainerComponent',
+                    'arguments' => [
+                        'components' => $mainSectionComponents
+                    ]
+                ]
+            ]
         ]);
         $this->addComponent('FooterComponent');
     }
