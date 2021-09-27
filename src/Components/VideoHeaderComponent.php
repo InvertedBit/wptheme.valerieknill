@@ -5,15 +5,15 @@ class VideoHeaderComponent extends HeaderComponent {
 
     public function __construct($data = []) {
         parent::__construct('VideoHeader', $data);
-        $this->initialize();
     }
 
+    protected function initializeFields()
+    {
+        $this->fields = [
+            'header_video'
+        ];
+    }
     
-    protected function initialize() {
-        $headerVideo = $this->getField('header_video');
-        $this->data['header_video'] = $headerVideo;
-    }
-
     public function isValid() {
         if (empty($this->data['header_video'])) {
             return false;

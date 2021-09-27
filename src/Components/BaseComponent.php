@@ -1,14 +1,21 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Components;
 
+use AlexScherer\WpthemeValerieknill\Data\BaseDataSource;
 use AlexScherer\WpthemeValerieknill\Rendering\IRenderable;
 
 abstract class BaseComponent extends BasePost implements IRenderable {
+    protected const DATASOURCE_BASECLASS = 'AlexScherer\\WpthemeValerieknill\\Data\\BaseDataSource';
+
     protected $name;
     protected $data;
     protected $type;
 
+    protected $fields = [];
+
     protected $preRender = '';
+
+    protected BaseDataSource $dataSource;
 
     public function __construct($name, $type, $data = [], $postId = -1)
     {
@@ -19,6 +26,41 @@ abstract class BaseComponent extends BasePost implements IRenderable {
             $postId = get_the_ID();
         }
         parent::__construct($postId);
+        $this->initializeFields();
+        $this->initializeDataSource();
+        $this->loadData();
+    }
+
+    protected abstract function initializeFields();
+
+    protected function initializeDataSource() {
+        if (!empty($this->data['datasource']) &&
+            is_a($this->data['datasource'], BaseComponent::DATASOURCE_BASECLASS, true)) {
+            $this->dataSource = $this->data['datasource'];
+        }
+    }
+
+    protected function loadData() {
+        if ($this->hasDataSource()) {
+            foreach ($this->fields as $field) {
+                if (empty($this->data[$field])) {
+                    $this->data[$field] = $this->dataSource->{$this->getFieldName($field)};
+                }
+            }
+        }
+    }
+
+    protected function hasDataSource() {
+        return isset($this->dataSource);
+    }
+
+    protected function getFieldName($field) {
+        if (!empty($this->data['fields'])) {
+            if (!empty($this->data['fields'][$field])) {
+                return $this->data['fields'][$field];
+            }
+        }
+        return $field;
     }
 
     public function getName() {

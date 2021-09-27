@@ -11,21 +11,14 @@ class TextComponent extends BaseViewComponent {
 
     public function __construct($data = []) {
         parent::__construct('Text', $data);
-        $this->initialize();
     }
 
+    protected function initializeFields() {
+        $this->fields = [
+            'text'
+        ];
+    }
     
-    protected function initialize() {
-        if (!empty($this->data['datasource']) &&
-            is_a($this->data['datasource'], TextComponent::DATASOURCE_BASECLASS)) {
-            $this->dataSource = $this->data['datasource'];
-            if (!isset($this->data['text']) ||
-                empty($this->data['text'])) {
-                $this->data['text'] = $this->dataSource->{$this->data['field']};
-            }
-        }
-    }
-
     public function isValid() {
         if (empty($this->data['text'])) {
             return false;

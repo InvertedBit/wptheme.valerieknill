@@ -1,6 +1,7 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Components;
 
+
 class TitleComponent extends BaseViewComponent {
 
     public function __construct($data = []) {
@@ -8,14 +9,22 @@ class TitleComponent extends BaseViewComponent {
         $this->initialize();
     }
 
+    protected function initializeFields()
+    {
+        $this->fields = [
+            'title',
+            'layout',
+            'subtitle',
+            'introduction'
+        ];
+    }
     
     protected function initialize() {
-        $this->data['title'] = $this->getField('title');
-
-        $this->data['layout'] = $this->getField('layout');
-        $this->data['subtitle'] = $this->getField('subtitle');
-        $this->data['introduction'] = $this->getField('introduction');
-        
+        if ($this->hasDataSource()) {
+            foreach ($this->fields as $field) {
+                $this->data[$field] = $this->dataSource->{$this->getFieldName($field)};
+            }
+        }
     }
 
     public function isValid() {

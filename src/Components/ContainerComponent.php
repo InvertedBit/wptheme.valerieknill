@@ -11,6 +11,10 @@ class ContainerComponent extends BaseViewComponent {
         $this->initialize();
     }
 
+    protected function initializeFields()
+    {
+        $this->fields = [];
+    }
     
     protected function initialize() {
         //$this->debug($this->data['cols']);
