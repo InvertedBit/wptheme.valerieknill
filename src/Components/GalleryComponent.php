@@ -8,6 +8,10 @@ class GalleryComponent extends BaseViewComponent {
         $this->initialize();
     }
 
+    protected function initializeFields()
+    {
+        $this->fields = [];
+    }
     
     protected function initialize() {
         $this->data['entries'] = [];
