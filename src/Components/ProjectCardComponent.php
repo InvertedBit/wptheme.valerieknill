@@ -20,6 +20,14 @@ class ProjectCardComponent extends BaseCardComponent {
         //$this->debug($this->dataSource->terms);
     }
 
+    public function getTerms($taxonomy = '') {
+        if (empty($taxonomy)) {
+            return $this->dataSource->terms;
+        } elseif (!empty($this->dataSource->terms[$taxonomy])) {
+            return $this->dataSource->terms[$taxonomy];
+        }
+    }
+
     public function isValid() {
         //if (empty($this->data['entries'])) {
             //return false;

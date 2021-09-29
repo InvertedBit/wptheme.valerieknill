@@ -14,7 +14,7 @@
 <?php foreach ($this->data['children'] as $key => $child): ?>
 <?php if ($child->isValid()): ?>
 <?php if (!empty($this->data['filter'])): ?>
-            <div class="<?php echo (empty($this->data['div-classes'][$key])?'':$this->data['div-classes'][$key]); foreach ($child->dataSource->terms[$this->data['filter']['taxonomy']] as $term) { echo $term->slug . ' '; } ?>">
+            <div class="<?php echo (empty($this->data['div-classes'][$key])?'':$this->data['div-classes'][$key]); foreach ($child->getTerms($this->data['filter']['taxonomy']) as $term) { echo $term->slug . ' '; } ?>">
 <?php else: ?>
             <div class="<?php echo (empty($this->data['div-classes'][$key])?'':$this->data['div-classes'][$key]); ?>">
 <?php endif; ?>

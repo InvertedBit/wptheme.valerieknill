@@ -10,9 +10,7 @@ class GeneralPostDataSource extends PostDataSource {
     {
         if (!empty($this->parameters['item'])) {
             $this->item = $this->parameters['item'];
-            return;
-        }
-        if (!empty($this->parameters['id'])) {
+        } elseif (!empty($this->parameters['id'])) {
             $post = get_post($this->parameters['id']);
             if ($post) {
                 $this->item = $post;
