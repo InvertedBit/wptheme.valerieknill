@@ -5,11 +5,14 @@ use AlexScherer\WpthemeValerieknill\Data\BaseDataSource;
 
 class ImageCardComponent extends BaseCardComponent {
 
-    protected BaseDataSource $dataSource;
+    //protected BaseDataSource $dataSource;
 
     public function __construct(BaseDataSource $dataSource, $data = []) {
         parent::__construct('ImageCard', $dataSource, $data);
-        $this->dataSource = $dataSource;
+        //$this->dataSource = $dataSource;
+        //$
+        //$this->debug($this->data);
+        //$this->debug($this->dataSource);
     }
 
     protected function initializeFields()

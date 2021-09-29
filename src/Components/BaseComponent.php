@@ -44,7 +44,7 @@ abstract class BaseComponent extends BasePost implements IRenderable {
         if ($this->hasDataSource()) {
             foreach ($this->fields as $field) {
                 if (empty($this->data[$field])) {
-                    $this->data[$field] = $this->dataSource->{$this->getFieldName($field)};
+                    $this->data[$field] = $this->getFieldValue($field);
                 }
             }
         }

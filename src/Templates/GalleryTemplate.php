@@ -82,7 +82,11 @@ class GalleryTemplate extends BaseTemplate {
                                         'url' => ['get_term_link' => 'item']
                                     ]
                                 ]
-                            ]
+                            ],
+                            'cols' => [
+                                's' => 1,
+                                'm' => 2
+                            ],
                         ]
                     ];
                 }
