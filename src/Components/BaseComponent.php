@@ -46,6 +46,15 @@ abstract class BaseComponent extends BasePost implements IRenderable {
                 if (empty($this->data[$field])) {
                     $this->data[$field] = $this->getFieldValue($field);
                 }
+                if (empty($this->data[$field])) {
+                    if (!empty($this->data['field_fallback']) &&
+                        !empty($this->data['field_fallback'][$field])) {
+                        if (function_exists('get_field')) {
+                            $this->data[$field] = get_field($this->data['field_fallback'][$field]['field'], $this->data['field_fallback'][$field]['id']);
+                        }
+                        
+                    }
+                }
             }
         }
     }

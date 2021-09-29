@@ -1,20 +1,21 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Components;
 
-use AlexScherer\WpthemeValerieknill\Data\BaseIterativeDataSource;
 
-class TableComponent extends BaseViewComponent {
+class TableComponent extends BaseIterativeViewComponent {
 
     protected const ITERATIVEDATASOURCE_BASECLASS = 'AlexScherer\\WpthemeValerieknill\\Data\\BaseIterativeDataSource';
 
-
-    protected BaseIterativeDataSource $dataSource;
 
     public function __construct($data = []) {
         parent::__construct('Table', $data);
         $this->initialize();
     }
 
+    protected function initializeFields()
+    {
+        $this->fields = [];
+    }
     
     protected function initialize() {
         if (empty($this->data['datasource']) ||

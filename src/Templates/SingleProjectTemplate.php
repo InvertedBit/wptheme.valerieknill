@@ -1,7 +1,7 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Templates;
 
-use AlexScherer\WpthemeValerieknill\Data\ProjectPostDataSource;
+use AlexScherer\WpthemeValerieknill\Data\GeneralPostDataSource;
 use AlexScherer\WpthemeValerieknill\Data\RepeaterDataSource;
 
 class SingleProjectTemplate extends BaseTemplate {
@@ -12,7 +12,11 @@ class SingleProjectTemplate extends BaseTemplate {
 
     protected function prepareComponents()
     {
+        $postDataSource = new GeneralPostDataSource([
+                'id' => get_the_ID()
+            ]);
         $headerArguments = [
+            'datasource' => $postDataSource,
             'field_fallback' => [
                 'header_image' => [
                     'field' => 'archive_project_header_image',
@@ -39,9 +43,7 @@ class SingleProjectTemplate extends BaseTemplate {
         $topSectionComponents[] = [
             'name' => 'MediaComponent',
             'arguments' => [
-                'datasource' => new ProjectPostDataSource([
-                    'id' => get_the_ID()
-                ]),
+                'datasource' => $postDataSource,
                 'field' => 'eyecatcher'
             ]
         ];
@@ -78,10 +80,10 @@ class SingleProjectTemplate extends BaseTemplate {
         $loglineComponents[] = [
             'name' => 'TextComponent',
             'arguments' => [
-                'datasource' => new ProjectPostDataSource([
-                    'id' => get_the_ID()
-                ]),
-                'field' => 'logline',
+                'datasource' => $postDataSource,
+                'fields' => [
+                    'text' => 'logline'
+                ],
                 'customClasses' => [
                     'uk-dropcap'
                 ]
