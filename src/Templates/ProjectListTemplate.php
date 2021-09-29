@@ -1,6 +1,7 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Templates;
 
+use AlexScherer\WpthemeValerieknill\Data\OptionsDataSource;
 use AlexScherer\WpthemeValerieknill\Data\ProjectPostTypeDataSource;
 
 class ProjectListTemplate extends BaseTemplate {
@@ -11,17 +12,12 @@ class ProjectListTemplate extends BaseTemplate {
 
     protected function prepareComponents()
     {
-        $headerArguments = [
-            'field_overrides' => [
-                'header_image' => [
-                    'field' => 'archive_project_header_image',
-                    'id' => 'option'
-                ]
+        $this->addComponent('SlimHeaderComponent', [
+            'datasource' => new OptionsDataSource(),
+            'fields' => [
+                'header_image' => 'archive_project_header_image'
             ]
-        ];
-
-
-        $this->addComponent('SlimHeaderComponent', $headerArguments);
+        ]);
         $this->addComponent('NavigationComponent', [
             'menuLocation' => 'main-menu'
         ]);

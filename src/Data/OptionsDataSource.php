@@ -15,7 +15,7 @@ class OptionsDataSource extends BaseDataSource {
         if (property_exists($this, $name)) {
             return $this->$name;
         } else {
-            $this->getField($name, 'option');
+            return $this->getField($name, 'option');
         }
 
         return null;

@@ -10,6 +10,11 @@ class ProjectCardComponent extends BaseCardComponent {
         $this->initialize();
     }
 
+    protected function initializeFields()
+    {
+        $this->fields = [];
+    }
+
     
     protected function initialize() {
         //$this->debug($this->dataSource->terms);
