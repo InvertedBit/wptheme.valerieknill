@@ -1,6 +1,9 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Templates;
 
+use AlexScherer\WpthemeValerieknill\Data\GeneralPostDataSource;
+use AlexScherer\WpthemeValerieknill\Data\PostTypeDataSource;
+
 class ExhibitionsTemplate extends BaseTemplate {
 
     public function __construct($parameters) {
@@ -9,25 +12,54 @@ class ExhibitionsTemplate extends BaseTemplate {
 
     protected function prepareComponents()
     {
+        $currentPostDataSource = new GeneralPostDataSource([
+            'id' => get_the_ID()
+        ]);
 
-        $this->addComponent('SlimHeaderComponent');
+        $this->addComponent('SlimHeaderComponent', [
+            'datasource' => $currentPostDataSource
+        ]);
         $this->addComponent('NavigationComponent', [
             'menuLocation' => 'main-menu'
         ]);
 
-        $this->addComponent('SectionComponent', [
-            'style' => 'secondary',
-            'components' => [
-                [
-                    'name' => 'BreadcrumbComponent'
-                ],
-                [
-                    'name' => 'TitleComponent'
-                ],
-                [
-                    'name' => 'ExhibitionSliderComponent'
+        $mainContainerComponents = [
+            [
+                'name' => 'BreadcrumbComponent'
+            ],
+            [
+                'name' => 'TitleComponent',
+                'arguments' => [
+                    'datasource' => $currentPostDataSource
+                ]
+            ],
+            [
+                'name' => 'ExhibitionSliderComponent',
+                'arguments' => [
+                    'datasource' => new PostTypeDataSource([
+                        'post_type' => 'exhibition'
+                    ])
+                    
                 ]
             ]
+        ];
+
+        $mainContainer = [
+            [
+                'name' => 'ContainerComponent',
+                'arguments' => [
+                    'components' => $mainContainerComponents
+                ]
+            ]
+        ];
+
+        $this->addComponent('SectionComponent', [
+            'style' => [
+                'section' => [
+                    'secondary'
+                ]
+            ],
+            'components' => $mainContainer
         ]);
 
         $this->addComponent('FooterComponent');

@@ -3,41 +3,65 @@ namespace AlexScherer\WpthemeValerieknill\Components;
 
 use DateTime;
 
-class ExhibitionSliderComponent extends BaseViewComponent {
+class ExhibitionSliderComponent extends BaseIterativeViewComponent {
 
     public function __construct($data = []) {
         parent::__construct('ExhibitionSlider', $data);
         $this->initialize();
     }
+
+    protected function initializeFields()
+    {
+        $this->fields = [];
+    }
     
     protected function initialize() {
-        $args = [
-            'post_type' => 'exhibition',
-            'nopaging' => true
+        //$args = [
+            //'post_type' => 'exhibition',
+            //'nopaging' => true
 
-        ];
+        //];
 
-        $exhibitionPosts = get_posts($args);
+        //$exhibitionPosts = get_posts($args);
         $this->data['exhibitions'] = [];
         $this->data['exhibitions_closed'] = [];
         $nowTime = time();
-        foreach($exhibitionPosts as $exhibitionPost) {
-            $exhibitionEndDate = $this->getField('to', $exhibitionPost->ID);
+        do {
+            $exhibitionEndDate = $this->dataSource->to;
             $exhibitionEndDatetime = DateTime::createFromFormat("d/m/Y", $exhibitionEndDate);
             $exhibitionEndTime = $exhibitionEndDatetime->getTimestamp();
             $exhibition = [
-                    'name' => $this->getField('name', $exhibitionPost->ID),
-                    'description' => $this->getField('description', $exhibitionPost->ID),
-                    'address' => $this->getField('address', $exhibitionPost->ID),
-                    'from' => $this->getField('from', $exhibitionPost->ID),
-                    'to' => $this->getField('to', $exhibitionPost->ID)
-                ];
+                'name' => $this->dataSource->name,
+                'description' => $this->dataSource->description,
+                'address' => $this->dataSource->address,
+                'from' => $this->dataSource->from,
+                'to' => $this->dataSource->to,
+            ];
             if ($exhibitionEndTime >= $nowTime) {
                 $this->data['exhibitions'][] = $exhibition;
             } else {
                 $this->data['exhibitions_closed'][] = $exhibition;
             }
-        }
+            
+            
+        } while($this->dataSource->nextItem());
+        //foreach($exhibitionPosts as $exhibitionPost) {
+            //$exhibitionEndDate = $this->getField('to', $exhibitionPost->ID);
+            //$exhibitionEndDatetime = DateTime::createFromFormat("d/m/Y", $exhibitionEndDate);
+            //$exhibitionEndTime = $exhibitionEndDatetime->getTimestamp();
+            //$exhibition = [
+                    //'name' => $this->getField('name', $exhibitionPost->ID),
+                    //'description' => $this->getField('description', $exhibitionPost->ID),
+                    //'address' => $this->getField('address', $exhibitionPost->ID),
+                    //'from' => $this->getField('from', $exhibitionPost->ID),
+                    //'to' => $this->getField('to', $exhibitionPost->ID)
+                //];
+            //if ($exhibitionEndTime >= $nowTime) {
+                //$this->data['exhibitions'][] = $exhibition;
+            //} else {
+                //$this->data['exhibitions_closed'][] = $exhibition;
+            //}
+        //}
     }
 
     public function isValid() {
