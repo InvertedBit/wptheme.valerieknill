@@ -14,6 +14,11 @@ class MediaComponent extends BaseViewComponent {
         $this->initialize();
     }
 
+    protected function initializeFields()
+    {
+        $this->fields = [];
+    }
+
     
     protected function initialize() {
         if (!empty($this->data['datasource']) &&

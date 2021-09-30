@@ -1,6 +1,8 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Templates;
 
+use AlexScherer\WpthemeValerieknill\Data\OptionsDataSource;
+use AlexScherer\WpthemeValerieknill\Data\PostTypeDataSource;
 use AlexScherer\WpthemeValerieknill\Data\ProjectPostTypeDataSource;
 
 class ProjectListTemplate extends BaseTemplate {
@@ -11,17 +13,12 @@ class ProjectListTemplate extends BaseTemplate {
 
     protected function prepareComponents()
     {
-        $headerArguments = [
-            'field_overrides' => [
-                'header_image' => [
-                    'field' => 'archive_project_header_image',
-                    'id' => 'option'
-                ]
+        $this->addComponent('SlimHeaderComponent', [
+            'datasource' => new OptionsDataSource(),
+            'fields' => [
+                'header_image' => 'archive_project_header_image'
             ]
-        ];
-
-
-        $this->addComponent('SlimHeaderComponent', $headerArguments);
+        ]);
         $this->addComponent('NavigationComponent', [
             'menuLocation' => 'main-menu'
         ]);
@@ -32,7 +29,8 @@ class ProjectListTemplate extends BaseTemplate {
         $mainSectionComponents[] = [
             'name' => 'GridComponent',
             'arguments' => [
-                'datasource' => new ProjectPostTypeDataSource([
+                'datasource' => new PostTypeDataSource([
+                    'post_type' => 'project',
                     'loadTerms' => [
                         'role'
                     ],
@@ -40,7 +38,9 @@ class ProjectListTemplate extends BaseTemplate {
                 ]),
                 'childComponent' => [
                     'name' => 'ProjectCardComponent',
-                    'arguments' => []
+                    'arguments' => [
+                        
+                    ]
                 ],
                 'cols' => [
                     'xs' => 1,
@@ -55,33 +55,22 @@ class ProjectListTemplate extends BaseTemplate {
             ]
         ];
 
-        if (!empty($this->parameters['type'])) {
-            if ($this->parameters['type'] === 'taxonomy') {
-                $mainSectionComponents[] = [
-                    'name' => 'GalleryComponent',
-                    'arguments' => [
-                        'term' => $this->parameters['term'],
-                        'post_type' => 'image'
-                    ]
-                ];
-                
-            } elseif ($this->parameters['type'] === 'page') {
-                if ($this->discipline === 'painting') {
-                    $mainSectionComponents[] = [
-                        'name' => 'TaxonomyGridComponent',
-                        'arguments' => [
-                            'taxonomy' => 'series',
-                            'filter' => false
-                        ]
-                    ];
-                }
-            }
-
-        }
+        $mainSectionContainer = [
+            [
+                'name' => 'ContainerComponent',
+                'arguments' => [
+                    'components' => $mainSectionComponents
+                ]
+            ]
+        ];
 
         $this->addComponent('SectionComponent', [
-            'style' => 'secondary',
-            'components' => $mainSectionComponents
+            'style' => [
+                'section' => [
+                    'secondary'
+                ]
+            ],
+            'components' => $mainSectionContainer
         ]);
         $this->addComponent('FooterComponent');
     }

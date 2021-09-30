@@ -8,6 +8,10 @@ class BreadcrumbComponent extends BaseViewComponent {
         $this->initialize();
     }
 
+    protected function initializeFields()
+    {
+        $this->fields = [];
+    }
     
     protected function initialize() {
         $language = 'de';

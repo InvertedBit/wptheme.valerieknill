@@ -10,9 +10,22 @@ class ProjectCardComponent extends BaseCardComponent {
         $this->initialize();
     }
 
+    protected function initializeFields()
+    {
+        $this->fields = [];
+    }
+
     
     protected function initialize() {
         //$this->debug($this->dataSource->terms);
+    }
+
+    public function getTerms($taxonomy = '') {
+        if (empty($taxonomy)) {
+            return $this->dataSource->terms;
+        } elseif (!empty($this->dataSource->terms[$taxonomy])) {
+            return $this->dataSource->terms[$taxonomy];
+        }
     }
 
     public function isValid() {

@@ -1,6 +1,7 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Templates;
 
+use AlexScherer\WpthemeValerieknill\Data\GeneralPostDataSource;
 
 class HomeTemplate extends BaseTemplate {
 
@@ -11,19 +12,34 @@ class HomeTemplate extends BaseTemplate {
     protected function prepareComponents()
     {
 
+        $dataSource = new GeneralPostDataSource([
+            'id' => get_the_ID()
+        ]);
+
         if ($this->discipline === 'painting') {
-            $this->addComponent('SliderHeaderComponent');
+            $this->addComponent('SliderHeaderComponent', [
+                'datasource' => $dataSource
+            ]);
         } else {
-            $this->addComponent('VideoHeaderComponent');
+            $this->addComponent('VideoHeaderComponent', [
+                'datasource' => $dataSource
+            ]);
         }
         $this->addComponent('NavigationComponent', [
             'menuLocation' => 'main-menu'
         ]);
         $this->addComponent('SectionComponent', [
-            'style' => 'secondary',
+            'style' => [
+                'section' => [
+                    'secondary'
+                ]
+            ],
             'components' => [
                 [
-                    'name' => 'TitleComponent'
+                    'name' => 'TitleComponent',
+                    'arguments' => [
+                        'datasource' => $dataSource
+                    ]
                 ]
             ]
         ]);

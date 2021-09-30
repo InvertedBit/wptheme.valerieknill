@@ -8,6 +8,12 @@ class NavigationComponent extends BaseViewComponent {
         $this->initialize();
     }
 
+    protected function initializeFields()
+    {
+        $this->fields = [
+        ];
+    }
+
     protected function initialize() {
         $disciplines = $this->getField('disciplines', 'option');
         foreach ($disciplines as $discipline) {

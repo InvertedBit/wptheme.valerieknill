@@ -10,6 +10,10 @@ class PlaqueCardComponent extends BaseCardComponent {
         $this->initialize();
     }
 
+    protected function initializeFields()
+    {
+        $this->fields = [];
+    }
     
     protected function initialize() {
     }

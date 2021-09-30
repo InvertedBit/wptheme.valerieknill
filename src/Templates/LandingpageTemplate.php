@@ -1,7 +1,7 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Templates;
 
-use AlexScherer\WpthemeValerieknill\Components\LandingpageComponent;
+use AlexScherer\WpthemeValerieknill\Data\GeneralPostDataSource;
 
 class LandingpageTemplate extends BaseTemplate {
 
@@ -11,7 +11,11 @@ class LandingpageTemplate extends BaseTemplate {
 
     protected function prepareComponents()
     {
-        $this->addComponent('LandingpageComponent');
+        $this->addComponent('LandingpageComponent', [
+            'datasource' => new GeneralPostDataSource([
+                'id' => get_the_ID()
+            ])
+        ]);
     }
 }
 

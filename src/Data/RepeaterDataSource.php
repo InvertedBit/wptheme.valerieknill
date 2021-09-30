@@ -6,8 +6,8 @@ class RepeaterDataSource extends BaseIterativeDataSource {
         parent::__construct('Repeater', $parameters);
     }
 
-    protected function getField($name, $source) {
-        if (function_exists('get_field')) {
+    protected function getField($name, $source = false) {
+        if ($source && function_exists('get_field')) {
             return get_field($name, $source);
         }
     }
