@@ -8,9 +8,9 @@ class AboutPageFieldGroup extends BaseFieldGroup {
 
     protected function getFieldGroupDefinition()
     {
-        array(
+        return array(
             'key' => 'group_61556f29bdc34',
-            'title' => 'About Page',
+            'title' => __('About Page', 'wptheme.valerieknill'),
             'fields' => array(
                 array(
                     'key' => 'field_61556f3a9fd55',
