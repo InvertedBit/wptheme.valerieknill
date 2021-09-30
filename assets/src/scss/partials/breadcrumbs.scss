@@ -1,8 +1,8 @@
-.main-section {
+.uk-section {
     .uk-breadcrumb.breadcrumb-primary {
         color: $global-primary-background;
         & > * > * {
-            color: $colourtheme-1;
+            color: rgba($colourtheme-1, 0.75);
         }
         & > :nth-child(n+2):not(.uk-first-column)::before {
             color: $colourtheme-2;

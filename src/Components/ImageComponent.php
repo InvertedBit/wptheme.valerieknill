@@ -3,34 +3,24 @@ namespace AlexScherer\WpthemeValerieknill\Components;
 
 use AlexScherer\WpthemeValerieknill\Data\BaseDataSource;
 
-class QuoteComponent extends BaseViewComponent {
+class ImageComponent extends BaseViewComponent {
 
     protected const DATASOURCE_BASECLASS = 'AlexScherer\\WpthemeValerieknill\\Data\\BaseDataSource';
     
     protected BaseDataSource $dataSource;
 
     public function __construct($data = []) {
-        parent::__construct('Quote', $data);
-        $this->initialize();
+        parent::__construct('Image', $data);
     }
 
-    protected function initializeFields()
-    {
+    protected function initializeFields() {
         $this->fields = [
-            'quote',
-            'quotee',
-            'sourceType',
-            'sourceWeb',
-            'sourcePrint'
+            'image'
         ];
     }
     
-    protected function initialize() {
-    }
-
     public function isValid() {
-        if (empty($this->data['quote']) ||
-            empty($this->data['quotee'])) {
+        if (empty($this->data['image'])) {
             return false;
         }
         return true;
