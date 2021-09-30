@@ -15,6 +15,9 @@ class Theme {
     protected const TEMPLATE_NAMESPACE = "AlexScherer\\WpthemeValerieknill\\Templates\\";
     protected const TEMPLATE_BASECLASS = "AlexScherer\\WpthemeValerieknill\\Templates\\BaseTemplate";
 
+    protected const FIELDGROUP_NAMESPACE = "AlexScherer\\WpthemeValerieknill\\FieldGroups\\";
+    protected const FIELDGROUP_BASECLASS = "AlexScherer\\WpthemeValerieknill\\FieldGroups\\BaseFieldGroup";
+
     protected static $_instance = false;
 
     public static function getInstance() {
@@ -54,6 +57,12 @@ class Theme {
 
     protected $postTypesLoaded = false;
 
+    protected $fieldGroups = [];
+
+    protected $fieldGroupsToLoad = [
+        'AboutPage'
+    ];
+
     protected $template;
 
     protected $parameters;
@@ -72,6 +81,7 @@ class Theme {
         $this->registerThemeSettings();
         $this->loadTaxonomies();
         $this->loadPostTypes();
+        $this->loadFieldGroups();
     }
 
     public function getSubdomain() {
@@ -163,6 +173,21 @@ class Theme {
         }
         $this->postTypes = $loadedPostTypes;
         $this->postTypesLoaded = true;
+    }
+
+    protected function loadFieldGroups() {
+        $fieldGroupsToLoad = $this->fieldGroupsToLoad;
+        $loadedFieldGroups = [];
+        foreach ($fieldGroupsToLoad as $fieldGroupName) {
+            $fullFieldGroupName = Theme::FIELDGROUP_NAMESPACE . $fieldGroupName . "FieldGroup";
+
+            if (class_exists($fullFieldGroupName) && is_a($fullFieldGroupName, Theme::FIELDGROUP_BASECLASS, true)) {
+                $fieldGroupInstance = new $fullFieldGroupName();
+                $fieldGroupInstance->registerFieldGroup();
+                $loadedFieldGroups[strtolower($fieldGroupName)] = $fieldGroupInstance;
+            }
+        }
+        $this->fieldGroups = $loadedFieldGroups;
     }
 
     public function registerMenuLocations() {
