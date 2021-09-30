@@ -25,6 +25,12 @@ class AboutTemplate extends BaseTemplate {
         $mainSectionComponents = [];
 
         $mainSectionComponents[] = [
+            'name' => 'BreadcrumbComponent',
+            'arguments' => [
+            ]
+        ];
+
+        $mainSectionComponents[] = [
             'name' => 'TitleComponent',
             'arguments' => [
                 'datasource' => $postDataSource
