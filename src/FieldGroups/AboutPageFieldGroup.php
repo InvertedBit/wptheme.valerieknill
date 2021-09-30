@@ -3,7 +3,7 @@ namespace AlexScherer\WpthemeValerieknill\FieldGroups;
 
 class AboutPageFieldGroup extends BaseFieldGroup {
     public function __construct() {
-        self::__construct('AboutPage');
+        parent::__construct('AboutPage');
     }
 
     protected function getFieldGroupDefinition()
@@ -14,7 +14,7 @@ class AboutPageFieldGroup extends BaseFieldGroup {
             'fields' => array(
                 array(
                     'key' => 'field_61556f3a9fd55',
-                    'label' => 'About text',
+                    'label' => __('About text', 'wptheme.valerieknill'),
                     'name' => 'text_about',
                     'type' => 'wysiwyg',
                     'instructions' => '',
@@ -34,7 +34,7 @@ class AboutPageFieldGroup extends BaseFieldGroup {
                 ),
                 array(
                     'key' => 'field_61556f5e9fd56',
-                    'label' => 'Image',
+                    'label' => __('Image', 'wptheme.valerieknill'),
                     'name' => 'image',
                     'type' => 'image',
                     'instructions' => '',
@@ -59,7 +59,7 @@ class AboutPageFieldGroup extends BaseFieldGroup {
                 ),
                 array(
                     'key' => 'field_61556fb99fd58',
-                    'label' => 'Quote',
+                    'label' => __('Quote', 'wptheme.valerieknill'),
                     'name' => 'quote',
                     'type' => 'group',
                     'instructions' => '',
@@ -74,7 +74,7 @@ class AboutPageFieldGroup extends BaseFieldGroup {
                     'sub_fields' => array(
                         array(
                             'key' => 'field_61556fc89fd59',
-                            'label' => 'Name',
+                            'label' => __('Name', 'wptheme.valerieknill'),
                             'name' => 'name',
                             'type' => 'text',
                             'instructions' => '',
@@ -94,7 +94,7 @@ class AboutPageFieldGroup extends BaseFieldGroup {
                         ),
                         array(
                             'key' => 'field_61556fd09fd5a',
-                            'label' => 'Text',
+                            'label' => __('Text', 'wptheme.valerieknill'),
                             'name' => 'text',
                             'type' => 'text',
                             'instructions' => '',
@@ -137,6 +137,6 @@ class AboutPageFieldGroup extends BaseFieldGroup {
             ),
             'active' => true,
             'description' => '',
-        )
+        );
     }
 }
