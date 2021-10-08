@@ -53,7 +53,7 @@ class NewsPostType extends BasePostType {
             'has_archive'        => true,
             'hierarchical'       => false,
             'menu_position'      => 4,
-            'supports'           => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail' ),
+            'supports'           => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments' ),
             'taxonomies'         => array( 'discipline', 'category', 'post_tag' ),
             'show_in_rest'       => true
         );

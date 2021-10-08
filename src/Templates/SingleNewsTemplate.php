@@ -39,6 +39,19 @@ class SingleNewsTemplate extends BaseTemplate {
             ]);
         }
 
+
+        $currentPage = get_query_var('n', 1);
+        $enablePagination = $newsPageDataSource->enable_pagination;
+        $postsPerPage = $newsPageDataSource->posts_per_page;
+
+        $paginationOptions = [
+            'enabled' => $enablePagination,
+            'postsPerPage' => $postsPerPage,
+            'currentPage' => $currentPage
+        ];
+
+
+
         //$debug = '<pre>';
 
         //$debug .= print_r($newsPageDataSource->, 1);
@@ -121,6 +134,14 @@ class SingleNewsTemplate extends BaseTemplate {
                 //'pagination' => $paginationOptions
             //]
         //];
+
+        $mainComponents[] = [
+            'name' => 'CommentListComponent',
+            'arguments' => [
+                'datasource' => $dataSource,
+                'pagination' => $paginationOptions
+            ]
+        ];
 
         $this->addComponent('SectionComponent', [
             'style' => [
