@@ -1,5 +1,4 @@
 <?php if ($this->isValid()): ?>
-    <div class="uk-container main-section">
         <h1 class="uk-heading-large introduction-title"><?php echo $this->data['title']; ?></h1>
 <?php  if (!empty($this->data['subtitle'])): ?>
         <div class="uk-text-lead introduction-lead">
@@ -11,5 +10,4 @@
             <?php echo $this->data['introduction']; ?>
         </div>
 <?php  endif; ?>
-    </div>
 <?php endif; ?>

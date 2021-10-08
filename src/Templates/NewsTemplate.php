@@ -85,7 +85,8 @@ class NewsTemplate extends BaseTemplate {
         $mainComponents = [];
 
         $postViewComponentArguments = [
-            'format' => 'excerpt'
+            'format' => 'excerpt',
+            'links' => true
         ];
         if ($authorPageOverride) {
             $postViewComponentArguments['author_page_link'] = $authorPageOverride;

@@ -45,12 +45,21 @@ class PostViewComponent extends BaseViewComponent {
 
         $this->data['comment_count'] = get_comments($commentArgs);
 
+        $this->data['omittedFields'] = [];
+        if (!empty($this->data['omitFields'])) {
+            foreach ($this->data['omitFields'] as $field) {
+                if (!empty($this->data[$field])) {
+                    $this->data['omittedFields'][$field] = $this->data[$field];
+                    unset($this->data[$field]);
+                }
+            }
+        }
+
         //$this->debug($this->data);
     }
     
     public function isValid() {
-        if (empty($this->data['post_title']) ||
-            empty($this->data['post_content'])) {
+        if (empty($this->data['post_content'])) {
             return false;
         }
         return true;
