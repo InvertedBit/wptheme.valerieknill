@@ -15,13 +15,14 @@
 
     <ul class="uk-pagination uk-flex-center" uk-margin="">
         <li class="uk-first-column"><a href="#"><span uk-pagination-previous="" class="uk-icon uk-pagination-previous"></span></a></li>
-<?php echo $this->dataSource->totalPages; ?>
+<?php $baseLink = get_permalink(get_queried_object_id()); ?>
 <?php for ($i = 1; $i <= $this->dataSource->getTotalPages(); $i++): ?>
         <li>
 <?php if ($this->dataSource->getCurrentPage() === $i): ?>
             <li class="uk-active"><span><?php echo $i; ?></span></li>
 <?php else: ?>
-            <a href="#"><?php echo $i; ?></a>
+<?php $link = add_query_arg('paged', $i, $baseLink); ?>
+            <a href="<?php echo $link; ?>"><?php echo $i; ?></a>
 <?php endif; ?>
         </li>
 <?php endfor; ?>

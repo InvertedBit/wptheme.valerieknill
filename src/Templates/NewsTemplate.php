@@ -16,8 +16,9 @@ class NewsTemplate extends BaseTemplate {
             'id' => get_the_ID()
         ]);
 
-        $currentPage = get_query_var('n', 1);
+        $currentPage = get_query_var('paged');
 
+        //die($currentPage);
         //$enablePagination = true;
         //$postsPerPage = 10;
         //$authorPageOverride = false;
