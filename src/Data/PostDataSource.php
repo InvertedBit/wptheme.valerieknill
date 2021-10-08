@@ -9,6 +9,8 @@ abstract class PostDataSource extends BaseDataSource {
 
     protected array $terms = [];
 
+    protected int $totalComments = 0;
+
     protected function initialize() {
         if (!empty($this->parameters['loadTerms'])) {
             $args = [];
@@ -20,6 +22,15 @@ abstract class PostDataSource extends BaseDataSource {
                 $this->terms[$taxonomy] = $terms;
             }
         }
+        $this->totalComments = $this->getComments(true);
+    }
+
+    public function getComments($countOnly = false) {
+        $commentArgs = [
+            'post_id' => $this->item->ID,
+            'count' => $countOnly
+        ];
+        return get_comments($commentArgs);
     }
 
     protected function getFromItem(string $name)
