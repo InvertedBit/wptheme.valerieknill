@@ -16,24 +16,33 @@ class NewsTemplate extends BaseTemplate {
             'id' => get_the_ID()
         ]);
 
-        $enablePagination = true;
-        $postsPerPage = 10;
-        $authorPageOverride = false;
+        $currentPage = get_query_var('n', 1);
 
-        if (!empty($dataSource->enable_pagination)) {
+        //$enablePagination = true;
+        //$postsPerPage = 10;
+        //$authorPageOverride = false;
+
+        //if (!empty($dataSource->enable_pagination)) {
             $enablePagination = $dataSource->enable_pagination;
-        }
+        //}
 
-        if (!empty($dataSource->posts_per_page)) {
+        //if (!empty($dataSource->posts_per_page)) {
             $postsPerPage = $dataSource->posts_per_page;
-        }
+        //}
 
-        if ($dataSource->override_about_page) {
+        //if ($dataSource->override_about_page) {
             $authorPageOverride = $dataSource->about_page_link;
-        }
+        //}
+
+        $paginationOptions = [
+            'enabled' => $enablePagination,
+            'postsPerPage' => $postsPerPage,
+            'currentPage' => $currentPage
+        ];
 
         $newsPostTypeDataSource = new PostTypeDataSource([
-            'post_type' => 'news'
+            'post_type' => 'news',
+            'pagination' => $paginationOptions
         ]);
 
         $this->addComponent('SlimHeaderComponent', [
@@ -90,6 +99,7 @@ class NewsTemplate extends BaseTemplate {
                     'name' => 'PostViewComponent',
                     'arguments' => $postViewComponentArguments
                 ],
+                'pagination' => $paginationOptions
             ]
         ];
 

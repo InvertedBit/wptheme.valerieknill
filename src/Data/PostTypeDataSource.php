@@ -1,6 +1,8 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Data;
 
+use WP_Query;
+
 class PostTypeDataSource extends BaseIterativeDataSource {
     public function __construct($parameters = []) {
         parent::__construct('PostType', $parameters);
@@ -8,6 +10,10 @@ class PostTypeDataSource extends BaseIterativeDataSource {
     }
 
     protected array $terms = [];
+
+    protected $totalPages = 1;
+
+    protected $currentPage = 1;
 
     protected function initialize() {
         if (!empty($this->parameters['loadTerms'])) {
@@ -33,7 +39,22 @@ class PostTypeDataSource extends BaseIterativeDataSource {
         $args = [
             'post_type' => $this->parameters['post_type']
         ];
-        $posts = get_posts($args);
+
+        if (!empty($this->parameters['pagination']) &&
+            $this->parameters['pagination']['enabled']) {
+            $args['posts_per_page'] = $this->parameters['pagination']['postsPerPage'];
+            $args['paged'] = $this->parameters['pagination']['currentPage'];
+            $this->currentPage = $this->parameters['pagination']['currentPage'];
+        } else {
+            $args['nopaging'] = true;
+        }
+
+        $query = new WP_Query($args);
+
+        $this->totalPages = $query->max_num_pages;
+        //die(print_r($this->totalPages, 1));
+
+        $posts = $query->posts;
 
         $this->items = [];
 
@@ -42,5 +63,13 @@ class PostTypeDataSource extends BaseIterativeDataSource {
             $parameters['item'] = $post;
             $this->items[] = new GeneralPostDataSource($parameters);
         }
+    }
+
+    public function getTotalPages() {
+        return $this->totalPages;
+    }
+
+    public function getCurrentPage() {
+        return $this->currentPage;
     }
 }
