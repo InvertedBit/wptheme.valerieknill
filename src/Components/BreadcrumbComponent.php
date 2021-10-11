@@ -27,8 +27,24 @@ class BreadcrumbComponent extends BaseViewComponent {
             }
         }
         $currentPostTitle = $this->getField('title');
+        if (empty($currentPostTitle)) {
+            $post = get_post(get_queried_object_id());
+            $currentPostTitle = $post->post_title;
+        }
+        $ancestors = [];
+        $parent = false;
 
-        $ancestors = get_post_ancestors(get_the_ID());
+        if (!empty($this->data['parent'])) {
+            if (is_numeric($this->data['parent'])) {
+                $parent = get_post($this->data['parent']);
+            } else {
+                $parent = $this->data['parent'];
+            }
+            $ancestors = get_post_ancestors($parent->ID);
+
+        } else {
+            $ancestors = get_post_ancestors(get_the_ID());
+        }
 
         $this->data['breadcrumb'] = [
             'Home' => $homeLink
@@ -42,6 +58,9 @@ class BreadcrumbComponent extends BaseViewComponent {
             }
         }
 
+        if ($parent) {
+            $this->data['breadcrumb'][$this->getField('title', $parent)] = get_post_permalink($parent);
+        }
 
         $this->data['breadcrumb'][$currentPostTitle] = false;
 
