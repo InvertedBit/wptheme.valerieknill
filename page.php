@@ -14,12 +14,7 @@ use AlexScherer\WpthemeValerieknill\Theme;
 
 
 $theme = Theme::getInstance();
-if (!$theme->getSubdomain()) {
-	$theme->setTemplate('LandingPage');
-} else {
-	$theme->setTemplate('Home', ['subdomain' => $theme->getSubdomain()]);
-}
-
+$theme->setTemplate('SimplePage');
 
 $theme->render();
 

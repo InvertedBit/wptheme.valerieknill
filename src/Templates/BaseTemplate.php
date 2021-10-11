@@ -48,7 +48,15 @@ abstract class BaseTemplate {
 
     protected function getPostDiscipline() {
         $disciplines = get_field('disciplines', 'option');
-        if (!empty($this->parameters['discipline'])) {
+        if (!empty($_GET['discipline'])) {
+            $this->discipline = $_GET['discipline'];
+            foreach($disciplines as $discipline) {
+                if ($discipline['discipline'] === $this->discipline) {
+                    $this->colourScheme = $discipline['colorscheme'];
+                    break;
+                }
+            }
+        } elseif (!empty($this->parameters['discipline'])) {
             $this->discipline = $this->parameters['discipline'];
             foreach($disciplines as $discipline) {
                 if ($discipline['discipline'] === $this->discipline) {
