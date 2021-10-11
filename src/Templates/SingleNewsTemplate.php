@@ -134,6 +134,16 @@ class SingleNewsTemplate extends BaseTemplate {
                 //'pagination' => $paginationOptions
             //]
         //];
+        
+        $mainComponents[] = [
+            'name' => 'CommentFormComponent',
+            'arguments' => [
+                'post' => $dataSource->ID,
+                'arguments' => [
+                    'title_reply' => 'Leave a reply'
+                ]
+            ]
+        ];
 
         $mainComponents[] = [
             'name' => 'CommentListComponent',
