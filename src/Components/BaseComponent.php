@@ -8,6 +8,7 @@ abstract class BaseComponent extends BasePost implements IRenderable {
     protected const DATASOURCE_BASECLASS = 'AlexScherer\\WpthemeValerieknill\\Data\\BaseDataSource';
 
     protected $name;
+    protected $viewName;
     protected $data;
     protected $type;
 
@@ -20,6 +21,7 @@ abstract class BaseComponent extends BasePost implements IRenderable {
     public function __construct($name, $type, $data = [], $postId = -1)
     {
         $this->name = $name;
+        $this->viewName = $name;
         $this->type = $type;
         $this->data = $data;
         if ($postId == -1) {
@@ -95,7 +97,7 @@ abstract class BaseComponent extends BasePost implements IRenderable {
     }
 
     protected function getViewPath($name = false) {
-        return get_template_directory() . '/src/Views/' . ($name ? $name : $this->name) . '.php';
+        return get_template_directory() . '/src/Views/' . ($name ? $name : $this->viewName) . '.php';
     }
 
     protected function includeView($name = false) {
