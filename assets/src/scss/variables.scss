@@ -2,7 +2,14 @@
 $global-primary-background: $colourtheme-2;
 //$global-inverse-color: $colourtheme-3;
 
-//$global-link-color: $colourtheme-3;
+$global-link-color: $colourtheme-1;
+
+$inverse-global-emphasis-color: $colourtheme-1;
+$inverse-global-muted-color: rgba($inverse-global-emphasis-color, 0.6);
+$inverse-global-primary-background: rgba($inverse-global-emphasis-color, 0.8);
+//$inverse-base-link-hover-color: rgba($inverse-global-emphasis-color, 0.8);
+//$inverse-button-link-hover-color: $inverse-base-link-hover-color;
+//$inverse-button-text-hover-color: $inverse-base-link-hover-color;
 $global-font-size: 16px;
 
 

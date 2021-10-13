@@ -2,13 +2,16 @@
     .uk-breadcrumb.breadcrumb-primary {
         color: $global-primary-background;
         & > * > * {
-            color: rgba($colourtheme-1, 0.75);
+            color: $colourtheme-1;
+            &:hover {
+                color: rgba($colourtheme-1, 0.8);
+            }
         }
         & > :nth-child(n+2):not(.uk-first-column)::before {
-            color: $colourtheme-2;
+            color: rgba($colourtheme-1, 0.6);
         }
         & > :last-child > * {
-            color: $colourtheme-2;
+            color: rgba($colourtheme-1, 0.6);
         }
     }
 }
