@@ -2,6 +2,7 @@
 namespace AlexScherer\WpthemeValerieknill\Templates;
 
 use AlexScherer\WpthemeValerieknill\Data\GeneralPostDataSource;
+use AlexScherer\WpthemeValerieknill\Data\PostTypeDataSource;
 
 class HomeTemplate extends BaseTemplate {
 
@@ -14,6 +15,12 @@ class HomeTemplate extends BaseTemplate {
 
         $dataSource = new GeneralPostDataSource([
             'id' => get_the_ID()
+        ]);
+
+
+        $newsPostTypeDataSource = new PostTypeDataSource([
+            'post_type' => 'news',
+            'count' => 1
         ]);
 
         if ($this->discipline === 'painting') {
@@ -50,6 +57,49 @@ class HomeTemplate extends BaseTemplate {
                 ]
             ]
         ]);
+
+        $newsContainerComponents = [];
+
+        $postViewComponentArguments = [
+            'format' => 'excerpt',
+            'links' => true
+        ];
+
+
+
+        //$postViewComponentArguments['author_page_link'] = $authorPageOverride;
+
+        $newsContainerComponents[] = [
+            'name' => 'PostListComponent',
+            'arguments' => [
+                'datasource' => $newsPostTypeDataSource,
+                'childComponent' => [
+                    'name' => 'PostViewComponent',
+                    'arguments' => $postViewComponentArguments
+                ],
+                'pagination' => [
+                    'enabled' => false
+                ]
+            ]
+        ];
+
+
+        $this->addComponent('SectionComponent', [
+            'style' => [
+                'section' => [
+                    'primary'
+                ]
+            ],
+            'components' => [
+                [
+                    'name' => 'ContainerComponent',
+                    'arguments' => [
+                        'components' => $newsContainerComponents
+                    ]
+                ]
+            ]
+        ]);
+
         $this->addComponent('FooterComponent');
     }
 }

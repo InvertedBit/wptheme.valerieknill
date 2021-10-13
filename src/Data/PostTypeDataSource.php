@@ -40,6 +40,7 @@ class PostTypeDataSource extends BaseIterativeDataSource {
             'post_type' => $this->parameters['post_type']
         ];
 
+
         if (!empty($this->parameters['pagination']) &&
             $this->parameters['pagination']['enabled']) {
             $args['posts_per_page'] = $this->parameters['pagination']['postsPerPage'];
@@ -47,6 +48,12 @@ class PostTypeDataSource extends BaseIterativeDataSource {
             $this->currentPage = $this->parameters['pagination']['currentPage'];
         } else {
             $args['nopaging'] = true;
+        }
+
+
+        if (!empty($this->parameters['count'])) {
+            $args['posts_per_page'] = $this->parameters['count'];
+            $args['nopaging'] = false;
         }
 
         $query = new WP_Query($args);
