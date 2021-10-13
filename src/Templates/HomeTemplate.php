@@ -28,6 +28,13 @@ class HomeTemplate extends BaseTemplate {
         $this->addComponent('NavigationComponent', [
             'menuLocation' => 'main-menu'
         ]);
+        $mainContainerComponents = [];
+        $mainContainerComponents[] = [
+            'name' => 'TitleComponent',
+            'arguments' => [
+                'datasource' => $dataSource
+            ]
+        ];
         $this->addComponent('SectionComponent', [
             'style' => [
                 'section' => [
@@ -36,9 +43,9 @@ class HomeTemplate extends BaseTemplate {
             ],
             'components' => [
                 [
-                    'name' => 'TitleComponent',
+                    'name' => 'ContainerComponent',
                     'arguments' => [
-                        'datasource' => $dataSource
+                        'components' => $mainContainerComponents
                     ]
                 ]
             ]
