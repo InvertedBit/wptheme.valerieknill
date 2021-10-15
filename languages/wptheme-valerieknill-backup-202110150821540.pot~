@@ -1,13 +1,14 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Valerie-Knill\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-15 07:47+0000\n"
-"PO-Revision-Date: 2021-10-15 08:50+0000\n"
-"Last-Translator: \n"
-"Language-Team: English (United States)\n"
-"Language: en_US\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"POT-Creation-Date: 2021-10-15 08:01+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -113,11 +114,8 @@ msgstr ""
 msgid "All Disciplines"
 msgstr ""
 
-#: src/PostTypes/ExhibitionPostType.php:26
-msgid "All exhibitions"
-msgstr ""
-
-#: src/PostTypes/NewsPostType.php:26 src/PostTypes/ImagePostType.php:26
+#: src/PostTypes/ExhibitionPostType.php:26 src/PostTypes/NewsPostType.php:26
+#: src/PostTypes/ImagePostType.php:26
 msgid "All news"
 msgstr ""
 
@@ -320,19 +318,13 @@ msgstr ""
 msgid "no comments yet"
 msgstr ""
 
-#: src/PostTypes/ExhibitionPostType.php:30
-msgid "No exhibitions found in Trash."
-msgstr ""
-
-#: src/PostTypes/ExhibitionPostType.php:29
-msgid "No exhibitions found."
-msgstr ""
-
-#: src/PostTypes/NewsPostType.php:30 src/PostTypes/ImagePostType.php:30
+#: src/PostTypes/ExhibitionPostType.php:30 src/PostTypes/NewsPostType.php:30
+#: src/PostTypes/ImagePostType.php:30
 msgid "No news found in Trash."
 msgstr ""
 
-#: src/PostTypes/NewsPostType.php:29 src/PostTypes/ImagePostType.php:29
+#: src/PostTypes/ExhibitionPostType.php:29 src/PostTypes/NewsPostType.php:29
+#: src/PostTypes/ImagePostType.php:29
 msgid "No news found."
 msgstr ""
 
@@ -473,11 +465,8 @@ msgstr ""
 msgid "Parent Discipline:"
 msgstr ""
 
-#: src/PostTypes/ExhibitionPostType.php:28
-msgid "Parent exhibitions:"
-msgstr ""
-
-#: src/PostTypes/NewsPostType.php:28 src/PostTypes/ImagePostType.php:28
+#: src/PostTypes/ExhibitionPostType.php:28 src/PostTypes/NewsPostType.php:28
+#: src/PostTypes/ImagePostType.php:28
 msgid "Parent news:"
 msgstr ""
 
@@ -563,14 +552,8 @@ msgstr ""
 msgid "Role"
 msgstr ""
 
-#: src/PostTypes/ExhibitionPostType.php:38
-msgctxt ""
-"Screen reader text for the filter links heading on the post type listing "
-"screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4"
-msgid "Filter exhibitions list"
-msgstr ""
-
-#: src/PostTypes/NewsPostType.php:38 src/PostTypes/ImagePostType.php:38
+#: src/PostTypes/ExhibitionPostType.php:38 src/PostTypes/NewsPostType.php:38
+#: src/PostTypes/ImagePostType.php:38
 msgctxt ""
 "Screen reader text for the filter links heading on the post type listing "
 "screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4"
@@ -644,11 +627,8 @@ msgstr ""
 msgid "Search Disciplines"
 msgstr ""
 
-#: src/PostTypes/ExhibitionPostType.php:27
-msgid "Search exhibitions"
-msgstr ""
-
-#: src/PostTypes/NewsPostType.php:27 src/PostTypes/ImagePostType.php:27
+#: src/PostTypes/ExhibitionPostType.php:27 src/PostTypes/NewsPostType.php:27
+#: src/PostTypes/ImagePostType.php:27
 msgid "Search news"
 msgstr ""
 

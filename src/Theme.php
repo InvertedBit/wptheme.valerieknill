@@ -76,12 +76,29 @@ class Theme {
     public function initialize() {
         $this->getCurrentSubdomain();
         add_theme_support('menus');
+        //add_action('after_setup_theme', [$this, 'afterSetupTheme']);
+
+        $this->loadTextdomain();
         add_action('init', [$this, 'runWordpressInit']);
         add_action('admin_init', [$this, 'runWordpressAdminInit']);
         $this->registerThemeSettings();
         $this->loadTaxonomies();
         $this->loadPostTypes();
         $this->loadFieldGroups();
+    }
+
+    public function afterSetupTheme() {
+        $this->loadTextdomain();
+    }
+
+    protected function loadTextdomain() {
+        $path = get_template_directory() . '/languages';
+        $success = load_theme_textdomain('wptheme-valerieknill', $path);
+        if ($success) {
+            return;
+        }
+        $locale = apply_filters( 'theme_locale', get_locale(), 'my_theme' );
+        die( "Could not find $path/$locale.mo." );
     }
 
     public function getSubdomain() {

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Valerie-Knill\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-15 07:47+0000\n"
-"PO-Revision-Date: 2021-10-15 08:50+0000\n"
+"PO-Revision-Date: 2021-10-15 08:26+0000\n"
 "Last-Translator: \n"
 "Language-Team: English (United States)\n"
 "Language: en_US\n"
@@ -56,7 +56,7 @@ msgstr ""
 #: src/PostTypes/ExhibitionPostType.php:20
 msgctxt "Add New on Toolbar"
 msgid "Exhibitions"
-msgstr ""
+msgstr "Exhiiiiibitions"
 
 #: src/PostTypes/ImagePostType.php:20
 msgctxt "Add New on Toolbar"
