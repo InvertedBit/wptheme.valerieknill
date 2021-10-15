@@ -85,9 +85,9 @@ class CommentListComponent extends BaseViewComponent {
     }
 
     public function isValid() {
-        if (empty($this->data['comments'])) {
-            return false;
-        }
+        //if (is_array($this->data['comments'])) {
+            //return false;
+        //}
         return true;
     }
 

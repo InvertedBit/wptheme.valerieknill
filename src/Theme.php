@@ -74,7 +74,7 @@ class Theme {
 
     
     public function initialize() {
-        $this->getCurrentSubdomain();
+        //$this->getCurrentSubdomain();
         add_theme_support('menus');
         //add_action('after_setup_theme', [$this, 'afterSetupTheme']);
 
