@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Valerie-Knill\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-15 07:47+0000\n"
-"PO-Revision-Date: 2021-10-15 09:13+0000\n"
+"PO-Revision-Date: 2021-10-15 09:53+0000\n"
 "Last-Translator: \n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -35,7 +35,7 @@ msgstr "Über mich - Text"
 #: src/PostTypes/ExhibitionPostType.php:21 src/PostTypes/NewsPostType.php:21
 #: src/PostTypes/ImagePostType.php:21 src/PostTypes/ProjectPostType.php:21
 msgid "Add New"
-msgstr ""
+msgstr "Hinzufügen"
 
 #: src/Taxonomies/DisciplineTaxonomy.php:19
 msgid "Add New Discipline"
@@ -71,7 +71,7 @@ msgstr ""
 #: src/PostTypes/ProjectPostType.php:20
 msgctxt "Add New on Toolbar"
 msgid "Projects"
-msgstr ""
+msgstr "Projekte"
 
 #: src/PostTypes/ProjectPostType.php:22
 msgid "Add New project"
@@ -103,7 +103,7 @@ msgstr ""
 #: src/PostTypes/ProjectPostType.php:19
 msgctxt "Admin Menu text"
 msgid "Projects"
-msgstr ""
+msgstr "Projekte"
 
 #. Author of the theme
 msgid "Alex Scherer"
@@ -157,22 +157,22 @@ msgstr "Kontakt"
 #: src/Components/ContactFormComponent.php:84
 msgctxt "Contact form error email"
 msgid "Please enter your E-Mail address."
-msgstr ""
+msgstr "Bitte gib Deine E-Mail Adresse ein."
 
 #: src/Components/ContactFormComponent.php:90
 msgctxt "Contact form error message"
 msgid "Please enter a message."
-msgstr ""
+msgstr "Bitte gib eine Nachricht ein."
 
 #: src/Components/ContactFormComponent.php:81
 msgctxt "Contact form error name"
 msgid "Please enter your name."
-msgstr ""
+msgstr "Bitte gib Deinen Namen ein."
 
 #: src/Components/ContactFormComponent.php:87
 msgctxt "Contact form error subject"
 msgid "Please enter a subject."
-msgstr ""
+msgstr "Bitte gib einen Betreff ein."
 
 #: src/Views/ContactFormSuccess.php:1
 msgctxt "Contact form success message"
@@ -527,7 +527,7 @@ msgstr ""
 #: src/PostTypes/ProjectPostType.php:17
 msgctxt "Post type general name"
 msgid "Projects"
-msgstr ""
+msgstr "Projekte"
 
 #: src/PostTypes/ExhibitionPostType.php:18
 msgctxt "Post type singular name"
@@ -547,7 +547,7 @@ msgstr ""
 #: src/PostTypes/ProjectPostType.php:18
 msgctxt "Post type singular name"
 msgid "Project"
-msgstr ""
+msgstr "Projekt"
 
 #: src/Views/PostView.php:5
 #, php-format
@@ -557,15 +557,15 @@ msgstr "Am %s geschrieben von"
 
 #: src/FieldGroups/AboutPageFieldGroup.php:62
 msgid "Quote"
-msgstr ""
+msgstr "Zitat"
 
 #: src/Templates/SingleProjectTemplate.php:198
 msgid "Reviews"
-msgstr ""
+msgstr "Rezensionen"
 
 #: src/Taxonomies/RoleTaxonomy.php:21
 msgid "Role"
-msgstr ""
+msgstr "Rolle"
 
 #: src/PostTypes/ExhibitionPostType.php:38
 msgctxt ""
@@ -646,47 +646,47 @@ msgstr ""
 
 #: src/Taxonomies/DisciplineTaxonomy.php:13
 msgid "Search Disciplines"
-msgstr ""
+msgstr "Disziplinen durchsuchen"
 
 #: src/PostTypes/ExhibitionPostType.php:27
 msgid "Search exhibitions"
-msgstr ""
+msgstr "Ausstellungen durchsuchen"
 
 #: src/PostTypes/NewsPostType.php:27 src/PostTypes/ImagePostType.php:27
 msgid "Search news"
-msgstr ""
+msgstr "Newsbeiträge durchsuchen"
 
 #: src/PostTypes/ProjectPostType.php:27
 msgid "Search projects"
-msgstr ""
+msgstr "Projekte durchsuchen"
 
 #: src/Taxonomies/RoleTaxonomy.php:13
 msgid "Search Roles"
-msgstr ""
+msgstr "Rollen durchsuchen"
 
 #: src/Taxonomies/SeriesTaxonomy.php:13
 msgid "Search Series"
-msgstr ""
+msgstr "Serien durchsuchen"
 
 #: src/Views/ContactForm.php:17
 msgid "Send"
-msgstr ""
+msgstr "Senden"
 
 #: src/Taxonomies/SeriesTaxonomy.php:21
 msgid "Series"
-msgstr ""
+msgstr "Serie"
 
 #: src/Templates/SingleProjectTemplate.php:124
 msgid "Specifications"
-msgstr ""
+msgstr "Spezifikationen"
 
 #: src/Views/ContactForm.php:10
 msgid "Subject"
-msgstr ""
+msgstr "Betreff"
 
 #: src/Components/CommentFormComponent.php:31
 msgid "Submit"
-msgstr ""
+msgstr "Absenden"
 
 #: src/Taxonomies/DisciplineTaxonomy.php:11
 msgctxt "taxonomy general name"
@@ -696,12 +696,12 @@ msgstr "Disziplinen"
 #: src/Taxonomies/RoleTaxonomy.php:11
 msgctxt "taxonomy general name"
 msgid "Roles"
-msgstr ""
+msgstr "Rollen"
 
 #: src/Taxonomies/SeriesTaxonomy.php:11
 msgctxt "taxonomy general name"
 msgid "Series"
-msgstr ""
+msgstr "Serien"
 
 #: src/Taxonomies/DisciplineTaxonomy.php:12
 msgctxt "taxonomy singular name"
@@ -711,20 +711,20 @@ msgstr "Disziplin"
 #: src/Taxonomies/RoleTaxonomy.php:12
 msgctxt "taxonomy singular name"
 msgid "Role"
-msgstr ""
+msgstr "Rolle"
 
 #: src/Taxonomies/SeriesTaxonomy.php:12
 msgctxt "taxonomy singular name"
 msgid "Series"
-msgstr ""
+msgstr "Serie"
 
 #: src/FieldGroups/AboutPageFieldGroup.php:97
 msgid "Text"
-msgstr ""
+msgstr "Inhalt"
 
 #: src/Components/ContactFormComponent.php:49
 msgid "Thank you for your request"
-msgstr ""
+msgstr "Vielen Dank für Deine Anfrage"
 
 #: src/PostTypes/NewsPostType.php:35
 msgctxt ""
@@ -756,15 +756,15 @@ msgstr ""
 
 #: src/Taxonomies/DisciplineTaxonomy.php:18
 msgid "Update Discipline"
-msgstr ""
+msgstr "Disziplin aktualisieren"
 
 #: src/Taxonomies/RoleTaxonomy.php:18
 msgid "Update Role"
-msgstr ""
+msgstr "Rolle aktualisieren"
 
 #: src/Taxonomies/SeriesTaxonomy.php:18
 msgid "Update Series"
-msgstr ""
+msgstr "Serie aktualisieren"
 
 #. Name of the theme
 msgid "Valerie-Knill"
@@ -772,19 +772,19 @@ msgstr ""
 
 #: src/PostTypes/NewsPostType.php:25
 msgid "View entry"
-msgstr ""
+msgstr "Newsbeitrag anschauen"
 
 #: src/PostTypes/ExhibitionPostType.php:25
 msgid "View exhibition"
-msgstr ""
+msgstr "Ausstellung anschauen"
 
 #: src/PostTypes/ImagePostType.php:25
 msgid "View image"
-msgstr ""
+msgstr "Bild anschauen"
 
 #: src/PostTypes/ProjectPostType.php:25
 msgid "View project"
-msgstr ""
+msgstr "Projekt anschauen"
 
 #: src/Components/CommentFormComponent.php:27
 msgid "Website"
@@ -792,4 +792,4 @@ msgstr ""
 
 #. Description of the theme
 msgid "Wordpress theme for the Website of Valerie Knill"
-msgstr ""
+msgstr "Wordpress theme für die Website von Valerie Knill"
