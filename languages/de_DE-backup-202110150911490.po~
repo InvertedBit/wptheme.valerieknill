@@ -1,14 +1,13 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Valerie-Knill\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-15 09:11+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: \n"
-"Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"POT-Creation-Date: 2021-10-15 07:47+0000\n"
+"PO-Revision-Date: 2021-10-15 08:52+0000\n"
+"Last-Translator: \n"
+"Language-Team: Deutsch\n"
+"Language: de_DE\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,19 +18,19 @@ msgstr ""
 #: src/Views/PostView.php:21
 #, php-format
 msgid "%d comments"
-msgstr ""
+msgstr "%d Kommentare"
 
 #. Name of the template
 msgid "About"
-msgstr ""
+msgstr "Über mich"
 
 #: src/FieldGroups/AboutPageFieldGroup.php:13
 msgid "About Page"
-msgstr ""
+msgstr "Über mich - Seite"
 
 #: src/FieldGroups/AboutPageFieldGroup.php:17
 msgid "About text"
-msgstr ""
+msgstr "Über mich - Text"
 
 #: src/PostTypes/ExhibitionPostType.php:21 src/PostTypes/NewsPostType.php:21
 #: src/PostTypes/ImagePostType.php:21 src/PostTypes/ProjectPostType.php:21
@@ -40,24 +39,24 @@ msgstr ""
 
 #: src/Taxonomies/DisciplineTaxonomy.php:19
 msgid "Add New Discipline"
-msgstr ""
+msgstr "Neue Disziplin"
 
 #: src/PostTypes/NewsPostType.php:22
 msgid "Add New entry"
-msgstr ""
+msgstr "Eintrag hinzufügen"
 
 #: src/PostTypes/ExhibitionPostType.php:22
 msgid "Add New exhibition"
-msgstr ""
+msgstr "Ausstellung hinzufügen"
 
 #: src/PostTypes/ImagePostType.php:22
 msgid "Add New image"
-msgstr ""
+msgstr "Bild hinzufügen"
 
 #: src/PostTypes/ExhibitionPostType.php:20
 msgctxt "Add New on Toolbar"
 msgid "Exhibitions"
-msgstr ""
+msgstr "Ausstellungen"
 
 #: src/PostTypes/ImagePostType.php:20
 msgctxt "Add New on Toolbar"
@@ -76,20 +75,20 @@ msgstr ""
 
 #: src/PostTypes/ProjectPostType.php:22
 msgid "Add New project"
-msgstr ""
+msgstr "Projekt hinzufügen"
 
 #: src/Taxonomies/RoleTaxonomy.php:19
 msgid "Add New Role"
-msgstr ""
+msgstr "Rolle hinzufügen"
 
 #: src/Taxonomies/SeriesTaxonomy.php:19
 msgid "Add New Series"
-msgstr ""
+msgstr "Serie hinzufügen"
 
 #: src/PostTypes/ExhibitionPostType.php:19
 msgctxt "Admin Menu text"
 msgid "Exhibitions"
-msgstr ""
+msgstr "Ausstellungen"
 
 #: src/PostTypes/ImagePostType.php:19
 msgctxt "Admin Menu text"
@@ -112,7 +111,7 @@ msgstr ""
 
 #: src/Taxonomies/DisciplineTaxonomy.php:14
 msgid "All Disciplines"
-msgstr ""
+msgstr "Alle Disziplinen"
 
 #: src/PostTypes/ExhibitionPostType.php:26
 msgid "All exhibitions"
@@ -120,40 +119,40 @@ msgstr ""
 
 #: src/PostTypes/NewsPostType.php:26 src/PostTypes/ImagePostType.php:26
 msgid "All news"
-msgstr ""
+msgstr "Alle Newsbeiträge"
 
 #: src/PostTypes/ProjectPostType.php:26
 msgid "All projects"
-msgstr ""
+msgstr "Alle Projekte"
 
 #: src/Taxonomies/RoleTaxonomy.php:14
 msgid "All Roles"
-msgstr ""
+msgstr "Alle Rollen"
 
 #: src/Taxonomies/SeriesTaxonomy.php:14
 msgid "All Series"
-msgstr ""
+msgstr "Alle Serien"
 
 #: src/Templates/SingleProjectTemplate.php:98
 msgid "Awards"
-msgstr ""
+msgstr "Preise"
 
 #: src/Components/ContactFormComponent.php:36
 msgctxt "Captcha failed message"
 msgid "Captcha failed!"
-msgstr ""
+msgstr "Captcha fehlgeschlagen!"
 
 #: src/Components/CommentFormComponent.php:29
 msgid "Comment"
-msgstr ""
+msgstr "Kommentar"
 
 #: src/Views/CommentForm.php:2
 msgid "Comments"
-msgstr ""
+msgstr "Kommentare"
 
 #. Name of the template
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #: src/Components/ContactFormComponent.php:84
 msgctxt "Contact form error email"
@@ -183,19 +182,19 @@ msgstr ""
 #: src/Views/ContactForm.php:2
 msgctxt "Contact form title"
 msgid "Contact me..."
-msgstr ""
+msgstr "Kontaktieren sie mich..."
 
 #: src/Views/PostView.php:14
 msgid "continue reading..."
-msgstr ""
+msgstr "weiterlesen..."
 
 #: src/Views/ExhibitionSlider.php:3
 msgid "Current exhibitions"
-msgstr ""
+msgstr "Laufende Ausstellungen"
 
 #: src/Taxonomies/DisciplineTaxonomy.php:21
 msgid "Discipline"
-msgstr ""
+msgstr "Disziplin"
 
 #: src/Views/ContactForm.php:7 src/Components/CommentFormComponent.php:26
 msgid "E-Mail"
@@ -203,53 +202,53 @@ msgstr ""
 
 #: src/Taxonomies/DisciplineTaxonomy.php:17
 msgid "Edit Discipline"
-msgstr ""
+msgstr "Disziplin bearbeiten"
 
 #: src/PostTypes/NewsPostType.php:24
 msgid "Edit entry"
-msgstr ""
+msgstr "Newseintrag bearbeiten"
 
 #: src/PostTypes/ExhibitionPostType.php:24
 msgid "Edit exhibition"
-msgstr ""
+msgstr "Ausstellung bearbeiten"
 
 #: src/PostTypes/ImagePostType.php:24
 msgid "Edit image"
-msgstr ""
+msgstr "Bild bearbeiten"
 
 #: src/PostTypes/ProjectPostType.php:24
 msgid "Edit project"
-msgstr ""
+msgstr "Projekt bearbeiten"
 
 #: src/Taxonomies/RoleTaxonomy.php:17
 msgid "Edit Role"
-msgstr ""
+msgstr "Rolle bearbeiten"
 
 #: src/Taxonomies/SeriesTaxonomy.php:17
 msgid "Edit Series"
-msgstr ""
+msgstr "Serie bearbeiten"
 
 #: src/Views/ExhibitionSlider.php:12
 #, php-format
 msgctxt "Exhibition card from to"
 msgid "From %s to %s"
-msgstr ""
+msgstr "Vom %s bis zum %s"
 
 #. Name of the template
 msgid "Exhibitions"
-msgstr ""
+msgstr "Ausstellungen"
 
 #: src/Templates/SingleProjectTemplate.php:248
 msgid "Festivals"
-msgstr ""
+msgstr "Festivals"
 
 #. Name of the template
 msgid "Gallery"
-msgstr ""
+msgstr "Galerie"
 
 #. Name of the template
 msgid "Homepage"
-msgstr ""
+msgstr "Startseite"
 
 #. URI of the theme
 msgid "https://valerie-knill.com/"
@@ -257,7 +256,7 @@ msgstr ""
 
 #: src/FieldGroups/AboutPageFieldGroup.php:37
 msgid "Image"
-msgstr ""
+msgstr "Bild"
 
 #. Name of the template
 msgid "Landingpage"
@@ -265,7 +264,7 @@ msgstr ""
 
 #: src/Components/CommentFormComponent.php:23
 msgid "Leave a comment"
-msgstr ""
+msgstr "Kommentar hinterlassen"
 
 #: src/Components/CommentFormComponent.php:22
 msgid "Leave a reply"
@@ -319,11 +318,7 @@ msgstr ""
 
 #: src/Views/PostView.php:18
 msgid "no comments yet"
-msgstr ""
-
-#: src/Views/CommentList.php:3
-msgid "No comments yet. Be the first one to comment..."
-msgstr ""
+msgstr "Noch keine Kommentare"
 
 #: src/PostTypes/ExhibitionPostType.php:30
 msgid "No exhibitions found in Trash."
@@ -353,13 +348,13 @@ msgstr ""
 msgctxt ""
 "Overrides the “Featured Image” phrase for this post type. Added in 4.3"
 msgid "Article Cover Image"
-msgstr ""
+msgstr "Newsartikel Coverbild"
 
 #: src/PostTypes/ExhibitionPostType.php:31
 msgctxt ""
 "Overrides the “Featured Image” phrase for this post type. Added in 4.3"
 msgid "Exhibition Cover Image"
-msgstr ""
+msgstr "Ausstellung Coverbild"
 
 #: src/PostTypes/ImagePostType.php:31
 msgctxt ""
@@ -513,7 +508,7 @@ msgstr ""
 #: src/PostTypes/ExhibitionPostType.php:17
 msgctxt "Post type general name"
 msgid "Exhibitions"
-msgstr ""
+msgstr "Ausstellungen"
 
 #: src/PostTypes/ImagePostType.php:17
 msgctxt "Post type general name"
@@ -533,7 +528,7 @@ msgstr ""
 #: src/PostTypes/ExhibitionPostType.php:18
 msgctxt "Post type singular name"
 msgid "Exhibition"
-msgstr ""
+msgstr "Ausstellung"
 
 #: src/PostTypes/ImagePostType.php:18
 msgctxt "Post type singular name"
@@ -580,28 +575,28 @@ msgctxt ""
 "Screen reader text for the filter links heading on the post type listing "
 "screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4"
 msgid "Filter news list"
-msgstr ""
+msgstr "Newsbeiträge filtern"
 
 #: src/PostTypes/ProjectPostType.php:38
 msgctxt ""
 "Screen reader text for the filter links heading on the post type listing "
 "screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4"
 msgid "Filter projects list"
-msgstr ""
+msgstr "Projekte filtern"
 
 #: src/PostTypes/NewsPostType.php:40
 msgctxt ""
 "Screen reader text for the items list heading on the post type listing "
 "screen. Default “Posts list”/”Pages list”. Added in 4.4"
 msgid "Articles list"
-msgstr ""
+msgstr "Newsartikel Liste"
 
 #: src/PostTypes/ExhibitionPostType.php:40
 msgctxt ""
 "Screen reader text for the items list heading on the post type listing "
 "screen. Default “Posts list”/”Pages list”. Added in 4.4"
 msgid "Exhibitions list"
-msgstr ""
+msgstr "Ausstellungsliste"
 
 #: src/PostTypes/ImagePostType.php:40
 msgctxt ""
@@ -622,14 +617,14 @@ msgctxt ""
 "Screen reader text for the pagination heading on the post type listing "
 "screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4"
 msgid "Articles list navigation"
-msgstr ""
+msgstr "Newsartikel Navigation"
 
 #: src/PostTypes/ExhibitionPostType.php:39
 msgctxt ""
 "Screen reader text for the pagination heading on the post type listing "
 "screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4"
 msgid "Exhibitions list navigation"
-msgstr ""
+msgstr "Ausstellungen Navigation"
 
 #: src/PostTypes/ImagePostType.php:39
 msgctxt ""
@@ -692,7 +687,7 @@ msgstr ""
 #: src/Taxonomies/DisciplineTaxonomy.php:11
 msgctxt "taxonomy general name"
 msgid "Disciplines"
-msgstr ""
+msgstr "Disziplinen"
 
 #: src/Taxonomies/RoleTaxonomy.php:11
 msgctxt "taxonomy general name"
@@ -707,7 +702,7 @@ msgstr ""
 #: src/Taxonomies/DisciplineTaxonomy.php:12
 msgctxt "taxonomy singular name"
 msgid "Discipline"
-msgstr ""
+msgstr "Disziplin"
 
 #: src/Taxonomies/RoleTaxonomy.php:12
 msgctxt "taxonomy singular name"
@@ -732,21 +727,21 @@ msgctxt ""
 "The post type archive label used in nav menus. Default “Post Archives”. "
 "Added in 4.4"
 msgid "Article archives"
-msgstr ""
+msgstr "Newsarchiv"
 
 #: src/PostTypes/ExhibitionPostType.php:35
 msgctxt ""
 "The post type archive label used in nav menus. Default “Post Archives”. "
 "Added in 4.4"
 msgid "Exhibition archives"
-msgstr ""
+msgstr "Aussstellungsarchiv"
 
 #: src/PostTypes/ImagePostType.php:35
 msgctxt ""
 "The post type archive label used in nav menus. Default “Post Archives”. "
 "Added in 4.4"
 msgid "Image archives"
-msgstr ""
+msgstr "Bildarchiv"
 
 #: src/PostTypes/ProjectPostType.php:35
 msgctxt ""

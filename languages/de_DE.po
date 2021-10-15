@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Valerie-Knill\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-15 07:47+0000\n"
-"PO-Revision-Date: 2021-10-15 08:52+0000\n"
+"PO-Revision-Date: 2021-10-15 09:13+0000\n"
 "Last-Translator: \n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -320,6 +320,10 @@ msgstr ""
 msgid "no comments yet"
 msgstr "Noch keine Kommentare"
 
+#: src/Views/CommentList.php:3
+msgid "No comments yet. Be the first one to comment..."
+msgstr "Noch keine Kommentare vorhanden. Sei der erste..."
+
 #: src/PostTypes/ExhibitionPostType.php:30
 msgid "No exhibitions found in Trash."
 msgstr ""
@@ -549,7 +553,7 @@ msgstr ""
 #, php-format
 msgctxt "PostView componet date"
 msgid "Written on %s by"
-msgstr ""
+msgstr "Am %s geschrieben von"
 
 #: src/FieldGroups/AboutPageFieldGroup.php:62
 msgid "Quote"

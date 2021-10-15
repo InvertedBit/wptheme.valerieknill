@@ -74,7 +74,6 @@ class Theme {
 
     
     public function initialize() {
-        //$this->getCurrentSubdomain();
         add_theme_support('menus');
         //add_action('after_setup_theme', [$this, 'afterSetupTheme']);
 
@@ -103,17 +102,6 @@ class Theme {
 
     public function getSubdomain() {
         return $this->subdomain;
-    }
-
-    protected function getCurrentSubdomain() {
-        $host = $_SERVER['HTTP_HOST'];
-        $siteHost = str_replace(['http://', 'https://'], '', get_site_url());
-        $this->baseDomain = $siteHost;
-        if ($host === $siteHost) {
-            $this->subdomain = false;
-            return;
-        }
-        $this->subdomain = rtrim(str_replace($siteHost, '', $host), '.');
     }
 
     public function runWordpressInit() {
