@@ -198,7 +198,7 @@ class Theme {
     public function registerMenuLocations() {
         register_nav_menus([
             'main-menu-painting'    => __('Main Menu - Painting'),
-            'main-menu-movies'      => __('Main Menu - Movies'),
+            'main-menu-film'      => __('Main Menu - Film'),
             'footer-menu'           => __('Footer Menu')
         ]);
     }

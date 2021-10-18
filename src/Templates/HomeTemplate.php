@@ -17,9 +17,15 @@ class HomeTemplate extends BaseTemplate {
             'id' => get_the_ID()
         ]);
 
+        //echo '<pre>';
+        //print_r($this->disciplineTerm);
+        //echo '</pre>';
 
         $newsPostTypeDataSource = new PostTypeDataSource([
             'post_type' => 'news',
+            'taxonomies' => [
+                'discipline' => $this->disciplineTerm->slug
+            ],
             'count' => 1
         ]);
 

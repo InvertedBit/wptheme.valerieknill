@@ -13,6 +13,8 @@ abstract class BaseTemplate {
 
     protected $discipline = false;
 
+    protected $disciplineTerm;
+
     protected $stylesheets = [];
 
     protected $scripts = [];
@@ -46,12 +48,23 @@ abstract class BaseTemplate {
 
     abstract protected function prepareComponents();
 
+    protected function getTermForCurrentLocale($ids) {
+        $locale = 'de';
+        if (function_exists('pll_current_language')) {
+            $locale = pll_current_language('slug');
+            $term = pll_get_term($ids[0]);
+            return get_term($term);
+        }
+        return false;
+    }
+
     protected function getPostDiscipline() {
         $disciplines = get_field('disciplines', 'option');
         if (!empty($_GET['discipline'])) {
             $this->discipline = $_GET['discipline'];
             foreach($disciplines as $discipline) {
                 if ($discipline['discipline'] === $this->discipline) {
+                    $this->disciplineTerm = $this->getTermForCurrentLocale($discipline['term']);
                     $this->colourScheme = $discipline['colorscheme'];
                     break;
                 }
@@ -60,6 +73,7 @@ abstract class BaseTemplate {
             $this->discipline = $this->parameters['discipline'];
             foreach($disciplines as $discipline) {
                 if ($discipline['discipline'] === $this->discipline) {
+                    $this->disciplineTerm = $this->getTermForCurrentLocale($discipline['term']);
                     $this->colourScheme = $discipline['colorscheme'];
                     break;
                 }
@@ -75,6 +89,7 @@ abstract class BaseTemplate {
                 if (in_array($postDisciplineId, $discipline['term'])) {
                     $this->colourScheme = $discipline['colorscheme'];
                     $this->discipline = $discipline['discipline'];
+                    $this->disciplineTerm = $this->getTermForCurrentLocale($discipline['term']);
                     break;
                 }
             }
