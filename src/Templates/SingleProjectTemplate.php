@@ -3,6 +3,7 @@ namespace AlexScherer\WpthemeValerieknill\Templates;
 
 use AlexScherer\WpthemeValerieknill\Data\GeneralPostDataSource;
 use AlexScherer\WpthemeValerieknill\Data\RepeaterDataSource;
+use WP_Query;
 
 class SingleProjectTemplate extends BaseTemplate {
 
@@ -26,6 +27,10 @@ class SingleProjectTemplate extends BaseTemplate {
             ]
         ];
 
+        $parent = [
+            'title' =>_x('Projects', 'Projects page breadcrumb title', 'wptheme-valerieknill'),
+            'url' => get_post_type_archive_link('project')
+];
 
         $this->addComponent('SlimHeaderComponent', $headerArguments);
         $this->addComponent('NavigationComponent', [
@@ -37,7 +42,9 @@ class SingleProjectTemplate extends BaseTemplate {
 
         $topSectionComponents[] = [
             'name' => 'BreadcrumbComponent',
-            'arguments' => []
+            'arguments' => [
+                'parent' => $parent
+            ]
         ];
 
         $topSectionComponents[] = [
