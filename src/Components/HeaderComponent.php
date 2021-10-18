@@ -29,8 +29,8 @@ abstract class HeaderComponent extends BaseViewComponent {
 
             if ($this->data['discipline'] === 'painting') {
                 $this->data['blog_subtitle'] = _x('Painting', 'Header Subtitle Painting');
-            } elseif ($this->data['discipline'] === 'movies') {
-                $this->data['blog_subtitle'] = _x('Movies', 'Header Subtitle Movies');
+            } elseif ($this->data['discipline'] === 'film') {
+                $this->data['blog_subtitle'] = _x('Film', 'Header Subtitle Movies');
             }
         }
     }

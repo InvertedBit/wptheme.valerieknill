@@ -1,6 +1,6 @@
 <article class="uk-article uk-inline">
 <?php if (!empty($this->data['post_title'])): ?>
-    <a href="<?php echo $this->data['post_permalink']; ?>"><h1 class="uk-article-title"><?php echo $this->data['post_title']; ?></h1></a>
+    <h1 class="uk-article-title"><a class="uk-link-heading" href="<?php echo $this->data['post_permalink']; ?>"><?php echo $this->data['post_title']; ?></a></h1>
 <?php endif; ?>
     <p class="uk-article-meta"><?php echo sprintf(_x('Written on %s by', 'PostView componet date', 'wptheme-valerieknill'), $this->data['post_date']); ?> <a href="<?php echo $this->data['author_page_link']; ?>"><?php echo $this->data['post_author']->nickname; ?></a>.</p>
 <?php if ($this->data['format'] === 'excerpt'): ?>

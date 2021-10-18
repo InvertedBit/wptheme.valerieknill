@@ -10,11 +10,11 @@ class AboutPageFieldGroup extends BaseFieldGroup {
     {
         return array(
             'key' => 'group_61556f29bdc34',
-            'title' => __('About Page', 'wptheme.valerieknill'),
+            'title' => __('About Page', 'wptheme-valerieknill'),
             'fields' => array(
                 array(
                     'key' => 'field_61556f3a9fd55',
-                    'label' => __('About text', 'wptheme.valerieknill'),
+                    'label' => __('About text', 'wptheme-valerieknill'),
                     'name' => 'text_about',
                     'type' => 'wysiwyg',
                     'instructions' => '',
@@ -34,7 +34,7 @@ class AboutPageFieldGroup extends BaseFieldGroup {
                 ),
                 array(
                     'key' => 'field_61556f5e9fd56',
-                    'label' => __('Image', 'wptheme.valerieknill'),
+                    'label' => __('Image', 'wptheme-valerieknill'),
                     'name' => 'image',
                     'type' => 'image',
                     'instructions' => '',
@@ -59,7 +59,7 @@ class AboutPageFieldGroup extends BaseFieldGroup {
                 ),
                 array(
                     'key' => 'field_61556fb99fd58',
-                    'label' => __('Quote', 'wptheme.valerieknill'),
+                    'label' => __('Quote', 'wptheme-valerieknill'),
                     'name' => 'quote',
                     'type' => 'group',
                     'instructions' => '',
@@ -74,7 +74,7 @@ class AboutPageFieldGroup extends BaseFieldGroup {
                     'sub_fields' => array(
                         array(
                             'key' => 'field_61556fc89fd59',
-                            'label' => __('Name', 'wptheme.valerieknill'),
+                            'label' => __('Name', 'wptheme-valerieknill'),
                             'name' => 'name',
                             'type' => 'text',
                             'instructions' => '',
@@ -94,7 +94,7 @@ class AboutPageFieldGroup extends BaseFieldGroup {
                         ),
                         array(
                             'key' => 'field_61556fd09fd5a',
-                            'label' => __('Text', 'wptheme.valerieknill'),
+                            'label' => __('Text', 'wptheme-valerieknill'),
                             'name' => 'text',
                             'type' => 'text',
                             'instructions' => '',

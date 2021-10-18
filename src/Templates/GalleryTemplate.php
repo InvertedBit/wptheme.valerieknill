@@ -4,6 +4,7 @@ namespace AlexScherer\WpthemeValerieknill\Templates;
 use AlexScherer\WpthemeValerieknill\Data\GeneralPostDataSource;
 use AlexScherer\WpthemeValerieknill\Data\TaxonomyDataSource;
 use AlexScherer\WpthemeValerieknill\Data\TermDataSource;
+use WP_Query;
 
 class GalleryTemplate extends BaseTemplate {
 
@@ -14,6 +15,7 @@ class GalleryTemplate extends BaseTemplate {
     protected function prepareComponents()
     {
         $headerArguments = [];
+        $parent = false;
         if (!empty($this->parameters['type']) && $this->parameters['type'] === 'taxonomy') {
             //$headerArguments = [
             //'field_overrides' => [
@@ -32,6 +34,27 @@ class GalleryTemplate extends BaseTemplate {
                 ]
             ];
 
+
+            $currentGalleryPageQuery = new WP_Query([
+                'post_type' => 'page',
+                'meta_key' => '_wp_page_template',
+                'meta_value' => 'page_gallery.php',
+                'tax_query' => [
+                    [
+                        'taxonomy' => 'discipline',
+                        'field' => 'slug',
+                        'terms' => $this->discipline
+                    ]
+                ]
+            ]);
+
+
+            if (!empty($currentGalleryPageQuery->posts)) {
+                $parent = $currentGalleryPageQuery->posts[0];
+            }
+
+
+
         } else {
             $headerArguments = [
                 'datasource' => new GeneralPostDataSource([
@@ -45,8 +68,18 @@ class GalleryTemplate extends BaseTemplate {
             'menuLocation' => 'main-menu'
         ]);
 
+        $breadcrumbArguments = [];
+        if ($parent) {
+            $breadcrumbArguments['parent'] = $parent;
+        }
+
 
         $mainSectionComponents = [];
+
+        $mainSectionComponents[] = [
+            'name' => 'BreadcrumbComponent',
+            'arguments' => $breadcrumbArguments
+        ];
 
         if (!empty($this->parameters['type'])) {
             if ($this->parameters['type'] === 'taxonomy') {

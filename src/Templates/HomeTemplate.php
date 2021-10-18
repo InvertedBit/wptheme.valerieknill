@@ -2,6 +2,7 @@
 namespace AlexScherer\WpthemeValerieknill\Templates;
 
 use AlexScherer\WpthemeValerieknill\Data\GeneralPostDataSource;
+use AlexScherer\WpthemeValerieknill\Data\PostTypeDataSource;
 
 class HomeTemplate extends BaseTemplate {
 
@@ -16,6 +17,18 @@ class HomeTemplate extends BaseTemplate {
             'id' => get_the_ID()
         ]);
 
+        //echo '<pre>';
+        //print_r($this->disciplineTerm);
+        //echo '</pre>';
+
+        $newsPostTypeDataSource = new PostTypeDataSource([
+            'post_type' => 'news',
+            'taxonomies' => [
+                'discipline' => $this->disciplineTerm->slug
+            ],
+            'count' => 1
+        ]);
+
         if ($this->discipline === 'painting') {
             $this->addComponent('SliderHeaderComponent', [
                 'datasource' => $dataSource
@@ -28,6 +41,13 @@ class HomeTemplate extends BaseTemplate {
         $this->addComponent('NavigationComponent', [
             'menuLocation' => 'main-menu'
         ]);
+        $mainContainerComponents = [];
+        $mainContainerComponents[] = [
+            'name' => 'TitleComponent',
+            'arguments' => [
+                'datasource' => $dataSource
+            ]
+        ];
         $this->addComponent('SectionComponent', [
             'style' => [
                 'section' => [
@@ -36,13 +56,56 @@ class HomeTemplate extends BaseTemplate {
             ],
             'components' => [
                 [
-                    'name' => 'TitleComponent',
+                    'name' => 'ContainerComponent',
                     'arguments' => [
-                        'datasource' => $dataSource
+                        'components' => $mainContainerComponents
                     ]
                 ]
             ]
         ]);
+
+        $newsContainerComponents = [];
+
+        $postViewComponentArguments = [
+            'format' => 'excerpt',
+            'links' => true
+        ];
+
+
+
+        //$postViewComponentArguments['author_page_link'] = $authorPageOverride;
+
+        $newsContainerComponents[] = [
+            'name' => 'PostListComponent',
+            'arguments' => [
+                'datasource' => $newsPostTypeDataSource,
+                'childComponent' => [
+                    'name' => 'PostViewComponent',
+                    'arguments' => $postViewComponentArguments
+                ],
+                'pagination' => [
+                    'enabled' => false
+                ]
+            ]
+        ];
+
+
+        $this->addComponent('SectionComponent', [
+            'style' => [
+                'section' => [
+                    'primary'
+                ]
+            ],
+            'components' => [
+                [
+                    'name' => 'ContainerComponent',
+                    'arguments' => [
+                        'components' => $newsContainerComponents
+                    ]
+                ]
+            ]
+        ]);
+
         $this->addComponent('FooterComponent');
     }
 }

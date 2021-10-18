@@ -3,6 +3,7 @@ namespace AlexScherer\WpthemeValerieknill\Templates;
 
 use AlexScherer\WpthemeValerieknill\Data\GeneralPostDataSource;
 use AlexScherer\WpthemeValerieknill\Data\RepeaterDataSource;
+use WP_Query;
 
 class SingleProjectTemplate extends BaseTemplate {
 
@@ -26,6 +27,10 @@ class SingleProjectTemplate extends BaseTemplate {
             ]
         ];
 
+        $parent = [
+            'title' =>_x('Projects', 'Projects page breadcrumb title', 'wptheme-valerieknill'),
+            'url' => get_post_type_archive_link('project')
+];
 
         $this->addComponent('SlimHeaderComponent', $headerArguments);
         $this->addComponent('NavigationComponent', [
@@ -37,7 +42,9 @@ class SingleProjectTemplate extends BaseTemplate {
 
         $topSectionComponents[] = [
             'name' => 'BreadcrumbComponent',
-            'arguments' => []
+            'arguments' => [
+                'parent' => $parent
+            ]
         ];
 
         $topSectionComponents[] = [
@@ -95,7 +102,7 @@ class SingleProjectTemplate extends BaseTemplate {
         $awardsGridComponents[] = [
             'name' => 'GridComponent',
             'arguments' => [
-                'title' => __('Awards', 'wptheme.valerieknill'),
+                'title' => __('Awards', 'wptheme-valerieknill'),
                 'datasource' => new RepeaterDataSource([
                     'field' => 'awards',
                     'source' => get_the_ID(),
@@ -121,7 +128,7 @@ class SingleProjectTemplate extends BaseTemplate {
         $awardsGridComponents[] = [
             'name' => 'TableComponent',
             'arguments' => [
-                'title' => __('Specifications', 'wptheme.valerieknill'),
+                'title' => __('Specifications', 'wptheme-valerieknill'),
                 'datasource' => new RepeaterDataSource([
                     'field' => 'specifications',
                     'source' => get_the_ID()
@@ -195,7 +202,7 @@ class SingleProjectTemplate extends BaseTemplate {
         $reviewSectionComponents[] = [
             'name' => 'GridComponent',
             'arguments' => [
-                'title' => __('Reviews', 'wptheme.valerieknill'),
+                'title' => __('Reviews', 'wptheme-valerieknill'),
                 'datasource' => new RepeaterDataSource([
                     'field' => 'reviews',
                     'source' => get_the_ID()
@@ -245,7 +252,7 @@ class SingleProjectTemplate extends BaseTemplate {
         $festivalSectionComponents[] = [
             'name' => 'GridComponent',
             'arguments' => [
-                'title' => __('Festivals', 'wptheme.valerieknill'),
+                'title' => __('Festivals', 'wptheme-valerieknill'),
                 'datasource' => new RepeaterDataSource([
                     'field' => 'festivals',
                     'source' => get_the_ID()

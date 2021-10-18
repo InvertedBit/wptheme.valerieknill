@@ -26,10 +26,16 @@ class BreadcrumbComponent extends BaseViewComponent {
                 break;
             }
         }
-        $currentPostTitle = $this->getField('title');
-        if (empty($currentPostTitle)) {
-            $post = get_post(get_queried_object_id());
-            $currentPostTitle = $post->post_title;
+        $object = get_queried_object();
+        $currentPostTitle = '';
+        if (is_a($object, 'WP_Post')) {
+            $currentPostTitle = $this->getField('title');
+            if (empty($currentPostTitle)) {
+                $post = get_post(get_queried_object_id());
+                $currentPostTitle = $post->post_title;
+            }
+        } elseif (is_a($object, 'WP_Term')) {
+            $currentPostTitle = $object->name;
         }
         $ancestors = [];
         $parent = false;
@@ -40,7 +46,9 @@ class BreadcrumbComponent extends BaseViewComponent {
             } else {
                 $parent = $this->data['parent'];
             }
-            $ancestors = get_post_ancestors($parent->ID);
+            if (is_a($parent, 'WP_Post')) {
+                $ancestors = get_post_ancestors($parent->ID);
+            }
 
         } else {
             $ancestors = get_post_ancestors(get_the_ID());
@@ -59,7 +67,11 @@ class BreadcrumbComponent extends BaseViewComponent {
         }
 
         if ($parent) {
-            $this->data['breadcrumb'][$this->getField('title', $parent)] = get_post_permalink($parent);
+            if (is_array($parent)) {
+                $this->data['breadcrumb'][$parent['title']] = $parent['url'];
+            } else {
+                $this->data['breadcrumb'][$this->getField('title', $parent)] = get_post_permalink($parent);
+            }
         }
 
         $this->data['breadcrumb'][$currentPostTitle] = false;

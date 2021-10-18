@@ -40,6 +40,19 @@ class PostTypeDataSource extends BaseIterativeDataSource {
             'post_type' => $this->parameters['post_type']
         ];
 
+        if (!empty($this->parameters['taxonomies'])) {
+            $taxQuery = [];
+            foreach ($this->parameters['taxonomies'] as $taxonomy => $term) {
+                $taxQuery[] = [
+                    'taxonomy' => $taxonomy,
+                    'field' => 'slug',
+                    'terms' => $term
+                ];
+            }
+            $args['tax_query'] = $taxQuery;
+        }
+
+
         if (!empty($this->parameters['pagination']) &&
             $this->parameters['pagination']['enabled']) {
             $args['posts_per_page'] = $this->parameters['pagination']['postsPerPage'];
@@ -49,6 +62,17 @@ class PostTypeDataSource extends BaseIterativeDataSource {
             $args['nopaging'] = true;
         }
 
+
+        if (!empty($this->parameters['count'])) {
+            $args['posts_per_page'] = $this->parameters['count'];
+            $args['nopaging'] = false;
+        }
+
+        //echo '<pre>';
+        //print_r($args);
+        //echo '</pre>';
+
+        //die();
         $query = new WP_Query($args);
 
         $this->totalPages = $query->max_num_pages;

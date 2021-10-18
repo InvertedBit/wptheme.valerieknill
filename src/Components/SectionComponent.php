@@ -37,6 +37,15 @@ class SectionComponent extends BaseViewComponent {
         if (empty($this->data['components'])) {
             return false;
         }
+        $validComponents = 0;
+        foreach ($this->data['components'] as $component) {
+            if ($component->isValid()) {
+                $validComponents++;
+            }
+        }
+        if ($validComponents === 0) {
+            return false;
+        }
         return true;
     }
 

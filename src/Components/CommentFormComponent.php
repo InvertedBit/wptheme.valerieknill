@@ -1,8 +1,6 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Components;
 
-use AlexScherer\WpthemeValerieknill\Data\BaseDataSource;
-
 class CommentFormComponent extends BaseViewComponent {
 
     protected const COMPONENT_NAMESPACE = 'AlexScherer\\WpthemeValerieknill\\Components\\';
@@ -19,7 +17,7 @@ class CommentFormComponent extends BaseViewComponent {
     }
     
     protected function initialize() {
-        $this->data['arguments']['title_reply_before'] = '<h3 id="reply-title" class="comment-reply-title uk-hidden">'.__('Leave a reply', 'wptheme.valerieknill').'</h3><h3 id="new-comment-title" class="comment-new-title">';
+        $this->data['arguments']['title_reply_before'] = '<h3 id="reply-title" class="comment-reply-title uk-hidden">'.__('Leave a reply', 'wptheme-valerieknill').'</h3><h3 id="new-comment-title" class="comment-new-title">';
         $this->data['arguments']['title_reply'] = __('Leave a comment', 'wptheme-valerieknill');
         $this->data['arguments']['fields'] = [
             'author' => '<div class="uk-width-1-3@s uk-width-1-1@xs uk-grid-margin uk-first-column"><input class="uk-input" type="text" name="author" placeholder="'. __('Name', 'wptheme-valerieknill').' *"></div>',

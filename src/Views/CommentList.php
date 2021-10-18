@@ -1,3 +1,8 @@
+<?php if (empty($this->getComments())): ?>
+
+<h4 class="uk-heading-xsmall"><?php echo __('No comments yet. Be the first one to comment...', 'wptheme-valerieknill'); ?></h4>
+
+<?php endif; ?>
 <ul class="uk-comment-list">
 <?php foreach ($this->getComments() as $comment): ?>
 
