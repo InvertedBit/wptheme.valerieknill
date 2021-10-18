@@ -25,7 +25,18 @@ class MediaComponent extends BaseViewComponent {
             is_a($this->data['datasource'], MediaComponent::DATASOURCE_BASECLASS)) {
             $this->dataSource = $this->data['datasource'];
             $this->populateData();
+            if ($this->data['sourceType'] === 'link') {
+                $this->fetchEmbedInfos();
+            }
         }
+    }
+
+    protected function fetchEmbedInfos() {
+        $this->data['embed'] = [];
+        $matches = [];
+        preg_match('/^(?:http|https):\/\/(?:www.)?(?P<platform>youtube|vimeo).com\/(?:watch\?v=)?(?P<code>[^\/]+)(?:\/)?$/', $this->data['source'], $matches);
+        $this->data['embed']['platform'] = $matches['platform'];
+        $this->data['embed']['code'] = $matches['code'];
     }
 
     protected function populateData() {
