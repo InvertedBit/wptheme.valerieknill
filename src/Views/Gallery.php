@@ -3,9 +3,11 @@
 <?php foreach ($this->data['entries'] as $entry): ?>
         <div>
             <div class="uk-card uk-card-secondary uk-card-small uk-card-hover card-clickable lightbox">
-                <div class="uk-card-media-top">
+                <div class="uk-card-media-top uk-background-cover uk-height-medium" data-src="<?php echo $entry['image']; ?>" data-uk-img>
                     <a href="<?php echo $entry['image']; ?>" class="uk-cover-container" data-caption="<?php echo $entry['title']; ?>">
+<!--
                         <img src="<?php echo $entry['image']; ?>" alt="<?php echo $entry['title']; ?>" />
+-->
                     </a>
                 </div>
                 <div class="uk-card-body">
