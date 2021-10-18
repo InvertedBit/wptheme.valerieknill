@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Valerie-Knill\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-18 08:59+0000\n"
+"POT-Creation-Date: 2021-10-15 09:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -134,7 +134,7 @@ msgstr ""
 msgid "All Series"
 msgstr ""
 
-#: src/Templates/SingleProjectTemplate.php:105
+#: src/Templates/SingleProjectTemplate.php:98
 msgid "Awards"
 msgstr ""
 
@@ -239,7 +239,7 @@ msgstr ""
 msgid "Exhibitions"
 msgstr ""
 
-#: src/Templates/SingleProjectTemplate.php:255
+#: src/Templates/SingleProjectTemplate.php:248
 msgid "Festivals"
 msgstr ""
 
@@ -556,16 +556,11 @@ msgctxt "PostView componet date"
 msgid "Written on %s by"
 msgstr ""
 
-#: src/Templates/SingleProjectTemplate.php:31
-msgctxt "Projects page breadcrumb title"
-msgid "Projects"
-msgstr ""
-
 #: src/FieldGroups/AboutPageFieldGroup.php:62
 msgid "Quote"
 msgstr ""
 
-#: src/Templates/SingleProjectTemplate.php:205
+#: src/Templates/SingleProjectTemplate.php:198
 msgid "Reviews"
 msgstr ""
 
@@ -682,7 +677,7 @@ msgstr ""
 msgid "Series"
 msgstr ""
 
-#: src/Templates/SingleProjectTemplate.php:131
+#: src/Templates/SingleProjectTemplate.php:124
 msgid "Specifications"
 msgstr ""
 
