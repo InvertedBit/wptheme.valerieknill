@@ -1,5 +1,5 @@
 <div class="uk-container uk-margin-large-top">
-    <div class="gallery-container uk-child-width-1-4@l uk-child-width-1-3@m uk-child-width-1-2@s uk-child-width-1-1@xs" data-uk-grid="masonry: true" data-uk-lightbox>
+    <div class="gallery-container uk-child-width-1-4@l uk-child-width-1-3@m uk-child-width-1-2@s uk-child-width-1-1@xs" data-uk-grid data-uk-lightbox>
 <?php foreach ($this->data['entries'] as $entry): ?>
         <div>
             <div class="uk-card uk-card-secondary uk-card-small uk-card-hover card-clickable lightbox">
