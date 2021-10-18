@@ -26,10 +26,16 @@ class BreadcrumbComponent extends BaseViewComponent {
                 break;
             }
         }
-        $currentPostTitle = $this->getField('title');
-        if (empty($currentPostTitle)) {
-            $post = get_post(get_queried_object_id());
-            $currentPostTitle = $post->post_title;
+        $object = get_queried_object();
+        $currentPostTitle = '';
+        if (is_a($object, 'WP_Post')) {
+            $currentPostTitle = $this->getField('title');
+            if (empty($currentPostTitle)) {
+                $post = get_post(get_queried_object_id());
+                $currentPostTitle = $post->post_title;
+            }
+        } elseif (is_a($object, 'WP_Term')) {
+            $currentPostTitle = $object->name;
         }
         $ancestors = [];
         $parent = false;
