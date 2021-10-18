@@ -1,8 +1,6 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill\Components;
 
-use AlexScherer\WpthemeValerieknill\Data\BaseDataSource;
-
 class CommentFormComponent extends BaseViewComponent {
 
     protected const COMPONENT_NAMESPACE = 'AlexScherer\\WpthemeValerieknill\\Components\\';

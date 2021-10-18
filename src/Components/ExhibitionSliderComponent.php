@@ -16,13 +16,6 @@ class ExhibitionSliderComponent extends BaseIterativeViewComponent {
     }
     
     protected function initialize() {
-        //$args = [
-            //'post_type' => 'exhibition',
-            //'nopaging' => true
-
-        //];
-
-        //$exhibitionPosts = get_posts($args);
         $this->data['exhibitions'] = [];
         $this->data['exhibitions_closed'] = [];
         $nowTime = time();

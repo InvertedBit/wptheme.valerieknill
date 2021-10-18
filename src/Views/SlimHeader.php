@@ -7,12 +7,6 @@ $logoText = explode(' ', $this->data['blog_title']);
 <div class="logo-part logo-middle"><?php echo $logoText[1]; ?></div>
 <div class="logo-part logo-<?php echo $this->data['discipline']; ?> logo-bottom"><?php echo $this->data['blog_subtitle']; ?></div>
     </a>
-<!--
-    <a href="<?php echo $this->data['home_link']; ?>" class="uk-link-muted heading-logo-link uk-logo">
-		<h1 class="uk-heading-small heading-logo"><?php echo $this->data['blog_title']; ?></h1>
-		<h3 class="uk-heading-xsmall heading-logo-sub"><?php echo $this->data['blog_subtitle']; ?></h3>
-	</a>
--->
 	<a href="#" class="uk-icon-link uk-position-center-right navigation-button" data-uk-toggle="target: #main-navigation" data-uk-icon="icon: menu; ratio: 3"></a>
 </div>
 <div class="uk-section uk-light uk-background-cover uk-background-secondary uk-background-fixed header-section header-background" style="background-image: url('<?php echo $this->data['header_image']; ?>')">
@@ -26,12 +20,6 @@ $logoText = explode(' ', $this->data['blog_title']);
 <div class="logo-part logo-middle"><?php echo $logoText[1]; ?></div>
 <div class="logo-part logo-<?php echo $this->data['discipline']; ?> logo-bottom"><?php echo $this->data['blog_subtitle']; ?></div>
     </a>
-<!--
-            <a href="<?php echo $this->data['home_link']; ?>" class="uk-link-muted heading-logo-link uk-logo">
-                <h1 class="uk-heading-small heading-logo"><?php echo $this->data['blog_title']; ?></h1>
-                <h3 class="uk-heading-xsmall heading-logo-sub"><?php echo $this->data['blog_subtitle']; ?></h3>
-            </a>
--->
             <a href="#" class="uk-icon-link uk-position-top-right navigation-button" data-uk-toggle="target: #main-navigation" data-uk-icon="icon: menu; ratio: 3"></a>
         </div>
 </div>
