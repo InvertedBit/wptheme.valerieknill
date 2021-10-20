@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Valerie-Knill\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-15 07:47+0000\n"
-"PO-Revision-Date: 2021-10-20 11:34+0000\n"
+"PO-Revision-Date: 2021-10-20 11:42+0000\n"
 "Last-Translator: \n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -26,7 +26,7 @@ msgstr "Über mich"
 
 #: src/Helpers/FieldgroupHelper.php:17
 msgid "About Page Fieldgroup"
-msgstr ""
+msgstr "Über-Seite"
 
 #: src/Helpers/FieldgroupHelper.php:21
 msgid "About text"
@@ -203,7 +203,7 @@ msgstr "Bitte gib einen Betreff ein."
 #: src/Views/ContactFormSuccess.php:1
 msgctxt "Contact form success message"
 msgid "Message successfully sent!"
-msgstr ""
+msgstr "Deine Nachricht wurde erfolgreich versandt!"
 
 #: src/Views/ContactForm.php:2
 msgctxt "Contact form title"
@@ -228,7 +228,7 @@ msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:444
 msgid "Dimensions"
-msgstr ""
+msgstr "Masse"
 
 #: src/Taxonomies/DisciplineTaxonomy.php:21
 #: src/Helpers/FieldgroupHelper.php:1864
@@ -312,19 +312,19 @@ msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:1648 src/Helpers/FieldgroupHelper.php:1699
 msgid "Header Image"
-msgstr ""
+msgstr "Headerbild"
 
 #: src/Helpers/FieldgroupHelper.php:1034
 msgid "Header image"
-msgstr ""
+msgstr "Headerbild"
 
 #: src/Helpers/FieldgroupHelper.php:266
 msgid "Header images"
-msgstr ""
+msgstr "Headerbilder"
 
 #: src/Helpers/FieldgroupHelper.php:152
 msgid "Header Video"
-msgstr ""
+msgstr "Headervideo"
 
 #. Name of the template
 msgid "Homepage"
@@ -332,15 +332,15 @@ msgstr "Startseite"
 
 #: src/Helpers/FieldgroupHelper.php:148
 msgid "Homepage Movies Page Options"
-msgstr ""
+msgstr "Startseite Film"
 
 #: src/Helpers/FieldgroupHelper.php:262
 msgid "Homepage Painting Template Options"
-msgstr ""
+msgstr "Startseite Malerei"
 
 #: src/Helpers/FieldgroupHelper.php:1918
 msgid "Homepages"
-msgstr ""
+msgstr "Startseiten"
 
 #. URI of the theme
 msgid "https://valerie-knill.com/"
@@ -357,7 +357,7 @@ msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:415
 msgid "Image Fieldgroup"
-msgstr ""
+msgstr "Bild"
 
 #: src/Helpers/FieldgroupHelper.php:1113
 msgid "Image from Link"
@@ -381,15 +381,15 @@ msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:700
 msgid "Is Crosslink"
-msgstr ""
+msgstr "Querverweis"
 
 #. Name of the template
 msgid "Landingpage"
-msgstr ""
+msgstr "Landingpage"
 
 #: src/Helpers/FieldgroupHelper.php:507
 msgid "Landingpage Fieldgroup"
-msgstr ""
+msgstr "Landingpage"
 
 #: src/Components/CommentFormComponent.php:21
 msgid "Leave a comment"
@@ -470,7 +470,7 @@ msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:761
 msgid "News Page Fieldgroup"
-msgstr ""
+msgstr "Newsseite"
 
 #: src/Views/PostView.php:18
 msgid "no comments yet"
@@ -743,11 +743,11 @@ msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:880
 msgid "PostType Exhibition Fieldgroup"
-msgstr ""
+msgstr "Ausstellung"
 
 #: src/Helpers/FieldgroupHelper.php:1030
 msgid "PostType Project Fieldgroup"
-msgstr ""
+msgstr "Projekt"
 
 #: src/Views/PostView.php:5
 #, php-format
@@ -761,7 +761,7 @@ msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:1629
 msgid "Project Archive Fieldgroup"
-msgstr ""
+msgstr "Projektarchiv"
 
 #: src/Helpers/FieldgroupHelper.php:1633
 msgid "Project Archive Settings"
@@ -912,11 +912,11 @@ msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:1695
 msgid "Slim Header Options"
-msgstr ""
+msgstr "Slim Header"
 
 #: src/Helpers/FieldgroupHelper.php:464
 msgid "Sold"
-msgstr ""
+msgstr "Verkauft"
 
 #: src/Helpers/FieldgroupHelper.php:1419
 msgid "Source"
@@ -964,7 +964,7 @@ msgstr "Serien"
 
 #: src/Helpers/FieldgroupHelper.php:1769
 msgid "Taxonomy Series Fieldgroup"
-msgstr ""
+msgstr "Serie"
 
 #: src/Taxonomies/DisciplineTaxonomy.php:12
 msgctxt "taxonomy singular name"
