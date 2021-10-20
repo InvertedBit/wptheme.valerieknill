@@ -1,14 +1,17 @@
 <?php
-namespace AlexScherer\WpthemeValerieknill\FieldGroups;
+namespace AlexScherer\WpthemeValerieknill\Helpers;
 
-class AboutPageFieldGroup extends BaseFieldGroup {
-    public function __construct() {
-        parent::__construct('AboutPage');
+class FieldgroupHelper {
+
+    public static function registerFieldGroups() {
+        if (function_exists('acf_add_local_field_group')) {
+            self::acfRegisterFieldGroups();
+        }
+
     }
 
-    protected function getFieldGroupDefinition()
-    {
-        return array(
+    protected static function acfRegisterFieldGroups() {
+        acf_add_local_field_group(array(
             'key' => 'group_61556f29bdc34',
             'title' => __('About Page', 'wptheme-valerieknill'),
             'fields' => array(
@@ -137,6 +140,6 @@ class AboutPageFieldGroup extends BaseFieldGroup {
             ),
             'active' => true,
             'description' => '',
-        );
+        ));
     }
 }
