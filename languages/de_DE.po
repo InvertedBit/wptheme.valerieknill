@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Valerie-Knill\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-15 07:47+0000\n"
-"PO-Revision-Date: 2021-10-20 13:44+0000\n"
+"PO-Revision-Date: 2021-10-20 13:49+0000\n"
 "Last-Translator: \n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -647,39 +647,39 @@ msgstr ""
 
 #: src/Taxonomies/DisciplineTaxonomy.php:15
 msgid "Parent Discipline"
-msgstr ""
+msgstr "Übergeordnete Disziplin"
 
 #: src/Taxonomies/DisciplineTaxonomy.php:16
 msgid "Parent Discipline:"
-msgstr ""
+msgstr "Übergeordnete Disziplin:"
 
 #: src/PostTypes/ExhibitionPostType.php:28
 msgid "Parent exhibitions:"
-msgstr ""
+msgstr "Übergeordnete Ausstellung:"
 
 #: src/PostTypes/NewsPostType.php:28 src/PostTypes/ImagePostType.php:28
 msgid "Parent news:"
-msgstr ""
+msgstr "Übergeordneter Newsbeitrag:"
 
 #: src/PostTypes/ProjectPostType.php:28
 msgid "Parent project:"
-msgstr ""
+msgstr "Übergeordnetes Projekt:"
 
 #: src/Taxonomies/RoleTaxonomy.php:15
 msgid "Parent Role"
-msgstr ""
+msgstr "Übergeordnete Rolle"
 
 #: src/Taxonomies/RoleTaxonomy.php:16
 msgid "Parent Role:"
-msgstr ""
+msgstr "Übergeordnete Rolle:"
 
 #: src/Taxonomies/SeriesTaxonomy.php:15
 msgid "Parent Series"
-msgstr ""
+msgstr "Übergeordnete Serie"
 
 #: src/Taxonomies/SeriesTaxonomy.php:16
 msgid "Parent Series:"
-msgstr ""
+msgstr "Übergeordnete Serie:"
 
 #: src/Views/ExhibitionSlider.php:26
 msgid "Past exhibitions"
@@ -1054,7 +1054,7 @@ msgstr "Oben"
 
 #: src/Helpers/FieldgroupHelper.php:1099
 msgid "Type"
-msgstr ""
+msgstr "Art"
 
 #: src/Taxonomies/DisciplineTaxonomy.php:18
 msgid "Update Discipline"
