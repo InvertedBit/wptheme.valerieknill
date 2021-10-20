@@ -21,6 +21,7 @@ class LandingpageComponent extends HeaderComponent {
 
         $this->data['link_left'] = $links[0];
         $this->data['link_right'] = $links[1];
+        //if (empty($this->data['link_left']['image_po
     }
 
     public function isValid() {

@@ -4,6 +4,7 @@
     $zIndexFront: 20;
     $zIndexMiddle: 15;
     $zIndexBack: 10;
+    $linkPadding: 30px;
     .landingpage-section {
         height: 100vh;
         
@@ -47,6 +48,7 @@
             //top: 10vh;
             cursor: pointer;
             width: 100%;
+            background-repeat: no-repeat;
             
             &:hover {
                 //width: 90vw;
@@ -71,7 +73,7 @@
                 font-size: 61px;
                 position: relative;
                 top: calc(75% - 38px);
-                width: inherit;
+                width: calc(100% - #{$linkPadding});
                 display: inline-block;
                 line-height: 1.1125em;
                 padding-bottom: 0.175em;
@@ -101,7 +103,7 @@
             .link-text {
                 color: #ffffff;
                 background-color: $colourtheme-2;
-                padding-left: 30px;
+                padding-left: $linkPadding;
             }     
         }
         
@@ -130,7 +132,7 @@
             .link-text {
                 color: #ffffff;
                 background-color: $colourtheme-comp-2;
-                padding-right: 30px;
+                padding-right: $linkPadding;
             }     
         }
         
