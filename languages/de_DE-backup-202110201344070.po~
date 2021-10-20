@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Valerie-Knill\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-15 07:47+0000\n"
-"PO-Revision-Date: 2021-10-20 13:44+0000\n"
+"PO-Revision-Date: 2021-10-20 13:40+0000\n"
 "Last-Translator: \n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -1022,16 +1022,6 @@ msgid "Project archives"
 msgstr "Projekte"
 
 #: src/Helpers/FieldgroupHelper.php:1818
-msgid "Theme Settings"
-msgstr "Themeeinstellungen"
-
-#: src/Theme.php:121
-msgctxt "Theme settings menu_title"
-msgid "Theme Settings"
-msgstr "Themeeinstellungen"
-
-#: src/Theme.php:120
-msgctxt "Theme settings page_title"
 msgid "Theme Settings"
 msgstr "Themeeinstellungen"
 
