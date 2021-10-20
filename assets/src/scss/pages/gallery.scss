@@ -1,4 +1,4 @@
-.page-gallery {
+.tax-series {
 
     
     .uk-card {
@@ -10,6 +10,20 @@
         
         img {
             width: 100%;
+        }
+
+        .uk-card-media-top {
+            overflow: hidden;
+
+            .sold-banner {
+                position: relative;
+                background-color: red;
+                rotate: 45deg;
+                text-align: center;
+                top: 10%;
+                right: -30%;
+                font-size: 1.5rem;
+            }
         }
     }
 
