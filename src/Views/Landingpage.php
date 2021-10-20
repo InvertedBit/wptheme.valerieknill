@@ -12,8 +12,8 @@ $logoText = explode(' ', $this->data['title']);
 -->
         </div>
         <div class="link-container">
-            <div class="link-painting link" style="background-image: url('<?php echo $this->data['link_left']['image']; ?>');"><a class="link-text" href="<?php echo $this->data['link_left']['page_link']; ?>"><?php echo $this->data['link_left']['text']; ?></a></div>
-            <div class="link-movies link" style="background-image: url('<?php echo $this->data['link_right']['image']; ?>');"><a class="link-text" href="<?php echo $this->data['link_right']['page_link']; ?>"><?php echo $this->data['link_right']['text']; ?></a></div>
+            <div class="link-painting link" style="background-image: url('<?php echo $this->data['link_left']['image']; ?>'); background-position-x: <?php echo $this->data['link_left']['image_position_x']; ?>; background-position-y: <?php echo $this->data['link_left']['image_position_y']; ?>"><a class="link-text" href="<?php echo $this->data['link_left']['page_link']; ?>"><?php echo $this->data['link_left']['text']; ?></a></div>
+            <div class="link-movies link" style="background-image: url('<?php echo $this->data['link_right']['image']; ?>'); background-position-x: <?php echo $this->data['link_right']['image_position_x']; ?>; background-position-y: <?php echo $this->data['link_right']['image_position_y']; ?>"><a class="link-text" href="<?php echo $this->data['link_right']['page_link']; ?>"><?php echo $this->data['link_right']['text']; ?></a></div>
         </div>
     </div>
 
