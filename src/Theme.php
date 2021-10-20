@@ -1,6 +1,7 @@
 <?php
 namespace AlexScherer\WpthemeValerieknill;
 
+use AlexScherer\WpthemeValerieknill\Helpers\FieldgroupHelper;
 use AlexScherer\WpthemeValerieknill\PostTypes\BasePostType;
 use AlexScherer\WpthemeValerieknill\Taxonomies\BaseTaxonomy;
 
@@ -57,11 +58,11 @@ class Theme {
 
     protected $postTypesLoaded = false;
 
-    protected $fieldGroups = [];
+    //protected $fieldGroups = [];
 
-    protected $fieldGroupsToLoad = [
-        'AboutPage'
-    ];
+    //protected $fieldGroupsToLoad = [
+        //'AboutPage'
+    //];
 
     protected $template;
 
@@ -181,18 +182,19 @@ class Theme {
     }
 
     protected function loadFieldGroups() {
-        $fieldGroupsToLoad = $this->fieldGroupsToLoad;
-        $loadedFieldGroups = [];
-        foreach ($fieldGroupsToLoad as $fieldGroupName) {
-            $fullFieldGroupName = Theme::FIELDGROUP_NAMESPACE . $fieldGroupName . "FieldGroup";
+        FieldgroupHelper::registerFieldGroups();
+        //$fieldGroupsToLoad = $this->fieldGroupsToLoad;
+        //$loadedFieldGroups = [];
+        //foreach ($fieldGroupsToLoad as $fieldGroupName) {
+            //$fullFieldGroupName = Theme::FIELDGROUP_NAMESPACE . $fieldGroupName . "FieldGroup";
 
-            if (class_exists($fullFieldGroupName) && is_a($fullFieldGroupName, Theme::FIELDGROUP_BASECLASS, true)) {
-                $fieldGroupInstance = new $fullFieldGroupName();
-                $fieldGroupInstance->registerFieldGroup();
-                $loadedFieldGroups[strtolower($fieldGroupName)] = $fieldGroupInstance;
-            }
-        }
-        $this->fieldGroups = $loadedFieldGroups;
+            //if (class_exists($fullFieldGroupName) && is_a($fullFieldGroupName, Theme::FIELDGROUP_BASECLASS, true)) {
+                //$fieldGroupInstance = new $fullFieldGroupName();
+                //$fieldGroupInstance->registerFieldGroup();
+                //$loadedFieldGroups[strtolower($fieldGroupName)] = $fieldGroupInstance;
+            //}
+        //}
+        //$this->fieldGroups = $loadedFieldGroups;
     }
 
     public function registerMenuLocations() {
