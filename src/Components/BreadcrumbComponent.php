@@ -28,7 +28,9 @@ class BreadcrumbComponent extends BaseViewComponent {
         }
         $object = get_queried_object();
         $currentPostTitle = '';
-        if (is_a($object, 'WP_Post')) {
+        if (!empty($this->data['current_title_override'])) {
+            $currentPostTitle = $this->data['current_title_override'];
+        } elseif (is_a($object, 'WP_Post')) {
             $currentPostTitle = $this->getField('title');
             if (empty($currentPostTitle)) {
                 $post = get_post(get_queried_object_id());
