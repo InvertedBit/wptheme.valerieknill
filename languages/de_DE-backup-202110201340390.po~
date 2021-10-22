@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Valerie-Knill\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-15 07:47+0000\n"
-"PO-Revision-Date: 2021-10-20 13:49+0000\n"
+"PO-Revision-Date: 2021-10-20 13:35+0000\n"
 "Last-Translator: \n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -498,19 +498,19 @@ msgstr "Keine News gefunden."
 
 #: src/PostTypes/ProjectPostType.php:30
 msgid "No projects found in Trash."
-msgstr "Keine Projekte im Papierkorb gefunden."
+msgstr ""
 
 #: src/PostTypes/ProjectPostType.php:29
 msgid "No projects found."
-msgstr "Keine Projekte gefunden."
+msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:1433
 msgid "None"
-msgstr "Keine"
+msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:807
 msgid "Override Author Page"
-msgstr "Autorseite überschreiben"
+msgstr ""
 
 #: src/PostTypes/NewsPostType.php:31
 msgctxt ""
@@ -635,11 +635,11 @@ msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:570 src/Helpers/FieldgroupHelper.php:1957
 msgid "Page"
-msgstr "Seite"
+msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:1724
 msgid "Page title"
-msgstr "Seitentitel"
+msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:1876
 msgid "Painting"
@@ -647,51 +647,51 @@ msgstr ""
 
 #: src/Taxonomies/DisciplineTaxonomy.php:15
 msgid "Parent Discipline"
-msgstr "Übergeordnete Disziplin"
+msgstr ""
 
 #: src/Taxonomies/DisciplineTaxonomy.php:16
 msgid "Parent Discipline:"
-msgstr "Übergeordnete Disziplin:"
+msgstr ""
 
 #: src/PostTypes/ExhibitionPostType.php:28
 msgid "Parent exhibitions:"
-msgstr "Übergeordnete Ausstellung:"
+msgstr ""
 
 #: src/PostTypes/NewsPostType.php:28 src/PostTypes/ImagePostType.php:28
 msgid "Parent news:"
-msgstr "Übergeordneter Newsbeitrag:"
+msgstr ""
 
 #: src/PostTypes/ProjectPostType.php:28
 msgid "Parent project:"
-msgstr "Übergeordnetes Projekt:"
+msgstr ""
 
 #: src/Taxonomies/RoleTaxonomy.php:15
 msgid "Parent Role"
-msgstr "Übergeordnete Rolle"
+msgstr ""
 
 #: src/Taxonomies/RoleTaxonomy.php:16
 msgid "Parent Role:"
-msgstr "Übergeordnete Rolle:"
+msgstr ""
 
 #: src/Taxonomies/SeriesTaxonomy.php:15
 msgid "Parent Series"
-msgstr "Übergeordnete Serie"
+msgstr ""
 
 #: src/Taxonomies/SeriesTaxonomy.php:16
 msgid "Parent Series:"
-msgstr "Übergeordnete Serie:"
+msgstr ""
 
 #: src/Views/ExhibitionSlider.php:26
 msgid "Past exhibitions"
-msgstr "Vergangene Ausstellungen"
+msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:1903
 msgid "Pink"
-msgstr "Pink"
+msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:1336 src/Helpers/FieldgroupHelper.php:1560
 msgid "Plaque"
-msgstr "Plakette"
+msgstr ""
 
 #: src/PostTypes/ExhibitionPostType.php:17
 msgctxt "Post type general name"
@@ -735,11 +735,11 @@ msgstr "Projekt"
 
 #: src/Helpers/FieldgroupHelper.php:1059
 msgid "Poster image"
-msgstr "Posterbild"
+msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:785
 msgid "Posts per Page"
-msgstr "Beiträge pro Seite"
+msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:880
 msgid "PostType Exhibition Fieldgroup"
@@ -757,7 +757,7 @@ msgstr "Am %s geschrieben von"
 
 #: src/Helpers/FieldgroupHelper.php:1432
 msgid "Print"
-msgstr "Drucken"
+msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:1629
 msgid "Project Archive Fieldgroup"
@@ -765,12 +765,12 @@ msgstr "Projektarchiv"
 
 #: src/Helpers/FieldgroupHelper.php:1633
 msgid "Project Archive Settings"
-msgstr "Projektarchiv"
+msgstr ""
 
 #: src/Templates/SingleProjectTemplate.php:31
 msgctxt "Projects page breadcrumb title"
 msgid "Projects"
-msgstr "Projekte"
+msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:66
 msgid "Quote"
@@ -778,7 +778,7 @@ msgstr "Zitat"
 
 #: src/Helpers/FieldgroupHelper.php:1994
 msgid "Recipient address"
-msgstr "Adresse des Empfängers"
+msgstr ""
 
 #: src/Templates/SingleProjectTemplate.php:205
 #: src/Helpers/FieldgroupHelper.php:1380
@@ -787,7 +787,7 @@ msgstr "Rezensionen"
 
 #: src/Helpers/FieldgroupHelper.php:629
 msgid "Right"
-msgstr "Rechts"
+msgstr ""
 
 #: src/Taxonomies/RoleTaxonomy.php:21 src/Helpers/FieldgroupHelper.php:1235
 msgid "Role"
@@ -896,7 +896,7 @@ msgstr "Serien durchsuchen"
 
 #: src/Helpers/FieldgroupHelper.php:1127
 msgid "Select File"
-msgstr "Datei auswählen"
+msgstr ""
 
 #: src/Views/ContactForm.php:17
 msgid "Send"
@@ -908,7 +908,7 @@ msgstr "Serie"
 
 #: src/Helpers/FieldgroupHelper.php:1296
 msgid "Show on project page"
-msgstr "Auf Projektseite anzeigen"
+msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:1695
 msgid "Slim Header Options"
@@ -920,15 +920,15 @@ msgstr "Verkauft"
 
 #: src/Helpers/FieldgroupHelper.php:1419
 msgid "Source"
-msgstr "Quelle"
+msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:1446
 msgid "Source link"
-msgstr "Quellenlink"
+msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:1471
 msgid "Source name"
-msgstr "Quellenname"
+msgstr ""
 
 #: src/Templates/SingleProjectTemplate.php:131
 #: src/Helpers/FieldgroupHelper.php:1216
@@ -945,7 +945,7 @@ msgstr "Absenden"
 
 #: src/Helpers/FieldgroupHelper.php:192 src/Helpers/FieldgroupHelper.php:332
 msgid "Subtitle"
-msgstr "Untertitel"
+msgstr ""
 
 #: src/Taxonomies/DisciplineTaxonomy.php:11
 msgctxt "taxonomy general name"
@@ -983,7 +983,7 @@ msgstr "Serie"
 
 #: src/Helpers/FieldgroupHelper.php:1841
 msgid "Term"
-msgstr "Term"
+msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:101 src/Helpers/FieldgroupHelper.php:550
 msgid "Text"
@@ -1019,42 +1019,32 @@ msgctxt ""
 "The post type archive label used in nav menus. Default “Post Archives”. "
 "Added in 4.4"
 msgid "Project archives"
-msgstr "Projekte"
+msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:1818
 msgid "Theme Settings"
-msgstr "Themeeinstellungen"
-
-#: src/Theme.php:121
-msgctxt "Theme settings menu_title"
-msgid "Theme Settings"
-msgstr "Themeeinstellungen"
-
-#: src/Theme.php:120
-msgctxt "Theme settings page_title"
-msgid "Theme Settings"
-msgstr "Themeeinstellungen"
+msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:172 src/Helpers/FieldgroupHelper.php:312
 #: src/Helpers/FieldgroupHelper.php:511
 msgid "Title"
-msgstr "Titel"
+msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:1773
 msgid "Title Image"
-msgstr "Titelbild"
+msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:987
 msgid "To"
-msgstr "Bis"
+msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:654
 msgid "Top"
-msgstr "Oben"
+msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:1099
 msgid "Type"
-msgstr "Art"
+msgstr ""
 
 #: src/Taxonomies/DisciplineTaxonomy.php:18
 msgid "Update Discipline"
@@ -1074,11 +1064,11 @@ msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:1114
 msgid "Video from Link"
-msgstr "Video von externem Link"
+msgstr ""
 
 #: src/Helpers/FieldgroupHelper.php:1112
 msgid "Video from WordPress"
-msgstr "Video aus der Mediathek"
+msgstr ""
 
 #: src/PostTypes/NewsPostType.php:25
 msgid "View entry"
@@ -1098,12 +1088,12 @@ msgstr "Projekt anschauen"
 
 #: src/Helpers/FieldgroupHelper.php:1431
 msgid "Web"
-msgstr "Web"
+msgstr ""
 
 #: src/Components/CommentFormComponent.php:25
 #: src/Helpers/FieldgroupHelper.php:1361 src/Helpers/FieldgroupHelper.php:1585
 msgid "Website"
-msgstr "Website"
+msgstr ""
 
 #. Description of the theme
 msgid "Wordpress theme for the Website of Valerie Knill"
