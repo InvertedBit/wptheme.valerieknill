@@ -26,12 +26,12 @@ class NotFound404Template extends BaseTemplate {
 
         $topComponents = [];
 
-        $topComponents[] = [
-            'name' => 'BreadcrumbComponent',
-            'arguments' => [
-                'current_title_override' => '404'
-            ]
-        ];
+        //$topComponents[] = [
+            //'name' => 'BreadcrumbComponent',
+            //'arguments' => [
+                //'current_title_override' => '404'
+            //]
+        //];
 
         $topComponents[] = [
             'name' => 'TitleComponent',
