@@ -13,7 +13,7 @@ abstract class HeaderComponent extends BaseViewComponent {
         if (function_exists('pll_current_language')) {
             $language = pll_current_language('slug');
         }
-        //$this->debug($language);
+        //$this->debug($this->data['discipline']);
         $homepages = $this->getField('homepages', 'option');
         //$this->debug($homepages);
         $this->data['home_link'] = '#';

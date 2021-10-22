@@ -22,7 +22,7 @@ $post = get_post();
 $args = [];
 
 if ($post->post_type === 'project') {
-    $args['discipline'] = 'movies';
+    $args['discipline'] = 'film';
 }
 
 $theme->setTemplate('Single' . ucfirst($post->post_type), $args);
