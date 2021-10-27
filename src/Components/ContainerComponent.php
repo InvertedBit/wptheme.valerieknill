@@ -29,6 +29,18 @@ class ContainerComponent extends BaseViewComponent {
     public function isValid() {
         if (empty($this->data['children'])) {
             return false;
+        } elseif (is_array($this->data['children'])) {
+            $validChildCount = 0;
+
+            foreach ($this->data['children'] as $child) {
+                if ($child->isValid()) {
+                    $$validChildCount++;
+                }
+            }
+
+            if ($validChildCount === 0) {
+                return false;
+            }
         }
         return true;
     }
