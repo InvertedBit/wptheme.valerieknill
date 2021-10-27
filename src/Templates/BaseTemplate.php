@@ -60,6 +60,9 @@ abstract class BaseTemplate {
 
     protected function getPostDiscipline() {
         $disciplines = get_field('disciplines', 'option');
+        //echo '<pre>';
+        //print_r($disciplines);
+        //echo '</pre>';
         if (!empty($_GET['discipline'])) {
             $this->discipline = $_GET['discipline'];
             foreach($disciplines as $discipline) {
@@ -95,6 +98,9 @@ abstract class BaseTemplate {
             }
 
         }
+        //echo '<pre>';
+        //print_r($this->discipline);
+        //echo '</pre>';
     }
 
     protected function getChildComponents($arguments = []) {

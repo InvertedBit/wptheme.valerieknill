@@ -4,11 +4,12 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
  */
+use AlexScherer\WpthemeValerieknill\Theme;
 
-echo '404';
 
+$theme = Theme::getInstance();
 
+$theme->setTemplate('NotFound404');
+
+$theme->render();
