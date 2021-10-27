@@ -1,6 +1,7 @@
 {
     "name": "alex.scherer/wptheme.valerieknill",
     "description": "Wordpress Theme for valerie-knill.com",
+    "version": "1.0.0",
     "type": "project",
     "autoload": {
         "psr-4": {
