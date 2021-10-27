@@ -1,0 +1,206 @@
+.page-template-page_landingpage {
+    $imageCutoffMulti: 0.3;
+    $imageCutoffPercent: 30%;
+    $zIndexFront: 20;
+    $zIndexMiddle: 15;
+    $zIndexBack: 10;
+    $linkPadding: 30px;
+    .landingpage-section {
+        height: 100vh;
+        
+        .title-logo {
+            position: relative;
+            width: max-content;
+            height: 20vh;
+            margin-left: auto;
+            margin-right: auto;
+            
+            .heading-logo {
+                display: inline;
+                font-family: $header-title-font-family;
+            }
+        }
+        
+        .link-container {
+            height: 60vh;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1200px;
+            min-width: 600px;
+            width: 90vw;
+            position: relative;
+        }
+
+        .link {
+            //&:not(.animated) {
+                //display: none;
+            //}
+            
+            //&.animated {
+                //display: block;
+            //}
+
+            //width: calc(40vw + 40vw * #{$imageCutoffMulti});
+            height: 100%;
+            //background-color: red;
+            position: absolute;
+            //float: left;
+            //top: 10vh;
+            cursor: pointer;
+            width: 100%;
+            background-repeat: no-repeat;
+            
+            &:hover {
+                //width: 90vw;
+                //z-index: $zIndexFront;
+                //animation: link-hover;
+                //animation-delay: 0.5s;
+                //animation-duration: 1s;
+                //animation-fill-mode: both;
+                //animation-timing-function: linear;
+            }
+            &:not(:hover) {
+                //width: calc(40vw + 40vw * #{$imageCutoffMulti});
+                //z-index: $zIndexBack;
+                //animation: link-normal;
+                //animation-duration: 1s;
+                //animation-fill-mode: both;
+                //animation-timing-function: linear;
+            }
+            
+            .link-text {
+                font-family: $header-title-font-family;
+                font-size: 61px;
+                position: relative;
+                top: calc(75% - 38px);
+                width: calc(100% - #{$linkPadding});
+                display: inline-block;
+                line-height: 1.1125em;
+                padding-bottom: 0.175em;
+            }
+        }
+        
+        .link-painting {
+            //background-image: url('../../static/img/DSC018841o.R.JPG');
+            //background-size: cover;
+            background-size: 90vw;
+            //clip-path: polygon(0% 0%, 100% 0%, calc(100% - #{$imageCutoffPercent}) 100%, 0% 100%);
+            clip-path: polygon(0% 0%, calc(100% - #{$imageCutoffPercent}) 0%, #{$imageCutoffPercent} 100%, 0% 100%);
+            //left: calc(5vw - 5px);
+            //margin-right: calc(-40vw * #{$imageCutoffMulti});
+            &:hover {
+                animation: painting-hover;
+                animation-duration: 0.75s;
+                animation-delay: 0s;
+                animation-fill-mode: both;
+            }
+            &:not(:hover) {
+                animation: painting-normal;
+                animation-duration: 0.25s;
+                animation-delay: 0s;
+                animation-fill-mode: both;
+            }
+            .link-text {
+                color: #ffffff;
+                background-color: $colourtheme-2;
+                padding-left: $linkPadding;
+            }     
+        }
+        
+        .link-movies {
+            //background-image: url('../../static/img/header-movie01.png');
+            background-position: right;
+            //background-size: cover;
+            background-size: 90vw;
+            //clip-path: polygon(#{$imageCutoffPercent} 0%, 100% 0%, 100% 100%, 0% 100%);
+            clip-path: polygon(calc(100% - #{$imageCutoffPercent}) 0%, 100% 0%, 100% 100%, #{$imageCutoffPercent} 100%);
+            //right: calc(5vw - 5px);
+            //margin-left: calc(-40vw * #{$imageCutoffMulti});
+            text-align: right;
+            &:hover {
+                animation: movies-hover;
+                animation-duration: 0.75s;
+                animation-delay: 0s;
+                animation-fill-mode: both;
+            }
+            &:not(:hover) {
+                animation: movies-normal;
+                animation-duration: 0.25s;
+                animation-delay: 0s;
+                animation-fill-mode: both;
+            }
+            .link-text {
+                color: #ffffff;
+                background-color: $colourtheme-comp-2;
+                padding-right: $linkPadding;
+            }     
+        }
+        
+
+        @keyframes painting-hover {
+            from {
+                clip-path: polygon(0% 0%, calc(100% - #{$imageCutoffPercent}) 0%, #{$imageCutoffPercent} 100%, 0% 100%);
+                z-index: $zIndexBack;
+            }
+            to {
+                clip-path: polygon(0% 0%, 100% 0%, calc(100% - #{$imageCutoffPercent}) 100%, 0% 100%);
+                z-index: $zIndexFront;
+            }
+        }
+
+        @keyframes painting-normal {
+            from {
+                clip-path: polygon(0% 0%, 100% 0%, calc(100% - #{$imageCutoffPercent}) 100%, 0% 100%);
+                z-index: $zIndexFront;
+            }
+            to {
+                clip-path: polygon(0% 0%, calc(100% - #{$imageCutoffPercent}) 0%, #{$imageCutoffPercent} 100%, 0% 100%);
+                z-index: $zIndexBack;
+            }
+        }
+        
+        @keyframes movies-hover {
+            from {
+                clip-path: polygon(calc(100% - #{$imageCutoffPercent}) 0%, 100% 0%, 100% 100%, #{$imageCutoffPercent} 100%);
+                z-index: $zIndexBack;
+            }
+            to {
+                clip-path: polygon(#{$imageCutoffPercent} 0%, 100% 0%, 100% 100%, 0% 100%);
+                z-index: $zIndexFront;
+            }
+        }
+        
+        @keyframes movies-normal{
+            from {
+                clip-path: polygon(#{$imageCutoffPercent} 0%, 100% 0%, 100% 100%, 0% 100%);
+                z-index: $zIndexFront;
+            }
+            to {
+                clip-path: polygon(calc(100% - #{$imageCutoffPercent}) 0%, 100% 0%, 100% 100%, #{$imageCutoffPercent} 100%);
+                z-index: $zIndexBack;
+            }
+        }
+
+        
+        @keyframes link-hover {
+            from {
+                width: calc(40vw + 40vw * #{$imageCutoffMulti});
+                z-index: $zIndexBack;
+            }
+            to {
+                width: 90vw;
+                z-index: $zIndexFront;
+            }
+        }
+        @keyframes link-normal {
+            from {
+                width: 90vw;
+                z-index: $zIndexFront;
+            }
+            to {
+                width: calc(40vw + 40vw * #{$imageCutoffMulti});
+                z-index: $zIndexBack;
+            }
+        }
+    }
+}

@@ -14,12 +14,17 @@
  * @since Twenty Twenty-One 1.0
  */
 
-use AlexScherer\WpthemeValerieknill as VK;
+use AlexScherer\WpthemeValerieknill\Theme;
+
+$theme = Theme::getInstance();
 
 
-$theme = VK\Theme::getInstance();
+if (!$theme->getSubdomain()) {
+	$theme->setTemplate('LandingPage');
+} else {
+	$theme->setTemplate('Home', ['subdomain' => $theme->getSubdomain()]);
+}
 
-$theme->setTemplate('index');
 
 $theme->render();
 

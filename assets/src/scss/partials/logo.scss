@@ -1,0 +1,53 @@
+.page, .archive, .single {
+
+.heading-logo-link.uk-logo, .heading-logo-link.uk-logo.heading-logo-large-center, .logo-button {
+    font-size: 2em;
+
+    &.heading-logo-large-center {
+        font-size: 4em;
+    }
+    &:hover {
+        .logo-part {
+            color: rgba(#ffffff, 0.8);
+            &.logo-bottom {
+                color: rgba($colourtheme-1, 0.8);
+            }
+        }
+    }
+
+    .logo-part {
+        display: block;
+        height: 1em;
+        color: #ffffff;
+
+        &.logo-middle {
+            padding-left: 2.675em;
+        }
+
+        &.logo-bottom {
+            color: $colourtheme-1;
+            &.logo-painting {
+                padding-left: 1.2125em;
+            }
+            &.logo-film {
+                padding-left: 0.5125em;
+            }
+        }
+        
+    }
+
+    &.logo-button {
+        //font-size: 1em;
+        .logo-part.logo-bottom {
+            color: #ffffff;
+        }
+        &:hover {
+            .logo-part.logo-bottom {
+                color: rgba(#ffffff, 0.8);
+            }
+        }
+    }
+
+}
+
+}

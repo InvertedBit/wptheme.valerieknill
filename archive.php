@@ -8,30 +8,34 @@
  * @subpackage Twenty_Twenty_One
  * @since Twenty Twenty-One 1.0
  */
+use AlexScherer\WpthemeValerieknill\Theme;
 
-get_header();
+$theme = Theme::getInstance();
 
-$description = get_the_archive_description();
-?>
+$queriedObject = get_queried_object();
 
-<?php if ( have_posts() ) : ?>
+//echo '<pre>';
+//print_r($queriedObject);
+//echo '</pre>';
 
-	<header class="page-header alignwide">
-		<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
-		<?php if ( $description ) : ?>
-			<div class="archive-description"><?php echo wp_kses_post( wpautop( $description ) ); ?></div>
-		<?php endif; ?>
-	</header><!-- .page-header -->
+if (is_a($queriedObject, 'WP_TERM')) {
+    $taxonomy = $queriedObject->taxonomy;
+    if ($taxonomy === 'series') {
+        $theme->setTemplate('Gallery', [
+            'discipline' => 'painting',
+            'type' => 'taxonomy',
+            'taxonomy' => $taxonomy,
+            'term' => $queriedObject
+        ]);
+    }
+} elseif (is_a($queriedObject, 'WP_Post_Type')) {
+    $name = $queriedObject->name;
+    $parameters = [];
+    if ($name === 'project') {
+        $parameters['discipline'] = 'movies';
+        $theme->setTemplate('ProjectList', $parameters);
+    }
+}
 
-	<?php while ( have_posts() ) : ?>
-		<?php the_post(); ?>
-		<?php get_template_part( 'template-parts/content/content', get_theme_mod( 'display_excerpt_or_full_post', 'excerpt' ) ); ?>
-	<?php endwhile; ?>
 
-	<?php twenty_twenty_one_the_posts_navigation(); ?>
-
-<?php else : ?>
-	<?php get_template_part( 'template-parts/content/content-none' ); ?>
-<?php endif; ?>
-
-<?php get_footer(); ?>
+$theme->render();

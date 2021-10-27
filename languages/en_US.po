@@ -1,0 +1,1100 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Valerie-Knill\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-15 07:47+0000\n"
+"PO-Revision-Date: 2021-10-20 11:34+0000\n"
+"Last-Translator: \n"
+"Language-Team: English (United States)\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.4; wp-5.8.1\n"
+"X-Domain: wptheme-valerieknill"
+
+#: src/Views/PostView.php:21
+#, php-format
+msgid "%d comments"
+msgstr ""
+
+#. Name of the template
+msgid "About"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:17
+msgid "About Page Fieldgroup"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:21
+msgid "About text"
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:21 src/PostTypes/NewsPostType.php:21
+#: src/PostTypes/ImagePostType.php:21 src/PostTypes/ProjectPostType.php:21
+msgid "Add New"
+msgstr ""
+
+#: src/Taxonomies/DisciplineTaxonomy.php:19
+msgid "Add New Discipline"
+msgstr ""
+
+#: src/PostTypes/NewsPostType.php:22
+msgid "Add New entry"
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:22
+msgid "Add New exhibition"
+msgstr ""
+
+#: src/PostTypes/ImagePostType.php:22
+msgid "Add New image"
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:20
+msgctxt "Add New on Toolbar"
+msgid "Exhibitions"
+msgstr ""
+
+#: src/PostTypes/ImagePostType.php:20
+msgctxt "Add New on Toolbar"
+msgid "Images"
+msgstr ""
+
+#: src/PostTypes/NewsPostType.php:20
+msgctxt "Add New on Toolbar"
+msgid "News"
+msgstr ""
+
+#: src/PostTypes/ProjectPostType.php:20
+msgctxt "Add New on Toolbar"
+msgid "Projects"
+msgstr ""
+
+#: src/PostTypes/ProjectPostType.php:22
+msgid "Add New project"
+msgstr ""
+
+#: src/Taxonomies/RoleTaxonomy.php:19
+msgid "Add New Role"
+msgstr ""
+
+#: src/Taxonomies/SeriesTaxonomy.php:19
+msgid "Add New Series"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:949
+msgid "Address"
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:19
+msgctxt "Admin Menu text"
+msgid "Exhibitions"
+msgstr ""
+
+#: src/PostTypes/ImagePostType.php:19
+msgctxt "Admin Menu text"
+msgid "Images"
+msgstr ""
+
+#: src/PostTypes/NewsPostType.php:19
+msgctxt "Admin Menu text"
+msgid "News"
+msgstr ""
+
+#: src/PostTypes/ProjectPostType.php:19
+msgctxt "Admin Menu text"
+msgid "Projects"
+msgstr ""
+
+#. Author of the theme
+msgid "Alex Scherer"
+msgstr ""
+
+#: src/Taxonomies/DisciplineTaxonomy.php:14
+msgid "All Disciplines"
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:26
+msgid "All exhibitions"
+msgstr ""
+
+#: src/PostTypes/NewsPostType.php:26 src/PostTypes/ImagePostType.php:26
+msgid "All news"
+msgstr ""
+
+#: src/PostTypes/ProjectPostType.php:26
+msgid "All projects"
+msgstr ""
+
+#: src/Taxonomies/RoleTaxonomy.php:14
+msgid "All Roles"
+msgstr ""
+
+#: src/Taxonomies/SeriesTaxonomy.php:14
+msgid "All Series"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:827
+msgid "Author page"
+msgstr ""
+
+#. Name of the template
+#: src/Templates/SingleProjectTemplate.php:105
+#: src/Helpers/FieldgroupHelper.php:1277
+msgid "Awards"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:656
+msgid "Bottom"
+msgstr ""
+
+#: src/Components/ContactFormComponent.php:36
+msgctxt "Captcha failed message"
+msgid "Captcha failed!"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:628 src/Helpers/FieldgroupHelper.php:655
+msgid "Center"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1890
+msgid "Colorscheme"
+msgstr ""
+
+#: src/Components/CommentFormComponent.php:27
+msgid "Comment"
+msgstr ""
+
+#: src/Views/CommentForm.php:2
+msgid "Comments"
+msgstr ""
+
+#. Name of the template
+msgid "Contact"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1979
+msgid "Contact Form"
+msgstr ""
+
+#: src/Components/ContactFormComponent.php:84
+msgctxt "Contact form error email"
+msgid "Please enter your E-Mail address."
+msgstr ""
+
+#: src/Components/ContactFormComponent.php:90
+msgctxt "Contact form error message"
+msgid "Please enter a message."
+msgstr ""
+
+#: src/Components/ContactFormComponent.php:81
+msgctxt "Contact form error name"
+msgid "Please enter your name."
+msgstr ""
+
+#: src/Components/ContactFormComponent.php:87
+msgctxt "Contact form error subject"
+msgid "Please enter a subject."
+msgstr ""
+
+#: src/Views/ContactFormSuccess.php:1
+msgctxt "Contact form success message"
+msgid "Message successfully sent!"
+msgstr ""
+
+#: src/Views/ContactForm.php:2
+msgctxt "Contact form title"
+msgid "Contact me..."
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1499
+msgid "Content"
+msgstr ""
+
+#: src/Views/PostView.php:14
+msgid "continue reading..."
+msgstr ""
+
+#: src/Views/ExhibitionSlider.php:3
+msgid "Current exhibitions"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:929
+msgid "Description"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:444
+msgid "Dimensions"
+msgstr ""
+
+#: src/Taxonomies/DisciplineTaxonomy.php:21
+#: src/Helpers/FieldgroupHelper.php:1864
+msgid "Discipline"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1822
+msgid "Disciplines"
+msgstr ""
+
+#: src/Views/ContactForm.php:7 src/Components/CommentFormComponent.php:24
+msgid "E-Mail"
+msgstr ""
+
+#: src/Taxonomies/DisciplineTaxonomy.php:17
+msgid "Edit Discipline"
+msgstr ""
+
+#: src/PostTypes/NewsPostType.php:24
+msgid "Edit entry"
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:24
+msgid "Edit exhibition"
+msgstr ""
+
+#: src/PostTypes/ImagePostType.php:24
+msgid "Edit image"
+msgstr ""
+
+#: src/PostTypes/ProjectPostType.php:24
+msgid "Edit project"
+msgstr ""
+
+#: src/Taxonomies/RoleTaxonomy.php:17
+msgid "Edit Role"
+msgstr ""
+
+#: src/Taxonomies/SeriesTaxonomy.php:17
+msgid "Edit Series"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:765
+msgid "Enable Pagination"
+msgstr ""
+
+#: src/Views/ExhibitionSlider.php:12
+#, php-format
+msgctxt "Exhibition card from to"
+msgid "From %s to %s"
+msgstr ""
+
+#. Name of the template
+msgid "Exhibitions"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1084
+msgid "Eyecatcher"
+msgstr ""
+
+#: src/Templates/SingleProjectTemplate.php:255
+#: src/Helpers/FieldgroupHelper.php:1521
+msgid "Festivals"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1877
+msgid "Film"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:969
+msgid "From"
+msgstr ""
+
+#. Name of the template
+msgid "Gallery"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1902
+msgid "Green"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1648 src/Helpers/FieldgroupHelper.php:1699
+msgid "Header Image"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1034
+msgid "Header image"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:266
+msgid "Header images"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:152
+msgid "Header Video"
+msgstr ""
+
+#. Name of the template
+msgid "Homepage"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:148
+msgid "Homepage Movies Page Options"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:262
+msgid "Homepage Painting Template Options"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1918
+msgid "Homepages"
+msgstr ""
+
+#. URI of the theme
+msgid "https://valerie-knill.com/"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:41 src/Helpers/FieldgroupHelper.php:419
+#: src/Helpers/FieldgroupHelper.php:590 src/Helpers/FieldgroupHelper.php:904
+msgid "Image"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:285
+msgid "image"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:415
+msgid "Image Fieldgroup"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1113
+msgid "Image from Link"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1111
+msgid "Image from WordPress"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:615
+msgid "Image position X"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:642
+msgid "Image position Y"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:212 src/Helpers/FieldgroupHelper.php:352
+msgid "Introduction"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:700
+msgid "Is Crosslink"
+msgstr ""
+
+#. Name of the template
+msgid "Landingpage"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:507
+msgid "Landingpage Fieldgroup"
+msgstr ""
+
+#: src/Components/CommentFormComponent.php:21
+msgid "Leave a comment"
+msgstr ""
+
+#: src/Components/CommentFormComponent.php:20
+msgid "Leave a reply"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:627
+msgid "Left"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1162
+msgid "Link to file"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:531
+msgid "Links"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1196
+msgid "Logline"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:696
+msgid "Menu Crosslink Options"
+msgstr ""
+
+#: src/Views/ContactForm.php:13
+msgid "Message"
+msgstr ""
+
+#: src/Views/ContactForm.php:4 src/Components/CommentFormComponent.php:23
+#: src/Helpers/FieldgroupHelper.php:81 src/Helpers/FieldgroupHelper.php:884
+#: src/Helpers/FieldgroupHelper.php:1255 src/Helpers/FieldgroupHelper.php:1316
+#: src/Helpers/FieldgroupHelper.php:1399 src/Helpers/FieldgroupHelper.php:1540
+#: src/Helpers/FieldgroupHelper.php:1937
+msgid "Name"
+msgstr ""
+
+#: src/Taxonomies/DisciplineTaxonomy.php:20
+msgid "New Discipline Name"
+msgstr ""
+
+#: src/PostTypes/NewsPostType.php:23
+msgid "New entry"
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:23
+msgid "New exhibition"
+msgstr ""
+
+#: src/PostTypes/ImagePostType.php:23
+msgid "New image"
+msgstr ""
+
+#: src/Components/ContactFormComponent.php:44
+#, php-format
+msgid "New message from \"%s\""
+msgstr ""
+
+#: src/PostTypes/ProjectPostType.php:23
+msgid "New project"
+msgstr ""
+
+#: src/Taxonomies/RoleTaxonomy.php:20
+msgid "New Role Name"
+msgstr ""
+
+#: src/Taxonomies/SeriesTaxonomy.php:20
+msgid "New Series Name"
+msgstr ""
+
+#. Name of the template
+msgid "News"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:761
+msgid "News Page Fieldgroup"
+msgstr ""
+
+#: src/Views/PostView.php:18
+msgid "no comments yet"
+msgstr ""
+
+#: src/Views/CommentList.php:3
+msgid "No comments yet. Be the first one to comment..."
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:30
+msgid "No exhibitions found in Trash."
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:29
+msgid "No exhibitions found."
+msgstr ""
+
+#: src/PostTypes/NewsPostType.php:30 src/PostTypes/ImagePostType.php:30
+msgid "No news found in Trash."
+msgstr ""
+
+#: src/PostTypes/NewsPostType.php:29 src/PostTypes/ImagePostType.php:29
+msgid "No news found."
+msgstr ""
+
+#: src/PostTypes/ProjectPostType.php:30
+msgid "No projects found in Trash."
+msgstr ""
+
+#: src/PostTypes/ProjectPostType.php:29
+msgid "No projects found."
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1433
+msgid "None"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:807
+msgid "Override Author Page"
+msgstr ""
+
+#: src/PostTypes/NewsPostType.php:31
+msgctxt ""
+"Overrides the “Featured Image” phrase for this post type. Added in 4.3"
+msgid "Article Cover Image"
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:31
+msgctxt ""
+"Overrides the “Featured Image” phrase for this post type. Added in 4.3"
+msgid "Exhibition Cover Image"
+msgstr ""
+
+#: src/PostTypes/ImagePostType.php:31
+msgctxt ""
+"Overrides the “Featured Image” phrase for this post type. Added in 4.3"
+msgid "Image Cover Image"
+msgstr ""
+
+#: src/PostTypes/ProjectPostType.php:31
+msgctxt ""
+"Overrides the “Featured Project” phrase for this post type. Added in 4.3"
+msgid "Project Cover Project"
+msgstr ""
+
+#: src/PostTypes/NewsPostType.php:36
+msgctxt ""
+"Overrides the “Insert into post”/”Insert into page” phrase (used when "
+"inserting media into a post). Added in 4.4"
+msgid "Insert into entry"
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:36
+msgctxt ""
+"Overrides the “Insert into post”/”Insert into page” phrase (used when "
+"inserting media into a post). Added in 4.4"
+msgid "Insert into exhibition"
+msgstr ""
+
+#: src/PostTypes/ImagePostType.php:36
+msgctxt ""
+"Overrides the “Insert into post”/”Insert into page” phrase (used when "
+"inserting media into a post). Added in 4.4"
+msgid "Insert into image"
+msgstr ""
+
+#: src/PostTypes/ProjectPostType.php:36
+msgctxt ""
+"Overrides the “Insert into post”/”Insert into page” phrase (used when "
+"inserting media into a post). Added in 4.4"
+msgid "Insert into project"
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:33 src/PostTypes/NewsPostType.php:33
+#: src/PostTypes/ImagePostType.php:33
+msgctxt ""
+"Overrides the “Remove featured image” phrase for this post type. Added in 4.3"
+msgid "Remove cover image"
+msgstr ""
+
+#: src/PostTypes/ProjectPostType.php:33
+msgctxt ""
+"Overrides the “Remove featured project” phrase for this post type. Added in "
+"4.3"
+msgid "Remove cover project"
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:32 src/PostTypes/NewsPostType.php:32
+#: src/PostTypes/ImagePostType.php:32
+msgctxt ""
+"Overrides the “Set featured image” phrase for this post type. Added in 4.3"
+msgid "Set cover image"
+msgstr ""
+
+#: src/PostTypes/ProjectPostType.php:32
+msgctxt ""
+"Overrides the “Set featured project” phrase for this post type. Added in 4.3"
+msgid "Set cover project"
+msgstr ""
+
+#: src/PostTypes/NewsPostType.php:37
+msgctxt ""
+"Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used "
+"when viewing media attached to a post). Added in 4.4"
+msgid "Uploaded to this entry"
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:37
+msgctxt ""
+"Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used "
+"when viewing media attached to a post). Added in 4.4"
+msgid "Uploaded to this exhibition"
+msgstr ""
+
+#: src/PostTypes/ImagePostType.php:37
+msgctxt ""
+"Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used "
+"when viewing media attached to a post). Added in 4.4"
+msgid "Uploaded to this image"
+msgstr ""
+
+#: src/PostTypes/ProjectPostType.php:37
+msgctxt ""
+"Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used "
+"when viewing media attached to a post). Added in 4.4"
+msgid "Uploaded to this project"
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:34 src/PostTypes/NewsPostType.php:34
+#: src/PostTypes/ImagePostType.php:34
+msgctxt ""
+"Overrides the “Use as featured image” phrase for this post type. Added in 4.3"
+msgid "Use as cover image"
+msgstr ""
+
+#: src/PostTypes/ProjectPostType.php:34
+msgctxt ""
+"Overrides the “Use as featured project” phrase for this post type. Added in "
+"4.3"
+msgid "Use as cover project"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:570 src/Helpers/FieldgroupHelper.php:1957
+msgid "Page"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1724
+msgid "Page title"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1876
+msgid "Painting"
+msgstr ""
+
+#: src/Taxonomies/DisciplineTaxonomy.php:15
+msgid "Parent Discipline"
+msgstr ""
+
+#: src/Taxonomies/DisciplineTaxonomy.php:16
+msgid "Parent Discipline:"
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:28
+msgid "Parent exhibitions:"
+msgstr ""
+
+#: src/PostTypes/NewsPostType.php:28 src/PostTypes/ImagePostType.php:28
+msgid "Parent news:"
+msgstr ""
+
+#: src/PostTypes/ProjectPostType.php:28
+msgid "Parent project:"
+msgstr ""
+
+#: src/Taxonomies/RoleTaxonomy.php:15
+msgid "Parent Role"
+msgstr ""
+
+#: src/Taxonomies/RoleTaxonomy.php:16
+msgid "Parent Role:"
+msgstr ""
+
+#: src/Taxonomies/SeriesTaxonomy.php:15
+msgid "Parent Series"
+msgstr ""
+
+#: src/Taxonomies/SeriesTaxonomy.php:16
+msgid "Parent Series:"
+msgstr ""
+
+#: src/Views/ExhibitionSlider.php:26
+msgid "Past exhibitions"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1903
+msgid "Pink"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1336 src/Helpers/FieldgroupHelper.php:1560
+msgid "Plaque"
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:17
+msgctxt "Post type general name"
+msgid "Exhibitions"
+msgstr ""
+
+#: src/PostTypes/ImagePostType.php:17
+msgctxt "Post type general name"
+msgid "Images"
+msgstr ""
+
+#: src/PostTypes/NewsPostType.php:17
+msgctxt "Post type general name"
+msgid "News"
+msgstr ""
+
+#: src/PostTypes/ProjectPostType.php:17
+msgctxt "Post type general name"
+msgid "Projects"
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:18
+msgctxt "Post type singular name"
+msgid "Exhibition"
+msgstr ""
+
+#: src/PostTypes/ImagePostType.php:18
+msgctxt "Post type singular name"
+msgid "Image"
+msgstr ""
+
+#: src/PostTypes/NewsPostType.php:18
+msgctxt "Post type singular name"
+msgid "News entry"
+msgstr ""
+
+#: src/PostTypes/ProjectPostType.php:18
+msgctxt "Post type singular name"
+msgid "Project"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1059
+msgid "Poster image"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:785
+msgid "Posts per Page"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:880
+msgid "PostType Exhibition Fieldgroup"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1030
+msgid "PostType Project Fieldgroup"
+msgstr ""
+
+#: src/Views/PostView.php:5
+#, php-format
+msgctxt "PostView componet date"
+msgid "Written on %s by"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1432
+msgid "Print"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1629
+msgid "Project Archive Fieldgroup"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1633
+msgid "Project Archive Settings"
+msgstr ""
+
+#: src/Templates/SingleProjectTemplate.php:31
+msgctxt "Projects page breadcrumb title"
+msgid "Projects"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:66
+msgid "Quote"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1994
+msgid "Recipient address"
+msgstr ""
+
+#: src/Templates/SingleProjectTemplate.php:205
+#: src/Helpers/FieldgroupHelper.php:1380
+msgid "Reviews"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:629
+msgid "Right"
+msgstr ""
+
+#: src/Taxonomies/RoleTaxonomy.php:21 src/Helpers/FieldgroupHelper.php:1235
+msgid "Role"
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:38
+msgctxt ""
+"Screen reader text for the filter links heading on the post type listing "
+"screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4"
+msgid "Filter exhibitions list"
+msgstr ""
+
+#: src/PostTypes/NewsPostType.php:38 src/PostTypes/ImagePostType.php:38
+msgctxt ""
+"Screen reader text for the filter links heading on the post type listing "
+"screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4"
+msgid "Filter news list"
+msgstr ""
+
+#: src/PostTypes/ProjectPostType.php:38
+msgctxt ""
+"Screen reader text for the filter links heading on the post type listing "
+"screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4"
+msgid "Filter projects list"
+msgstr ""
+
+#: src/PostTypes/NewsPostType.php:40
+msgctxt ""
+"Screen reader text for the items list heading on the post type listing "
+"screen. Default “Posts list”/”Pages list”. Added in 4.4"
+msgid "Articles list"
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:40
+msgctxt ""
+"Screen reader text for the items list heading on the post type listing "
+"screen. Default “Posts list”/”Pages list”. Added in 4.4"
+msgid "Exhibitions list"
+msgstr ""
+
+#: src/PostTypes/ImagePostType.php:40
+msgctxt ""
+"Screen reader text for the items list heading on the post type listing "
+"screen. Default “Posts list”/”Pages list”. Added in 4.4"
+msgid "Images list"
+msgstr ""
+
+#: src/PostTypes/ProjectPostType.php:40
+msgctxt ""
+"Screen reader text for the items list heading on the post type listing "
+"screen. Default “Posts list”/”Pages list”. Added in 4.4"
+msgid "Projects list"
+msgstr ""
+
+#: src/PostTypes/NewsPostType.php:39
+msgctxt ""
+"Screen reader text for the pagination heading on the post type listing "
+"screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4"
+msgid "Articles list navigation"
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:39
+msgctxt ""
+"Screen reader text for the pagination heading on the post type listing "
+"screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4"
+msgid "Exhibitions list navigation"
+msgstr ""
+
+#: src/PostTypes/ImagePostType.php:39
+msgctxt ""
+"Screen reader text for the pagination heading on the post type listing "
+"screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4"
+msgid "Images list navigation"
+msgstr ""
+
+#: src/PostTypes/ProjectPostType.php:39
+msgctxt ""
+"Screen reader text for the pagination heading on the post type listing "
+"screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4"
+msgid "Projects list navigation"
+msgstr ""
+
+#: src/Taxonomies/DisciplineTaxonomy.php:13
+msgid "Search Disciplines"
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:27
+msgid "Search exhibitions"
+msgstr ""
+
+#: src/PostTypes/NewsPostType.php:27 src/PostTypes/ImagePostType.php:27
+msgid "Search news"
+msgstr ""
+
+#: src/PostTypes/ProjectPostType.php:27
+msgid "Search projects"
+msgstr ""
+
+#: src/Taxonomies/RoleTaxonomy.php:13
+msgid "Search Roles"
+msgstr ""
+
+#: src/Taxonomies/SeriesTaxonomy.php:13
+msgid "Search Series"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1127
+msgid "Select File"
+msgstr ""
+
+#: src/Views/ContactForm.php:17
+msgid "Send"
+msgstr ""
+
+#: src/Taxonomies/SeriesTaxonomy.php:21
+msgid "Series"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1296
+msgid "Show on project page"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1695
+msgid "Slim Header Options"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:464
+msgid "Sold"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1419
+msgid "Source"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1446
+msgid "Source link"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1471
+msgid "Source name"
+msgstr ""
+
+#: src/Templates/SingleProjectTemplate.php:131
+#: src/Helpers/FieldgroupHelper.php:1216
+msgid "Specifications"
+msgstr ""
+
+#: src/Views/ContactForm.php:10
+msgid "Subject"
+msgstr ""
+
+#: src/Components/CommentFormComponent.php:29
+msgid "Submit"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:192 src/Helpers/FieldgroupHelper.php:332
+msgid "Subtitle"
+msgstr ""
+
+#: src/Taxonomies/DisciplineTaxonomy.php:11
+msgctxt "taxonomy general name"
+msgid "Disciplines"
+msgstr ""
+
+#: src/Taxonomies/RoleTaxonomy.php:11
+msgctxt "taxonomy general name"
+msgid "Roles"
+msgstr ""
+
+#: src/Taxonomies/SeriesTaxonomy.php:11
+msgctxt "taxonomy general name"
+msgid "Series"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1769
+msgid "Taxonomy Series Fieldgroup"
+msgstr ""
+
+#: src/Taxonomies/DisciplineTaxonomy.php:12
+msgctxt "taxonomy singular name"
+msgid "Discipline"
+msgstr ""
+
+#: src/Taxonomies/RoleTaxonomy.php:12
+msgctxt "taxonomy singular name"
+msgid "Role"
+msgstr ""
+
+#: src/Taxonomies/SeriesTaxonomy.php:12
+msgctxt "taxonomy singular name"
+msgid "Series"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1841
+msgid "Term"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:101 src/Helpers/FieldgroupHelper.php:550
+msgid "Text"
+msgstr ""
+
+#: src/Components/ContactFormComponent.php:49
+msgid "Thank you for your request"
+msgstr ""
+
+#: src/PostTypes/NewsPostType.php:35
+msgctxt ""
+"The post type archive label used in nav menus. Default “Post Archives”. "
+"Added in 4.4"
+msgid "Article archives"
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:35
+msgctxt ""
+"The post type archive label used in nav menus. Default “Post Archives”. "
+"Added in 4.4"
+msgid "Exhibition archives"
+msgstr ""
+
+#: src/PostTypes/ImagePostType.php:35
+msgctxt ""
+"The post type archive label used in nav menus. Default “Post Archives”. "
+"Added in 4.4"
+msgid "Image archives"
+msgstr ""
+
+#: src/PostTypes/ProjectPostType.php:35
+msgctxt ""
+"The post type archive label used in nav menus. Default “Post Archives”. "
+"Added in 4.4"
+msgid "Project archives"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1818
+msgid "Theme Settings"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:172 src/Helpers/FieldgroupHelper.php:312
+#: src/Helpers/FieldgroupHelper.php:511
+msgid "Title"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1773
+msgid "Title Image"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:987
+msgid "To"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:654
+msgid "Top"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1099
+msgid "Type"
+msgstr ""
+
+#: src/Taxonomies/DisciplineTaxonomy.php:18
+msgid "Update Discipline"
+msgstr ""
+
+#: src/Taxonomies/RoleTaxonomy.php:18
+msgid "Update Role"
+msgstr ""
+
+#: src/Taxonomies/SeriesTaxonomy.php:18
+msgid "Update Series"
+msgstr ""
+
+#. Name of the theme
+msgid "Valerie-Knill"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1114
+msgid "Video from Link"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1112
+msgid "Video from WordPress"
+msgstr ""
+
+#: src/PostTypes/NewsPostType.php:25
+msgid "View entry"
+msgstr ""
+
+#: src/PostTypes/ExhibitionPostType.php:25
+msgid "View exhibition"
+msgstr ""
+
+#: src/PostTypes/ImagePostType.php:25
+msgid "View image"
+msgstr ""
+
+#: src/PostTypes/ProjectPostType.php:25
+msgid "View project"
+msgstr ""
+
+#: src/Helpers/FieldgroupHelper.php:1431
+msgid "Web"
+msgstr ""
+
+#: src/Components/CommentFormComponent.php:25
+#: src/Helpers/FieldgroupHelper.php:1361 src/Helpers/FieldgroupHelper.php:1585
+msgid "Website"
+msgstr ""
+
+#. Description of the theme
+msgid "Wordpress theme for the Website of Valerie Knill"
+msgstr ""

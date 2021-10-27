@@ -1,0 +1,109 @@
+// variables
+$image-background-overlay-opacity: 0.5;
+$video-background-overlay-opacity: 0;
+$header-height-home: 80vh;
+$header-height-global: 25vh;
+
+
+.header-section {
+    
+    
+    &.header-section {
+        height: $header-height-global;
+    }
+
+    .page-template-page_home &.header-section {
+        height: $header-height-home;
+    }
+    
+    &.header-section {
+        padding: 0;
+        
+        .heading-logo-link {
+            display: block;
+            width: max-content;
+            position: relative;
+            left: 3vw;
+            top: 5vh;
+
+            &:hover > .heading-logo {
+                color: rgba(255, 255, 255, 0.8);
+            }
+            .heading-logo, .heading-logo-sub {
+                font-family: $header-title-font-family;
+                display: block;
+                position: relative;
+                width: max-content;
+                margin: 0;
+                top: 0;
+            }
+            .heading-logo-sub {
+                color: $colourtheme-1;
+                left: 15px;
+            }
+
+        }
+
+        
+        .navigation-button {
+            color: #ffffff;
+            margin-right: 5vw;
+            margin-top: 6vh;
+            
+            svg rect {
+                stroke: #ffffff;
+                stroke-width: 0.5px;
+            }
+            
+            &:hover {
+                color: rgba(255, 255, 255, 0.8);
+            }
+        }
+        
+        .uk-cover-container {
+            height: 100%;
+            background-color: rgba($global-secondary-background, $image-background-overlay-opacity);
+        }
+    }
+    
+    &.header-background-slideshow {
+        
+        .header-overlay {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            margin-top: calc(#{$header-height-home} * -1);
+            background-color: rgba($global-secondary-background, $image-background-overlay-opacity);
+        }
+        
+        .uk-slideshow-items {
+            height: 100%;
+            min-height: 0!important;
+        }
+        
+    }
+
+    //&.header-background {
+    //    background-image: url('../../static/img/DSC018841o.R.JPG');
+    //}
+    
+    &.header-video {
+        
+        .header-overlay {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            margin-top: 0;
+            background-color: rgba($global-secondary-background, $video-background-overlay-opacity);
+        }
+        & > .uk-cover-container {
+            height: 100%;
+        }
+
+        .header-opacity-layer {
+            position: relative;
+            background-color: rgba($global-secondary-background, $video-background-overlay-opacity);
+        }
+    }
+
+}
