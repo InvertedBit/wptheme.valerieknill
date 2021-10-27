@@ -34,7 +34,7 @@ class ContainerComponent extends BaseViewComponent {
 
             foreach ($this->data['children'] as $child) {
                 if ($child->isValid()) {
-                    $$validChildCount++;
+                    $validChildCount++;
                 }
             }
 
