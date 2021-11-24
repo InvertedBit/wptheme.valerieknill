@@ -32,7 +32,7 @@ if (is_a($queriedObject, 'WP_TERM')) {
     $name = $queriedObject->name;
     $parameters = [];
     if ($name === 'project') {
-        $parameters['discipline'] = 'movies';
+        $parameters['discipline'] = 'film';
         $theme->setTemplate('ProjectList', $parameters);
     }
 }
