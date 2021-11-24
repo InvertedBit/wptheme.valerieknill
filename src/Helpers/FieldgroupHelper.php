@@ -735,14 +735,14 @@ class FieldgroupHelper {
                     array(
                         'param' => 'nav_menu_item',
                         'operator' => '==',
-                        'value' => 'location/main-menu-movies___en',
+                        'value' => 'location/main-menu-film___en',
                     ),
                 ),
                 array(
                     array(
                         'param' => 'nav_menu_item',
                         'operator' => '==',
-                        'value' => 'location/main-menu-movies',
+                        'value' => 'location/main-menu-film',
                     ),
                 ),
             ),
